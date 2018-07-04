@@ -1,0 +1,24 @@
+site_name: MacroPeople Data Controller Product Documentation
+pages:
+- Home: index.md
+- Using Data Controller:
+  - Data Controller User Guide : dc-userguide.md
+#    - Data Controller Admin Guide
+#- Installing Data Controller
+
+markdown_extensions:
+ - admonition
+ - pymdownx.superfences
+ - codehilite
+ - fontawesome_markdown
+#extra_css: ['font-awesome.css']
+theme: 
+  name: material 
+  logo: 'img/favicon.ico'
+  palette:
+    primary: 'White'
+    accent: 'Amber'
+  font:
+    text: 'Open Sans'
+    code: 'Ubuntu Mono'
+copyright: All rights reserved &copy;2018 Macro People Ltd. 
