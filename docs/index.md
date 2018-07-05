@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Data Controller Documentation
 
 For full documentation visit [mkdocs.org](http://mkdocs.org).
 

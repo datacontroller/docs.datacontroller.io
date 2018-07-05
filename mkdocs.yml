@@ -1,9 +1,9 @@
-site_name: MacroPeople Data Controller Product Documentation
+site_name: Data Controller for SAS® Product Documentation
 pages:
 - Home: index.md
 - Using Data Controller:
-  - Data Controller User Guide : dc-userguide.md
-#    - Data Controller Admin Guide
+    - DC Overview: dc-overview.md
+    - DC User Guide : dc-userguide.md
 #- Installing Data Controller
 
 markdown_extensions:
