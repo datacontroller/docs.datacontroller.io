@@ -4,9 +4,9 @@ pages:
 - Using Data Controller:
     - DC Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
-- Configuring Data Controller
-    - Adding Users: dcc-users.md
-    - Adding Tables
+- Configuring Data Controller:
+    - Security: dcc-security.md
+#    - Adding Tables
 
 markdown_extensions:
  - admonition

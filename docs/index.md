@@ -14,7 +14,7 @@ The following documents are available on this site:
 
 * [Overview](dc-overview.md)
 * [User Guide](dc-userguide.md)
-* [Config - Adding Users](dcc-users.md)
+* [Config - Security](dcc-security.md)
 * [Installation]()
 
 ## Online resources
