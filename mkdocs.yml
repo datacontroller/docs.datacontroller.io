@@ -3,8 +3,10 @@ pages:
 - Home: index.md
 - Using Data Controller:
     - DC Overview: dc-overview.md
-    - DC User Guide : dc-userguide.md
-#- Installing Data Controller
+    - DC User Guide: dc-userguide.md
+- Configuring Data Controller
+    - Adding Users: dcc-users.md
+    - Adding Tables
 
 markdown_extensions:
  - admonition

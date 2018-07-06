@@ -1,21 +1,25 @@
 # Data Controller Documentation
 
+## Overview 
+
 The Data Controller for SAS® enables users to self serve their data changes, and for data owners to retain control over those updates by reviewing and approving each update.
 
 <iframe src="https://player.vimeo.com/video/277472582" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 For full documentation visit [mkdocs.org](http://mkdocs.org).
 
-## Commands
+## Documents
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+The following documents are available on this site:
 
-## Project layout
+* [Overview](dc-overview.md)
+* [User Guide](dc-userguide.md)
+* [Config - Adding Users](dcc-users.md)
+* [Installation]()
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Online resources
+
+The following sites contain additional information on the Data Controller for SAS®:
+
+* DC Overview [Presentation](https://slides.com/allanbowe/datacontroller)
+* Data Controller [LinkedIn](https://www.linkedin.com/company/datacontroller/) page
