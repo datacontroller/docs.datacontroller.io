@@ -5,8 +5,9 @@ pages:
     - DC Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
 - Configuring Data Controller:
-    - Security: dcc-security.md
     - Adding Tables: dcc-tables.md
+    - Security: dcc-security.md
+
 
 markdown_extensions:
  - admonition

@@ -6,6 +6,8 @@ Adding tables to the Data Controller is a matter of configuration, specifically 
 !!! note
     In order to surface the table to users, appropriate groups should be configured as per [security](dcc-security.md) settings.
 
+![screenshot](img/configtable.png)
+
 ## Details
 
 Each table to be edited in the Data Controller is represented by one record in `DATACTRL.MPE_TABLES`.  The fields should be populated as follows:
