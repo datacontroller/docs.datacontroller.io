@@ -5,16 +5,18 @@ pages:
     - DC Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
 - Configuring Data Controller:
-    - Adding Tables: dcc-tables.md
+    - Tables: dcc-tables.md
     - Security: dcc-security.md
-
+    - Selectboxes: dcc-selectbox.md
 
 markdown_extensions:
  - admonition
  - pymdownx.superfences
  - codehilite
  - fontawesome_markdown
+
 extra_css: ['font-awesome.css']
+
 theme: 
   name: material 
   logo: 'img/favicon.ico'
