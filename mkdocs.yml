@@ -8,6 +8,9 @@ pages:
     - Tables: dcc-tables.md
     - Security: dcc-security.md
     - Selectboxes: dcc-selectbox.md
+- Installing Data Controller:
+    - Backend: dci-backend.md
+    - Frontend: dci-frontend.md
 
 markdown_extensions:
  - admonition
