@@ -6,3 +6,5 @@ Installation
 
 To build, navigate to the root of this repo and run:
     mkdocs build --clean
+
+Note that the readme has been renamed to README.txt to prevent github pages from considering it to be the index by default!
