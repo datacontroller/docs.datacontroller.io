@@ -19,7 +19,7 @@ The libref of the table.  If not pre-assigned, DC will assign it at runtime usin
 The dataset (table) name as visible when assigning a direct libref connection to `LIBREF`.
 
 ### NUM_OF_APPROVALS_REQUIRED
-This is an integer representing the number of approvals required before a table is updated.  This mechanism lets you insist on, say, 2 or 3 approvals before sensitive data is updated following a submission.  Note that only one rejection is ever necessary to remove the submission.
+This is an integer representing the number of approvals required before a table is updated.  This mechanism lets you insist on, for example, 2 or 3 approvals before sensitive data is updated following a submission.  Note that only one rejection is ever necessary to remove the submission.
 This is a required field.
 
 ### LOADTYPE
@@ -50,11 +50,11 @@ Set the name of a variable (eg `processed_dttm`) which should be given a current
 Leave blank if not required.
 
 ### CLOSE_VARS
-By default, the data controller will only process the records that are part of a changeset.  This means that records should be explicity marked for deletion.  But what if you are performing a reload of a monthly batch, and the _absence_ of a record implies that it is no longer required?  For this scenario, it is necessary to specify the range within a 'complete' load is expected.  For instance, by reporting month, or month + product.  When performing loads, the DC will then first extract a distinct list of values for this key and close them out in the target table, before performing the upload.  The `CLOSE_VARS` are typically a subset of the [BUSKEY](#buskey) fields.
+By default, the Data Controller will only process the records that are part of a changeset.  This means that records should be explicity marked for deletion.  But what if you are performing a reload of a monthly batch, and the _absence_ of a record implies that it is no longer required?  For this scenario, it is necessary to specify the range within a 'complete' load is expected.  For instance, by reporting month, or month + product.  When performing loads, the DC will then first extract a distinct list of values for this key and close them out in the target table, before performing the upload.  The `CLOSE_VARS` are typically a subset of the [BUSKEY](#buskey) fields.
 Leave blank if not required.
 
 ### PRE_EDIT_HOOK
-The full path / location (unquoted) of a SAS program that will be `%inc`'d prior to an edit being made.  This allows a particular view of a table to be presented to a user for editing (eg masking columns etc). 
+The full path / location (unquoted) of a SAS program that will be `%inc`'d prior to an edit being made.  This allows a particular view of a table to be presented to a user for editing (eg masking columns etc).
 Leave blank if not required.
 
 ### POST_EDIT_HOOK

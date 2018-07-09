@@ -1,7 +1,7 @@
 #Data Controller for SAS® - Backend Deployment
 
 ## Overview
-The backend for data controller consists of a set of Stored Processes, a macro library, and a database.  The database can be SAS Base library if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS. 
+The backend for Data Controller consists of a set of Stored Processes, a macro library, and a database.  The database can be SAS Base library if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
 
 ## Details
 
@@ -9,11 +9,11 @@ The backend for data controller consists of a set of Stored Processes, a macro l
 
 2 - Import datacontroller.spk using SAS Management Console.  The location in which this is deployed should be added to the `metadataRoot` value in the `h54s.config` file as per [frontend](dci-frontend.md#details) deployment.
 
-3 - Create a staging directory.  This will contain the data submitted by editors and awaiting approval.  The Stored Process system account (eg `sassrv`) will need write access to this location. 
+3 - Create a staging directory.  This will contain the data submitted by editors and awaiting approval.  The Stored Process system account (eg `sassrv`) will need write access to this location.
 
 4 - Register a library in metadata for your preferred database.  The libref should be `DATACTRL`.  If this is not possible, then an alternative libref can be used, simply specify it in the configuration in step 6.
 
-5 - Make the `mpeinit.sas` macro available.  This "initialisation" macro needs to be available to a fresh Stored Process session.  There are several ways to do this, such as to `%include` from the `/Lev1/StoredProcessServer/StoredProcessServer_usermods.sas` file or to create a symlink from the `sasautos` directory.  
+5 - Make the `mpeinit.sas` macro available.  This "initialisation" macro needs to be available to a fresh Stored Process session.  There are several ways to do this, such as to `%include` from the `/Lev1/StoredProcessServer/StoredProcessServer_usermods.sas` file or to create a symlink from the `sasautos` directory.
 
 6 - Configure the `mpeinit.sas` file.  This is where all your site specific locations are stored.  The following macro variables should be modified:
 
