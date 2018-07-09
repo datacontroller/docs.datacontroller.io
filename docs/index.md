@@ -6,8 +6,6 @@ The Data Controller for SAS® enables users to self serve their data changes, an
 
 <iframe src="https://player.vimeo.com/video/277472582" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
-
 ## Documents
 
 The following documents are available on this site:
