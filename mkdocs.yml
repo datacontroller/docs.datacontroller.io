@@ -19,7 +19,7 @@ markdown_extensions:
  - fontawesome_markdown
 
 extra_css: ['font-awesome.css']
-site_favicon: img/favicon.ico
+
 theme: 
   name: material 
   logo: 'img/favicon.ico'
