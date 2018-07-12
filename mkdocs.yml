@@ -13,15 +13,21 @@ pages:
     - Frontend: dci-frontend.md
 
 markdown_extensions:
- - admonition
- - pymdownx.superfences
- - codehilite
- - fontawesome_markdown
+  - admonition
+  - pymdownx.superfences
+  - codehilite
+  - fontawesome_markdown
+  - toc:
+      permalink: true
 
 extra_css: ['font-awesome.css']
 
-theme: 
-  name: material 
+# Repository
+repo_name: 'macropeople/dcdocs.github.io'
+repo_url: 'https://github.com/macropeople/dcdocs.github.io'
+
+theme:
+  name: material
   logo: 'img/favicon.ico'
   palette:
     primary: 'White'
@@ -29,4 +35,4 @@ theme:
   font:
     text: 'Open Sans'
     code: 'Ubuntu Mono'
-copyright: All rights reserved &copy;2018 Macro People Ltd. 
+copyright: All rights reserved &copy;2018 Macro People Ltd.
