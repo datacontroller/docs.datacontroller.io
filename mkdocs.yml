@@ -35,4 +35,5 @@ theme:
   font:
     text: 'Open Sans'
     code: 'Ubuntu Mono'
+  favicon: img/favicon.ico
 copyright: All rights reserved &copy;2018 Macro People Ltd.
