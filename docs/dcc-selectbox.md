@@ -4,7 +4,6 @@
 To ensure data validity and to improve user experience, it is possible to predesignate specific values for data entry.  These appear to the user as a selectbox within the editor interface.
 
 ## Configuration
-
 Values are added by populating the `DATACTRL.MPE_SELECTBOX` table, eg below:
 
 ![selectboxtable](img/mpe_selectboxtable.png)
