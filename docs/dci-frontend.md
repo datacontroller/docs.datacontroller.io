@@ -7,7 +7,7 @@ The Data Controller front end was built on the Angular seed app from Boemska App
 
 1 - Unzip dcfrontend.zip and upload the entire `datacontroller` directory to the static content server.
 
-2 - Open the `h54s.config` file and update the `metadataRoot` value to the location of the Stored Processes as per [backend](dci-backend.md) deployment.
+2 - Open the `h54s.config` file and update the `metadataRoot` value to the location of the Stored Processes as per [backend](dci-backend.md) deployment.  Remember to include the trailing slash (`/`).
 
 It should now be possible to use the application - simply navigate to `YO
 URSASWEBLOC.domain/yourRoot/datacontroller` and sign in!
