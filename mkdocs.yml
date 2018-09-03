@@ -11,6 +11,7 @@ pages:
 - Installing Data Controller:
     - Backend: dci-backend.md
     - Frontend: dci-frontend.md
+    - Troubleshooting: dci-troubleshooting.md
 
 markdown_extensions:
   - admonition
