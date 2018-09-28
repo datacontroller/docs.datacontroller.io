@@ -40,7 +40,7 @@ The Editor screen lets users who have been pre-authorised (via the `DATACTRL.MPE
 
 1 - *Filter*.  The user can filter before proceeding to perform edits.
 
-2 - *Upload*.  The user can upload a CSV file directly, instead of using the interface.  The CSV must have the same structure as the target.  Use the 'download csv' option in Viewer to obtain a template of this CSV.
+2 - *Upload*.  If you have a lot of data, you can [upload it directly](dcu-fileupload).  The changes are then approved in the usual way.
 
 3 - *Edit*.  This is the main interface, data is displayed in tabular format.  The first column is always "Delete?", as this allows you to mark rows for deletion.  Note that removing a row from display does not mark it for deletion!  It simply means that this row is not part of the changeset being submitted.
 The next set of columns are the Primary Key, and are shaded grey.  If the table has a surrogate / retained key, then it is the Business Key that is shown here (the RK field is calculated / updated at the backend).  For SCD2 type tables, the 'validity' fields are not shown.  It is assumed that the user is always working with the current version of the data, and the view is filtered as such.
