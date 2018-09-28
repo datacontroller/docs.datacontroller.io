@@ -6,6 +6,7 @@ Installation
 
 To build, navigate to the root of this repo and run:
     mkdocs build --clean
+    mkdocs serve
 
 To deploy, run the following:
 

@@ -1,21 +1,38 @@
 # Data Controller for SAS: User Guide
 
-## Overview
+## Interface
 
 The Data Controller has 5 tabs, as follows:
 
-* *Viewer*.  This tab lets users view any table to which they have been granted access in metadata.  They can also download the data as csv, excel, or as a SAS program (datalines).
-* *Editor*.  This tab enables users to add, modify or delete data. This can be done directly in the browser, or by uploading a CSV file. Values can also be copy-pasted from a spreadsheet. Once changes are ready, they can be submitted, with a corresponding reason.
-* *Submissions*.  This shows and editor the outstanding changes that have been submitted for approval (but have not yet been approved or rejected).
-* *Approvals*.  This shows an approver all their outstanding approval requests.
-* *History*.  This shows an auditor, or other interested party, what changes have been submitted for each table.
+* *[Viewer](#viewer)*.  This tab lets users view any table to which they have been granted access in metadata.  They can also download the data as csv, excel, or as a SAS program (datalines).
+* *[Editor](#editor)*.  This tab enables users to add, modify or delete data. This can be done directly in the browser, or by uploading a CSV file. Values can also be copy-pasted from a spreadsheet. Once changes are ready, they can be submitted, with a corresponding reason.
+* *[Submitted](#submitted)*.  This shows and editor the outstanding changes that have been submitted for approval (but have not yet been approved or rejected).
+* *[Approvals](#approvals)*.  This shows an approver all their outstanding approval requests.
+* *[History](#history)*.  This shows an auditor, or other interested party, what changes have been submitted for each table.
 
 ## Viewer
 
-The Viewer screen lets any user with a SAS profile view tables to which they have already been granted access in metadata.  Simply Select library / table and the View button.  The first 5,000 rows of the table in question are displayed.
+### Overview
+The viewer screen provides users with a raw view of underlying data.  It is only possible to view tables that have been registered in metadata.
+Advantages of using the viewer (over client tools) for browsing data include:
 
-It is also possible to build complex filters against data before viewing, via the Filter button.  The filter string is converted into an ID, as can be seen in the URL.  Simply share this link with any other SAS user to share that particular view.
-The Viewer also has a Download option.  This lets you Download your view of the data in CSV, Excel, and SAS format.  The SAS format option gives you a SAS program with the relevant DATALINES so that you can easily recreate your data in another instance of SAS.
+* Ability to provide links to tables / filtered views of tables (just copy url)
+* In the case of SAS datasets, prevent file locks from ocurring
+* Ability to quickly download a CSV / Excel / SAS Cards program for that table
+
+### Usage
+Choose a library, then a table, and click view to see the first 5000 rows.
+A filter option is provided should you wish to view a different section of rows.
+
+The Download button gives three options for obtaining the current view of data:
+
+1) CSV.  This provides a comma delimited file.
+
+2) Excel.  This provides a tab delimited file.
+
+3) SAS.  This provides a SAS program with data as datalines, so that the data can be rebuilt as a SAS table.
+
+Note - if the table is registered in Data Controller as being TXTEMPORAL (SCD2) then the download option will prefilter for the _current_ records and removes the valid from / valid to variables.  This makes the CSV a suitable format for subsequent DC file upload, if desired.
 
 ## Editor
 
@@ -38,7 +55,9 @@ If you are also an approver you can approve this change yourself.
 This page shows a list of the changes you have submitted (that are not yet approved).
 
 ## Approvals
-This shows the list of changes that have been submitted to you (or your group) for approval.
+This shows the list of changes that have been submitted to you (or your groups) for approval.
 
 ## History
 View the list of changes to each table, who made the change, when, etc.
+
+## Functionality

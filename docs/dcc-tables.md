@@ -1,14 +1,14 @@
 # Data Controller for SAS® - Adding Tables
 
 ## Overview
-Adding tables to the Data Controller is a matter of configuration, specifically the addition of a new record to the `DATACTRL.MPE_TABLES` table.
+Adding tables to the Data Controller is a matter of configuration, specifically the addition of a new record to the `DATACTRL.MPE_TABLES` table, and corresponding entries in the `DATACTRL.MPE_SECURITY` table.
 
 !!! note
     In order to surface the table to users, appropriate groups should be configured as per [security](dcc-security.md) settings.
 
 ![screenshot](img/configtable.png)
 
-## Details
+## MPE_TABLES Configuration Details
 
 Each table to be edited in the Data Controller is represented by one record in `DATACTRL.MPE_TABLES`.  The fields should be populated as follows:
 
@@ -25,9 +25,10 @@ This is a required field.
 ### LOADTYPE
 The loadtype determines the nature of the update to be applied.  Valid values are as follows:
 
- - UPDATE.  This is the most basic type, and any updates will happen 'in place'.  Simply provide the primary key fields in the `BUSKEY` column.
- - TXTEMPORAL.  This signifies an SCD2 type load.  For this type the validty fields (valid from, valid to) should be specified in the `VAR_TXFROM` and `VAR_TXTO` fields.  The table itself should include `VAR_TXFROM` in the physical key.  The remainder of the primary key fields (not including `VAR_TXFROM`) should be specified in `BUSKEY`.
- - BITEMPORAL.  These tables have two time dimensions - a version history, and a business history.  The version history (SCD2) fields should be specified in `VAR_TXFROM` and `VAR_TXTO` and the business history fields should be specified in `VAR_BUSFROM` and `VAR_BUSTO`.  The `VAR_TXFROM` and `VAR_BUSFROM` fields should be in the key of the actual table, but should not be also specified in the `BUSKEY` field.
+* UPDATE.  This is the most basic type, and any updates will happen 'in place'.  Simply provide the primary key fields in the `BUSKEY` column.
+* TXTEMPORAL.  This signifies an SCD2 type load.  For this type the validity fields (valid from, valid to) should be specified in the `VAR_TXFROM` and `VAR_TXTO` fields.  The table itself should include `VAR_TXFROM` in the physical key.  The remainder of the primary key fields (not including `VAR_TXFROM`) should be specified in `BUSKEY`.
+* BITEMPORAL.  These tables have two time dimensions - a version history, and a business history.  The version history (SCD2) fields should be specified in `VAR_TXFROM` and `VAR_TXTO` and the business history fields should be specified in `VAR_BUSFROM` and `VAR_BUSTO`.  The `VAR_TXFROM` and `VAR_BUSFROM` fields should be in the key of the actual table, but should not be also specified in the `BUSKEY` field.
+
 This is a required field.
 !!! Note
     The support for BITEMPORAL loads is restricted, in the sense it is only possible to load data at a single point in time (no support for loading multiple business date ranges for a single business key).  The workaround is simply to load each date range separately.
