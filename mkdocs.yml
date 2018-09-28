@@ -2,8 +2,9 @@ site_name: Data Controller for SAS® Product Documentation
 pages:
 - Home: index.md
 - Using Data Controller:
-    - DC Overview: dc-overview.md
+    - Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
+    - File Uploads: dcu-fileupload.md
 - Configuring Data Controller:
     - Tables: dcc-tables.md
     - Security: dcc-security.md
