@@ -17,7 +17,7 @@ The backend for Data Controller consists of a set of Stored Processes, a macro l
 * `dc_libref` - if you were unable to use the `DATACTRL` libref in step 3, then use the updated libref here
 * `dc_admin_group` - enter the name of a metadata group (eg SASAdministrators) that should be given unrestricted access to the tool
 
-7 - Deploy the data model.  For this, simply compile and run the `mpe_build()` macro.
+5 - Deploy the data model.  For this, simply compile and run the `mpe_build()` macro.
 
 
 The next step is to deploy the [frontend](dci-frontend.md).
