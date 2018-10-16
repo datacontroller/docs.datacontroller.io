@@ -10,9 +10,9 @@ The Data Controller has 5 tabs, as follows:
 * *[Approvals](#approvals)*.  This shows an approver all their outstanding approval requests.
 * *[History](#history)*.  This shows an auditor, or other interested party, what changes have been submitted for each table.
 
-## Viewer
+### Viewer
 
-### Overview
+#### Overview
 The viewer screen provides users with a raw view of underlying data.  It is only possible to view tables that have been registered in metadata.
 Advantages of using the viewer (over client tools) for browsing data include:
 
@@ -20,7 +20,7 @@ Advantages of using the viewer (over client tools) for browsing data include:
 * In the case of SAS datasets, prevent file locks from ocurring
 * Ability to quickly download a CSV / Excel / SAS Cards program for that table
 
-### Usage
+#### Usage
 Choose a library, then a table, and click view to see the first 5000 rows.
 A filter option is provided should you wish to view a different section of rows.
 
@@ -34,7 +34,7 @@ The Download button gives three options for obtaining the current view of data:
 
 Note - if the table is registered in Data Controller as being TXTEMPORAL (SCD2) then the download option will prefilter for the _current_ records and removes the valid from / valid to variables.  This makes the CSV a suitable format for subsequent DC file upload, if desired.
 
-## Editor
+### Editor
 
 The Editor screen lets users who have been pre-authorised (via the `DATACTRL.MPE_SECURITY` table) to edit a particular table.  A user selects a particular library, and table and then has 3 options:
 
@@ -51,13 +51,17 @@ New rows can be added using the right click context menu, or the 'Add Row' butto
 When ready to submit, hit the SUBMIT button and enter a reason for the change.  The owners of the data are now alerted (so long as their email addresses are in metadata) with a link to the approve screen.
 If you are also an approver you can approve this change yourself.
 
-## Submitted
+### Submitted
 This page shows a list of the changes you have submitted (that are not yet approved).
 
-## Approvals
+### Approvals
 This shows the list of changes that have been submitted to you (or your groups) for approval.
 
-## History
+### History
 View the list of changes to each table, who made the change, when, etc.
 
-## Functionality
+## Use Case Diagram
+
+There are four Actors (Viewer, Editor, Approver, Auditor) and 3 primary use cases (View Table, Edit Table, Approve Change, View Change History)
+
+<img src="/img/dcu-usecase.svg" height="350" style="border:3px solid black" >
