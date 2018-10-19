@@ -51,6 +51,10 @@ New rows can be added using the right click context menu, or the 'Add Row' butto
 When ready to submit, hit the SUBMIT button and enter a reason for the change.  The owners of the data are now alerted (so long as their email addresses are in metadata) with a link to the approve screen.
 If you are also an approver you can approve this change yourself.
 
+#### BiTemporal Tables
+
+The Data Controller only permits BiTemporal data uploads at a single point in time - so for convenience, when viewing data in the edit screen, only the most recent records are displayed.  To edit earlier records, either use file upload, or apply a filter.
+
 ### Submitted
 This page shows a list of the changes you have submitted (that are not yet approved).
 
@@ -60,8 +64,3 @@ This shows the list of changes that have been submitted to you (or your groups) 
 ### History
 View the list of changes to each table, who made the change, when, etc.
 
-## Use Case Diagram
-
-There are four Actors (Viewer, Editor, Approver, Auditor) and 3 primary use cases (View Table, Edit Table, Approve Change, View Change History)
-
-<img src="/img/dcu-usecase.svg" height="350" style="border:3px solid black" >

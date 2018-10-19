@@ -20,3 +20,9 @@ There are 5 roles identified for users of the Data Controller:
 3. *Approver*.  An approver accepts / rejects proposed changes to data under their control. If accepted, the change is applied to the target table.
 4. *Auditor*.  An auditor has the ability to review the [history](dc-userguide.md#history) of changes to a particular table.
 5. *Administrator*.  An administrator has the ability to add new [tables](dcc-tables.md) to the Data Controller, and to configure the security settings (at metadata group level) as required.
+
+## Use Case Diagram
+
+There are five roles (Viewer, Editor, Approver, Auditor, Administrator) which correspond to 5 primary use cases (View Table, Edit Table, Approve Change, View Change History, Configure Table)
+
+<img src="/img/dcu-usecase.svg" height="350" style="border:3px solid black" >
