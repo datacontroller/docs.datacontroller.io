@@ -3,11 +3,11 @@
 ## Overview
 The backend for Data Controller consists of a set of Stored Processes, a macro library, and a database.  The database can be SAS Base library if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
 
-## Details
+## Regular Deployment
 
 1 - Import datacontroller.spk using SAS Management Console.  The location in which this is deployed should be added to the `metadataRoot` value in the `h54s.config` file as per [frontend](dci-frontend.md#details) deployment.
 
-2 - Create a physical staging directory.  This will contain the data submitted by editors and awaiting approval.  The Stored Process system account (eg `sassrv`) will need write access to this location.
+2 - Create a physical staging directory.  This will contain the data submitted by editors and awaiting approval.  The SAS Spawned Server account (eg `sassrv`) will need write access to this location.
 
 3 - Register a library in metadata for the control database.  The libref should be `DATACTRL`.  If this is not possible, then an alternative libref can be used, simply specify it in the configuration component.
 
@@ -19,5 +19,19 @@ The backend for Data Controller consists of a set of Stored Processes, a macro l
 
 5 - Deploy the data model.  For this, simply compile and run the `mpe_build()` macro.
 
+!!! note
+    Make sure the SAS Spawned Server account (eg `sassrv`) can access these tables!
+
 
 The next step is to deploy the [frontend](dci-frontend.md).
+
+## EUC Deployment
+
+Optionally, a shared network drive can be configured to enable EUCs to temporarily stage CSVs for upload into the Data Controller review process.
+For security, it is recommended to set permissions so that end users can write, but not read or modify.  The SAS Spawned Server account (eg `sassrv`) will need read and modify access - as it will remove the files once they are loaded into the secure staging area.
+
+## Deployment Diagram
+
+An overview of how the components fit together is available below:
+
+![deploymentdiagram](img/dci_deploymentdiagram.png)
