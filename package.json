@@ -1,0 +1,28 @@
+{
+  "name": "dcdocs",
+  "version": "1.0.0",
+  "description": "Documentation repo for Data Controller",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macropeople/dcdocs.github.io.git"
+  },
+  "keywords": [
+    "SAS"
+  ],
+  "author": "Allan Bowe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macropeople/dcdocs.github.io/issues"
+  },
+  "homepage": "https://docs.datacontroller.io",
+  "devDependencies": {
+    "standard-version": "^4.4.0"
+  }
+}
