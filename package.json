@@ -1,6 +1,6 @@
 {
   "name": "dcdocs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Documentation repo for Data Controller",
   "main": "index.js",
   "directories": {
