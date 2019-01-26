@@ -11,6 +11,7 @@ pages:
     - Selectboxes: dcc-selectbox.md
     - Dates / Datetimes: dcc-dates.md
 - Installing Data Controller:
+    - System Requirements: dci-requirements.md
     - Backend: dci-backend.md
     - Frontend: dci-frontend.md
     - Troubleshooting: dci-troubleshooting.md

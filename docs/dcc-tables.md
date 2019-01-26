@@ -59,7 +59,7 @@ The full path / location (unquoted) of a SAS program that will be `%inc`'d prior
 Leave blank if not required.
 
 ### POST_EDIT_HOOK
-The full path / location (unquoted) of a SAS program that will be `%inc`'d after an edit has been made.  This modifies the CSV that is created in the staging area, and can be useful for augmenting data / applying complex DQ fixes.
+The full path / location (unquoted) of a SAS program that will be `%inc`'d after an edit has been made.  This program can modify the dataset (`work.staging&x`) that is created in the staging area, which is useful for augmenting data / applying complex DQ rules.  If your DQ check means that the program should not be submitted, then simply exit with `syscc > 4` .
 Leave blank if not required.
 
 ### PRE_APPROVE_HOOK
