@@ -1,7 +1,7 @@
 # Data Controller for SAS® - Evaluation Version
 
 ## Overview
-A free version of Data Controller is available for evaluation purposes. Compiled into a single SPK, it is very easy to install and configure.  However it should not be used in production environments for all the reasons mentioned in the [caveats](#caveats) section.
+A free version of Data Controller is available for evaluation purposes. Compiled into a single SPK, it is very easy to install and configure.  However it must not be used in production environments for all the reasons mentioned in the [caveats](#caveats) section.
 
 ## Installation
 
@@ -27,19 +27,24 @@ Navigate to the [YOURHOST]/SASStoredProcess web application and 'list available 
 
 Simply navigate to the imported location from the Stored Process Web App, right click on the 'clickme' stored process, and open in new window!
 
+<video width="100%" controls>
+  <source src="/img/DeployingDCevaluation.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 
 ## Caveats
 
 The demo version is optimised for rapid install, however it should not be considered for production / commercial use, or for use by more than 2-5 people, for the following reasons:
 
-1) Static content is compiled into SAS services, placing undue strain on the Load Balancer (not scalable)
+1) Static content is compiled into SAS web services, placing undue strain on the Load Balancer (not scalable)
 
 2) Direct URLs are not functional
 
 3) Requires BASE engine for config tables, with high risk of table locks
 
-4) Not licenced for commercial use, and not supported
+4) Not licenced for commercial (or production) use, and not supported
 
-5) The embedded HandsOnTable library is not licenced for commerical use without a licence key
+5) The embedded HandsOnTable library is not licenced for commercial use without a licence key
 
 Contact Macro People support for a full-featured, fully licenced, scalable and supported deployment of Data Controller at your earliest convenience!
