@@ -11,40 +11,35 @@ Simply import the SPK to the desired location in the metadata tree.  During the 
 
 ### Configuration
 
-Firstly, if your SAS user acocunt is **not** in the 'SASAdministrators' group then you may need to update the settings to give your user the ability to view all tables.  Using SAS Management Console, open the `makeData` stored process in the Admin folder, and change the DC_ADMIN_GROUP macro variable to a group of your choosing.
+Navigate to the [YOURHOST]/SASStoredProcess web application and 'list available stored processes'.  Find the location where the app was imported, open the Admin subfolder and run the 'configurator' stored process.
 
-!!! warning
-    Every member of the group you provide above will have UNRESTRICTED access to the tool!
+![evaltree](img/dci_evaltree.png)
 
+This displays a screen with a choice of SAS Metadata Groups (to which your account belongs) can be chosen. Selecting any of these groups will build / rebuild all the configuration tables (placing logs in a subfolder of the previously configured library location) and provide the chosen group with urestricted access to the tool.
 
-Navigate to the [YOURHOST]/SASStoredProcess web application and 'list available stored processes'.  Find the location where the app was imported, open the Admin subfolder and run the 'makedata' stored process. This service will ensure logs are directed to a subfolder of the library location, and will create the necessary configuration tables in that library.
+![evaltree](img/dci_evalconfig.png)
 
 !!! note
-    A quick way to update the admin group is to simply add `&admin=YOURGROUPNAME` to the url when running the `makeData` stored process.
+    "Unrestricted access" is provided by code logic.  Data Controller does not update or modify any metadata, except the `[YOURHOST/PATH]/Admin/Data_Controller_Settings` Stored Process (in which the the aforementioned logic is applied).
 
 
 ## Usage
 
 Simply navigate to the imported location from the Stored Process Web App, right click on the 'clickme' stored process, and open in new window!
 
-<video width="100%" controls>
-  <source src="/img/DeployingDCevaluation.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![evaltree](img/dci_evallaunch.png)
 
 
 ## Caveats
 
-The demo version is optimised for rapid install, however it should not be considered for production / commercial use, or for use by more than 2-5 people, for the following reasons:
+The demo version has been optimised for a rapid install, and should not be considered for production / commercial use, or for use by more than 2-5 people, for the following reasons:
 
-1) Static content is compiled into SAS web services, placing undue strain on the Load Balancer (not scalable)
+1) Static content is compiled into SAS web services, which is inefficient (not scalable)
 
-2) Direct URLs are not functional
+2) Requires BASE engine for config tables, with high risk of table locks
 
-3) Requires BASE engine for config tables, with high risk of table locks
+3) Not licenced for commercial (or production) use, and not supported
 
-4) Not licenced for commercial (or production) use, and not supported
-
-5) The embedded HandsOnTable library is not licenced for commercial use without a licence key
+4) The embedded HandsOnTable library is not licenced for commercial use without a licence key
 
 Contact Macro People support for a full-featured, fully licenced, scalable and supported deployment of Data Controller at your earliest convenience!
