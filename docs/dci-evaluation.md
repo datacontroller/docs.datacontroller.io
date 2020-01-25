@@ -3,25 +3,33 @@
 ## Overview
 A free version of Data Controller is available for evaluation purposes. Compiled into a single SPK, it is very easy to install and configure.  However it must not be used in production environments for all the reasons mentioned in the [caveats](#caveats) section.
 
+<iframe src="https://player.vimeo.com/video/328175910" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
 ## Installation
 
 ### Deployment
 
-Simply import the SPK to the desired location in the metadata tree.  During the import (step 5 of the wizard), be sure to change the location of the library (BASE engine) to a directory folder which the Stored Process system account (sassrv) has write access to.  Also, make sure that your user account has WRITE METADATA (WM) on the imported Data Controller DATA folder, and that anyone who will use the app has READ.
+#### Import
+Simply import the SPK (using SAS Management Console or Data Integration Studio) to the desired location in the metadata tree.  During the import (step 5 of the wizard), be sure to change the location of the library (BASE engine) to a **directory folder** to which the Stored Process system account (eg `sassrv`) has **write access**.
+
+#### Permissions
+Be sure that the user account you will use in the [configuration(#Configuration) step below has WRITE METADATA (WM) on the `/DataController/Admin` and `/DataController/Data` folders, and that anyone who will use the app has READ.
 
 ### Configuration
 
-Navigate to the [YOURHOST]/SASStoredProcess web application and 'list available stored processes'.  Find the location where the app was imported, open the Admin subfolder and run the 'configurator' stored process.
+Navigate to the web application (eg `https://[YOURHOST]/SASStoredProcess?_action=1063`) and find the location where the app was imported.  Then run the `/DataController/Admin/configurator` stored process.
+
+!!! note
+    Use the same user account as you used to import the SPK, to avoid metadata permissions issues!  This may mean logging out / logging back in to the web application.
 
 ![evaltree](img/dci_evaltree.png)
 
-This displays a screen with a choice of SAS Metadata Groups (to which your account belongs) can be chosen. Selecting any of these groups will build / rebuild all the configuration tables (placing logs in a subfolder of the previously configured library location) and provide the chosen group with urestricted access to the tool.
+This displays a screen with a choice of SAS Metadata Groups (to which your account belongs) can be chosen. Selecting any of these groups will build / rebuild all the configuration tables (placing logs in a subfolder of the previously configured library location) and provide the chosen group with **unrestricted** access to the tool.
 
 ![evaltree](img/dci_evalconfig.png)
 
 !!! note
-    "Unrestricted access" is provided by code logic.  Data Controller does not update or modify any metadata, except the `[YOURHOST/PATH]/Admin/Data_Controller_Settings` Stored Process (in which the the aforementioned logic is applied).
-
+    "Unrestricted access" is provided by code logic.  Once installed, Data Controller does not ever update or modify metadata.  During installation, the services in the `/Admin` folder are updated (configuration) or removed (to prevent accidental reinstall).  Also the tables are registered in the `/Data` folder using `proc metalib`.
 
 ## Usage
 
