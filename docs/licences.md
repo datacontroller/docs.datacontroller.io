@@ -3,7 +3,7 @@
 ## Overview
 Data Controller uses the following licences:
 
-```
+<code>
 ├─ @angular-devkit/architect@0.13.7
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular-cli
@@ -8547,4 +8547,4 @@ Data Controller uses the following licences:
    ├─ repository: https://github.com/strongloop/zone
    ├─ path: /Users/allan/git/dcfrontend/node_modules/zone
    └─ licenseFile: /Users/allan/git/dcfrontend/node_modules/zone/LICENSE.md
-```
+</code>

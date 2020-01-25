@@ -13,7 +13,7 @@ Adding tables to the Data Controller is a matter of configuration, specifically 
 Each table to be edited in the Data Controller is represented by one record in `DATACTRL.MPE_TABLES`.  The fields should be populated as follows:
 
 ### LIBREF
-The libref of the table.  If not pre-assigned, DC will assign it at runtime using the first definition found in metadata, using this [macro](https://github.com/Boemska/macrocore/blob/master/meta/mm_assigndirectlib.sas).
+The libref of the table.  If not pre-assigned, DC will assign it at runtime using the first definition found in metadata, using this [macro](https://github.com/macropeople/macrocore/blob/master/meta/mm_assigndirectlib.sas).
 
 ### DSN
 The dataset (table) name as visible when assigning a direct libref connection to `LIBREF`.

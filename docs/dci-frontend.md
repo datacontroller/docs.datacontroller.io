@@ -1,7 +1,7 @@
 # Data Controller for SAS® - Frontend Deployment
 
 ## Overview
-The Data Controller front end was built on the Angular seed app from Boemska AppFactory®.  As such it comes bundled with standard features such as log handling and SASLogon redirects.  It is deployed the the root of the SAS Web Server (mid-tier), typically `htdocs`.
+The Data Controller front end comes pre-built, and ready to deploy to the root of the SAS Web Server (mid-tier), typically `htdocs`.
 
 ## Instructions
 

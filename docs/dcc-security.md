@@ -26,15 +26,13 @@ Before adding a group to Data Controller, it helps to know the members of that g
 
 1 - Use SAS Management Console
 
-2 - Deploy the [Boemska User Navigator](https://github.com/Boemska/user-navigator)
-
-3 - Use Code
+2- Use Code
 
 The "code" option can be performed as follows:
 
 ```
 /* get macro library */
-filename mc url "https://raw.githubusercontent.com/Boemska/macrocore/master/macrocore.sas";
+filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/macrocore.sas";
 %inc mc;
 /* call macro */
 %mm_getgroupmembers(YOURGROUPNAME)

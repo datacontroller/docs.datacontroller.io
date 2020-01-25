@@ -11,12 +11,16 @@ pages:
     - Selectboxes: dcc-selectbox.md
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
+    - Groups: groups.md
 - Installing Data Controller:
     - System Requirements: dci-requirements.md
     - Backend: dci-backend.md
     - Frontend: dci-frontend.md
     - Troubleshooting: dci-troubleshooting.md
-    - Evaluation Version: dci-evaluation.md
+- Evaluation (Demo) Version:
+    - Installation: dci-evaluation.md
+    - Evaluation Licence: evaluation-licence-agreement.md
+    - Other Licences: licences.md
 
 markdown_extensions:
   - admonition
@@ -43,4 +47,4 @@ theme:
     code: 'Ubuntu Mono'
   favicon: img/favicon.ico
   custom_dir: 'theme'
-copyright: All rights reserved &copy;2018 Macro People Ltd.
+copyright: All rights reserved &copy;2020 Macro People Ltd.
