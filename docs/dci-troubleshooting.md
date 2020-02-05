@@ -48,3 +48,14 @@ run;
 /* run the program */
 %inc tmp;
 ```
+
+## Custom Library
+
+If you wish to change the default *libref* or *libname* then there are TWO items to configure:
+
+1) The library itself
+
+2) The `mpelib` macro variable and the libname statement in the `/Admin/Data_Controller_Settings` stored process.
+
+!!! note
+    Be sure to make this change *after* running the configurator, to ensure the tables are first registered!

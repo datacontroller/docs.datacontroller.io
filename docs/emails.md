@@ -11,6 +11,8 @@ Emails are sent after any post edit / post approve hooks.  They can be sent when
 
 Email addresses are looked for first in `DCXXXXXX.MPE_EMAILS`.  If they are not found there, then a metadata search is made (the first email found in metadata for that user is used).
 
+<iframe src="https://player.vimeo.com/video/343401440" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 ## Setup
 As not every site has emails configured, this feature is switched OFF by default.
 To switch it on, navigate to `DCXXXXXX.MPE_CONFIG` and set the value for `DC_EMAIL_ALERTS` to be `YES` (uppercase).

@@ -11,7 +11,7 @@ pages:
     - Selectboxes: dcc-selectbox.md
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
-    - Groups: groups.md
+    - Groups: dcc-groups.md
 - Installing Data Controller:
     - System Requirements: dci-requirements.md
     - Backend: dci-backend.md

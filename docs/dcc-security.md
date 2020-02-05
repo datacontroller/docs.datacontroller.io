@@ -15,10 +15,25 @@ In order to surface a table to a new group, simply add a record to the `DATACTRL
 
 ![Screenshot](img/securitytable.png)
 
-## EDIT vs APPROVE
+##  ACCESS_LEVEL
 
-The `EDIT` permission determines which groups will be able to upload CSVs and submit changes via the web interface for that table.  The `APPROVE` permission determines which groups will be able to approve those changes, and hence enable the target table to be loaded.  If you wish to have members of a particular group both edit AND approve, then two lines (one for each group) must be entered, per table.
+### EDIT
 
+The `EDIT` permission determines which groups will be able to upload CSVs and submit changes via the web interface for that table.
+
+### APPROVE
+The `APPROVE` permission determines which groups will be able to approve those changes, and hence enable the target table to be loaded.  If you wish to have members of a particular group both edit AND approve, then two lines (one for each group) must be entered, per table.
+
+### VIEW
+The default behaviour when installing Data Controller is that the [viewer](dcu-tableviewer.md) lets all SAS Users see all the tables that they are authorised to view in SAS.  However there may be reasons to further restrict the tables in this component.
+
+There is a global setting that will disable ALL tables in VIEWER unless explicitly authorised - this is available in MPE_CONFIG.  Set `DC_RESTRICT_VIEWER=YES`, submit, and approve.
+
+If authorising groups without this setting, it means that tables will be restricted only in that library (the rest will still be visible).
+
+Groups can be given VIEW access for all libraries or all tables within a library by using the keyword `*ALL*` instead of the libref / tablename.
+
+It's also worth being aware of the `DC_VIEWLIB_CHECK` option in MPE_CONFIG.  When this is switched on, SAS will confirm that the library is valid and contains tables, before adding to the list.  This can sometimes be slow (depending on your library configurations), hence disabled - but as the list is actually cached on frontend (until the next hard refresh) the impact may worth it.
 
 ## Determining Group Members
 
@@ -38,3 +53,5 @@ filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/
 %mm_getgroupmembers(YOURGROUPNAME)
 /* the above will create a dataset containing the group members */
 ```
+
+Another option is to use the custom groups feature by defining your own groups in the [MPE_GROUPS](dci-groups.md) table.
