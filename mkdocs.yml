@@ -5,6 +5,7 @@ pages:
     - Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
     - File Uploads: dcu-fileupload.md
+    - Table Viewer: dcu-tableviewer.md
 - Configuring Data Controller:
     - Tables: dcc-tables.md
     - Security: dcc-security.md

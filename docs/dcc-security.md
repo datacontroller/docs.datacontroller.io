@@ -54,4 +54,4 @@ filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/
 /* the above will create a dataset containing the group members */
 ```
 
-Another option is to use the custom groups feature by defining your own groups in the [MPE_GROUPS](dci-groups.md) table.
+Another option is to use the custom groups feature by defining your own groups in the [MPE_GROUPS](dcc-groups.md) table.
