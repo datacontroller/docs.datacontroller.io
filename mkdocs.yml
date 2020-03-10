@@ -13,6 +13,7 @@ pages:
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
     - Groups: dcc-groups.md
+    - Options: dcc-options.md
 - Installing Data Controller:
     - System Requirements: dci-requirements.md
     - Backend: dci-backend.md
