@@ -47,7 +47,7 @@ The "code" option can be performed as follows:
 
 ```
 /* get macro library */
-filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/macrocore.sas";
+filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
 %inc mc;
 /* call macro */
 %mm_getgroupmembers(YOURGROUPNAME)
