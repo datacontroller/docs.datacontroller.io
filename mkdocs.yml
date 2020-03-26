@@ -7,13 +7,14 @@ pages:
     - File Uploads: dcu-fileupload.md
     - Table Viewer: dcu-tableviewer.md
 - Configuring Data Controller:
-    - Tables: dcc-tables.md
-    - Security: dcc-security.md
-    - Selectboxes: dcc-selectbox.md
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
     - Groups: dcc-groups.md
     - Options: dcc-options.md
+    - Security: dcc-security.md
+    - Selectboxes: dcc-selectbox.md
+    - Tables: dcc-tables.md
+    - Validations: dcc-validations.md
 - Installing Data Controller:
     - System Requirements: dci-requirements.md
     - Backend: dci-backend.md
