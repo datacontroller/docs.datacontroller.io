@@ -22,6 +22,8 @@ pages:
     - Troubleshooting: dci-troubleshooting.md
 - Evaluation (Demo) Version:
     - Installation: dci-evaluation.md
+- Legal:
+    - Privacy Policy: privacy.md
     - Evaluation Licence: evaluation-licence-agreement.md
     - Other Licences: licences.md
 
