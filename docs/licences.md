@@ -4,7 +4,7 @@
 ## Overview
 Data Controller source licences are extracted automatically from our repo using the [license-checker](https://www.npmjs.com/package/license-checker) NPM module
 
-<code>
+```
 ├─ @angular/animations@8.2.14
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
@@ -3829,4 +3829,4 @@ Data Controller source licences are extracted automatically from our repo using 
    ├─ path: /Users/allan/git/dcfrontend/node_modules/zone
    └─ licenseFile: node_modules/zone/LICENSE.md
 
-</code>
+```

@@ -16,12 +16,12 @@ cat > $OUTFILE <<'EOL'
 ## Overview
 Data Controller source licences are extracted automatically from our repo using the [license-checker](https://www.npmjs.com/package/license-checker) NPM module
 
-<code>
+```
 EOL
 
 license-checker --production --relativeLicensePath --direct --start ../dcfrontend  >> docs/licences.md
 
-echo '</code>' >> docs/licences.md
+echo '```' >> docs/licences.md
 
 echo 'building mkdocs'
 mkdocs build --clean
