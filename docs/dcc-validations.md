@@ -19,9 +19,9 @@ Check back frequently as we plan to keep growing this list of checks.
 
 |RULE_TYPE|RULE_VALUE|DESCRIPTION|
 |---|---|---|
-|CASE|UPCASE|Will enforce uppercase of cell values.  Valid values: UPCASE, LOWCASE|
-|NOTNULL||Will prevent submission if null values are present.  Optional - provide a default value.|
+|CASE|UPCASE|Will enforce the case of cell values.  Valid values: UPCASE, LOWCASE, PROPCASE|
+|NOTNULL|(defaultval)|Will prevent submission if null values are present.  Optional - provide a default value.|
 |MINVAL|1|Defines a minimum value for a numeric cell|
 |MAXVAL|1000000|Defines a maximum value for a numeric cell|
-|HARDSELECT|sashelp.class.name|A distinct list of values (max 1000) are taken from this library.member.column reference, and the value **must** be in this list|
-|SOFTSELECT|dcdemo.mpe_tables.libref|A distinct list of values (max 1000) are taken from this library.member.column reference, and the value **may** be in this list|
+|HARDSELECT|sashelp.class.name|A distinct list of values (max 1000) are taken from this library.member.column reference, and the value **must** be in this list.  This list may be supplemented by entries in the MPE_SELECTBOX table.|
+|SOFTSELECT|dcdemo.mpe_tables.libref|A distinct list of values (max 1000) are taken from this library.member.column reference, and the value **may** be in this list.  This list may be supplemented by entries in the MPE_SELECTBOX table.|

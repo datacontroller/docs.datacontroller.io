@@ -1037,7 +1037,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://trentm.com
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/dashdash
 │  └─ licenseFile: node_modules/dashdash/LICENSE.txt
-├─ datacontroller@3.0.0
+├─ datacontroller@3.2.0
 │  ├─ licenses: UNLICENSED
 │  ├─ private: true
 │  ├─ path: ../dcfrontend
@@ -3073,7 +3073,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://github.com/ChALkeR
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/safer-buffer
 │  └─ licenseFile: node_modules/safer-buffer/LICENSE
-├─ sasjs@2.2.4
+├─ sasjs@2.2.5
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/macropeople/sasjs
 │  ├─ publisher: Allan Bowe
