@@ -6,6 +6,7 @@ pages:
     - DC User Guide: dc-userguide.md
     - File Uploads: dcu-fileupload.md
     - Table Viewer: dcu-tableviewer.md
+    - Data Catalog: dcu-datacatalog.md
 - Configuring Data Controller:
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
