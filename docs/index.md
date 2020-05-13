@@ -23,4 +23,4 @@ The following resources contain additional information on the Data Controller:
 - DC Overview [Presentation](https://slides.com/allanbowe/datacontroller)
 - Data Controller [LinkedIn](https://www.linkedin.com/company/datacontroller/) page
 - Data Controller [website](https://datacontroller.io)
-- Data Controller [flyer](/marketing/dcflyer.pdf)
+- Data Controller flyer ([front](/marketing/flyer-front.pdf) / [back](/marketing/flyer-back.pdf))

@@ -3073,7 +3073,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://github.com/ChALkeR
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/safer-buffer
 │  └─ licenseFile: node_modules/safer-buffer/LICENSE
-├─ sasjs@2.2.5
+├─ sasjs@2.2.6
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/macropeople/sasjs
 │  ├─ publisher: Allan Bowe

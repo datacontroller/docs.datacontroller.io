@@ -21,6 +21,7 @@ pages:
     - Backend: dci-backend.md
     - Frontend: dci-frontend.md
     - Troubleshooting: dci-troubleshooting.md
+    - Dedicated STP: dci-stpinstance.md
 - Evaluation (Demo) Version:
     - Installation: dci-evaluation.md
 - Legal:
