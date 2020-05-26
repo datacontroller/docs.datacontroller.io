@@ -8,8 +8,31 @@ Under these circumstances, it is recommended to create a dedicated STP server in
 !!! note
     Data Controller only updates data (add, delete, modify records).  It does not need the ability to create new (permanent) tables, or modify the structure of existing tables.
 
+## Set up DC account
 
-## STP Server Configuration
+It is recommended to have a user for each environment in which DC is deployed, eg:
+
+* dcsrv_dev
+* dcsrv_test
+* dcsrv_prod
+
+After these OS users are created, log into SMC in relevant environment and open User Manager.  Adjust as follows:
+
+* Open SAS General Servers group
+* Select Accounts tab
+* Add the dcsrv_[ENV] user in DefaultAuth domain
+
+## STP Server Configuration - 9.4
+
+Open the SAS Deployment Wizard and deploy a new Application Context Server from the panel windows. 
+Be sure to use the relevant dcsrv_[env] user as configured above.
+
+Now head to the [security](#security) section.
+
+
+## STP Server Configuration - 9.3
+
+As the wizard does not exist in 9.3 it is necessary to copy the folder structure.
 
 ### Clone existing directory
 
@@ -40,25 +63,6 @@ DataControllerSTPsvr
 * Sasuser folder – EMPTY CONTENTS (remove all files). They aren’t relevant in the
 data controller context.
 
-### Set up DC account
-
-It is recommended to have a user for each environment in which DC is deployed, eg:
-
-* dcsrv_dev
-* dcsrv_test
-* dcsrv_prod
-
-Log into SMC in relevant environment and open User Manager.  Adjust as follows:
-
-* Open SAS General Servers group
-* Select Accounts tab
-* Add the dcsrv_[ENV] user in DefaultAuth domain
-
-#### Adding new users (Windows)
-Open Windows Server Manager and adjust as follows:
-
-* Select / Configuration / Local Users and Groups / Groups
-* Select Administrators group and Add the dcsrv_[Env] user
 
 ### Add Server
 
