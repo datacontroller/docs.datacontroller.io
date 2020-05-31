@@ -1,13 +1,14 @@
 site_name: Data Controller for SAS® Product Documentation
 pages:
 - Home: index.md
-- Using Data Controller:
+- User Guide:
     - Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
     - File Uploads: dcu-fileupload.md
     - Table Viewer: dcu-tableviewer.md
+    - Data Lineage: dcu-lineage.md
     - Data Catalog: dcu-datacatalog.md
-- Configuring Data Controller:
+- Configuration:
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
     - Groups: dcc-groups.md
@@ -16,7 +17,7 @@ pages:
     - Selectboxes: dcc-selectbox.md
     - Tables: dcc-tables.md
     - Validations: dcc-validations.md
-- Installing Data Controller:
+- Installation:
     - System Requirements: dci-requirements.md
     - Backend: dci-backend.md
     - Frontend: dci-frontend.md
