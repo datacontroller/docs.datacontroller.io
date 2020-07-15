@@ -53,6 +53,12 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: angular
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/@angular/router
 │  └─ licenseFile: node_modules/@angular/router/README.md
+├─ @auth0/angular-jwt@4.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/auth0/angular2-jwt
+│  ├─ publisher: Sam Bellen
+│  ├─ path: /Users/allan/git/dcfrontend/node_modules/@auth0/angular-jwt
+│  └─ licenseFile: node_modules/@auth0/angular-jwt/LICENSE
 ├─ @clr/angular@2.4.3
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/vmware/clarity
@@ -122,11 +128,6 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/@types/d3-zoom
 │  └─ licenseFile: node_modules/@types/d3-zoom/LICENSE
-├─ @types/isomorphic-fetch@0.0.35
-│  ├─ licenses: MIT
-│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
-│  ├─ path: /Users/allan/git/dcfrontend/node_modules/@types/isomorphic-fetch
-│  └─ licenseFile: node_modules/@types/isomorphic-fetch/LICENSE
 ├─ @types/pikaday@1.7.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -1442,6 +1443,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://debuggable.com/
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/form-data
 │  └─ licenseFile: node_modules/form-data/License
+├─ form-data@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/form-data/form-data
+│  ├─ publisher: Felix Geisendörfer
+│  ├─ email: felix@debuggable.com
+│  ├─ url: http://debuggable.com/
+│  ├─ path: /Users/allan/git/dcfrontend/node_modules/sasjs/node_modules/form-data
+│  └─ licenseFile: node_modules/sasjs/node_modules/form-data/License
 ├─ frac@1.1.2
 │  ├─ licenses: Apache-2.0
 │  ├─ repository: https://github.com/SheetJS/frac
@@ -3073,7 +3082,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://github.com/ChALkeR
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/safer-buffer
 │  └─ licenseFile: node_modules/safer-buffer/LICENSE
-├─ sasjs@2.3.0
+├─ sasjs@2.20.0
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/macropeople/sasjs
 │  ├─ publisher: Allan Bowe
@@ -3711,7 +3720,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Tobias Koppers @sokra
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/webpack
 │  └─ licenseFile: node_modules/webpack/LICENSE
-├─ whatwg-fetch@3.0.0
+├─ whatwg-fetch@3.1.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/github/fetch
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/whatwg-fetch

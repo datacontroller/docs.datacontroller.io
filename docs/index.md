@@ -6,16 +6,6 @@ The Data Controller for SAS® enables users to self serve their data changes, an
 
 <iframe src="https://player.vimeo.com/video/277472582" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
-## Documents
-
-The following information is available on this site:
-
-- [Overview](dc-overview.md)
-- [User Guide](dc-userguide.md)
-- [Config - Adding Tables](dcc-tables.md)
-- [Config - Security](dcc-security.md)
-- [Installation](dci-backend.md)
-
 ## Online resources
 
 The following resources contain additional information on the Data Controller:

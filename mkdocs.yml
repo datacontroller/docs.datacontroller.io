@@ -19,8 +19,7 @@ pages:
     - Validations: dcc-validations.md
 - Installation:
     - System Requirements: dci-requirements.md
-    - Backend: dci-backend.md
-    - Frontend: dci-frontend.md
+    - SAS 9 Deploy: dci-deploysas9.md
     - Troubleshooting: dci-troubleshooting.md
     - Dedicated STP: dci-stpinstance.md
 - Evaluation (Demo) Version:
