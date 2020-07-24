@@ -92,6 +92,13 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: hello@handsontable.com
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/@handsontable/formulajs
 │  └─ licenseFile: node_modules/@handsontable/formulajs/LICENSE
+├─ @sasjs/adapter@1.0.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/sasjs/adapter
+│  ├─ publisher: Allan Bowe
+│  ├─ email: support@macropeople.com
+│  ├─ path: /Users/allan/git/dcfrontend/node_modules/@sasjs/adapter
+│  └─ licenseFile: node_modules/@sasjs/adapter/LICENSE
 ├─ @sheet/perf@1.20200520.1
 │  ├─ licenses: MIT*
 │  ├─ repository: https://github.com/SheetJS/js-xlsx
@@ -1104,7 +1111,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://trentm.com
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/dashdash
 │  └─ licenseFile: node_modules/dashdash/LICENSE.txt
-├─ datacontroller@3.8.0
+├─ datacontroller@3.9.0
 │  ├─ licenses: UNLICENSED
 │  ├─ private: true
 │  ├─ path: ../dcfrontend
@@ -1449,8 +1456,8 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Felix Geisendörfer
 │  ├─ email: felix@debuggable.com
 │  ├─ url: http://debuggable.com/
-│  ├─ path: /Users/allan/git/dcfrontend/node_modules/sasjs/node_modules/form-data
-│  └─ licenseFile: node_modules/sasjs/node_modules/form-data/License
+│  ├─ path: /Users/allan/git/dcfrontend/node_modules/@sasjs/adapter/node_modules/form-data
+│  └─ licenseFile: node_modules/@sasjs/adapter/node_modules/form-data/License
 ├─ frac@1.1.2
 │  ├─ licenses: Apache-2.0
 │  ├─ repository: https://github.com/SheetJS/frac
@@ -2205,6 +2212,13 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: i@izs.me
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/cacache/node_modules/lru-cache
 │  └─ licenseFile: node_modules/cacache/node_modules/lru-cache/LICENSE
+├─ macrocore@7.5.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/macropeople/macrocore
+│  ├─ publisher: Allan Bowe
+│  ├─ email: support@macropeople.com
+│  ├─ path: /Users/allan/git/dcfrontend/node_modules/macrocore
+│  └─ licenseFile: node_modules/macrocore/LICENSE
 ├─ make-dir@2.1.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/sindresorhus/make-dir
@@ -3082,13 +3096,6 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://github.com/ChALkeR
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/safer-buffer
 │  └─ licenseFile: node_modules/safer-buffer/LICENSE
-├─ sasjs@2.20.0
-│  ├─ licenses: ISC
-│  ├─ repository: https://github.com/macropeople/sasjs
-│  ├─ publisher: Allan Bowe
-│  ├─ email: support@macropeople.com
-│  ├─ path: /Users/allan/git/dcfrontend/node_modules/sasjs
-│  └─ licenseFile: node_modules/sasjs/LICENSE
 ├─ sass-graph@2.2.5
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/xzyfer/sass-graph
@@ -3720,7 +3727,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Tobias Koppers @sokra
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/webpack
 │  └─ licenseFile: node_modules/webpack/LICENSE
-├─ whatwg-fetch@3.1.0
+├─ whatwg-fetch@3.2.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/github/fetch
 │  ├─ path: /Users/allan/git/dcfrontend/node_modules/whatwg-fetch

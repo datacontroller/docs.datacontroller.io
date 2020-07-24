@@ -1,9 +1,10 @@
-# Data Controller for SAS® Evaluation Agreement
-The terms and conditions contained below constitute a legal agreement. This agreement ("Agreement") contains herein the entire agreement between the licensee ("You") and Macro People Ltd ("Macro People Ltd"). Read this agreement carefully. By downloading, installing, and/or examining the product, you acknowledge:
+Data Controller for SAS® Evaluation Agreement
+====================
+The terms and conditions contained below constitute a legal agreement. This agreement ("Agreement") contains herein the entire agreement between the licensee ("Licensee") and Macro People Ltd ("Macro People Ltd"). Read this agreement carefully. By downloading, installing, and/or examining the product, you acknowledge:
 
 1 - You are authorized to enter this agreement for and on behalf of your company, and are doing so, and 2 - You have read, understand and agree that you and the company shall be bound by these terms and conditions and every modification and addition provided for.
 
-Software products included with this product that are not Macro People Ltd products are licensed to you by the software provider. Please refer to the license contained in the provider’s product for their terms of use.
+Software products included with this product that are not Macro People Ltd products are licensed to you by the software provider. Please refer to the license contained in the provider's product for their terms of use.
 
 ## 1. License Grant.
 Macro People Ltd grants you a limited, non-exclusive, non-transferable license to use, **for evaluation/non-production purposes only**, the Macro People Ltd software program(s) known as Data Controller for SAS® (the "Software") - and related product documentation - at no charge, subject to the terms and restrictions set forth in this License Agreement. You are not permitted to use the Software in any manner not expressly authorized by this License. You acknowledge and agree that ownership of the Software and all subsequent copies thereof regardless of the form or media are held by Macro People Ltd.
@@ -23,7 +24,7 @@ You shall not use the name, trade names or trademarks of Macro People Ltd or any
 5.2 - Certain components of the Software are provided under various Open Source licenses that have been made available to Macro People Ltd. You may modify or replace only these Open-Sourced Components; provided that (i) the resultant Software is used in place of the unmodified Software, on a single computer; and (ii) you otherwise comply with the terms of this License and any applicable licensing terms governing use of the Open-Sourced Components. Macro People Ltd is not obligated to provide any maintenance, technical or other support for the resultant Software.
 
 ## 6. Exclusion of Warranties.
-THE SOFTWARE IS PROVIDED TO LICENSEE “AS IS”, AND ANY USE BY LICENSEE OF THE SOFTWARE WILL BE AT LICENSEE’S SOLE RISK. Macro People Ltd makes no warrranties relating to the softwtare, and disclaims all warranties (express or implied), including without limitation those of merchantability and fitness for any particular purpose.
+THE SOFTWARE IS PROVIDED TO LICENSEE "AS IS", AND ANY USE BY LICENSEE OF THE SOFTWARE WILL BE AT LICENSEE'S SOLE RISK. Macro People Ltd makes no warrranties relating to the softwtare, and disclaims all warranties (express or implied), including without limitation those of merchantability and fitness for any particular purpose.
 
 ## 7. Limitation of Liability.
 In no event shall Macro People Ltd be liable for any incidental, special, indirect or consequential damages whatsoever, including, without limitation, damages for loss of profits, loss of data, business interrupton or any other commercial damages or losses, arising out of or related to your use or inability to use the Macro People Ltd software, however caused, regardless of the theory of liabilty (contract, tort or otherwise) and even if Macro People Ltd has been advised of the possibility of such damages.

@@ -1,4 +1,5 @@
-# Data Controller for SAS® - Emails
+Data Controller for SAS® - Emails
+====================
 
 ## Overview
 Data Controller enables email alerts for users when tables are:
