@@ -14,3 +14,7 @@ The following resources contain additional information on the Data Controller:
 - Data Controller [LinkedIn](https://www.linkedin.com/company/datacontroller/) page
 - Data Controller [website](https://datacontroller.io)
 - Data Controller flyer ([front](/marketing/flyer-front.pdf) / [back](/marketing/flyer-back.pdf))
+
+
+<meta name="title" property="og:title" content="Data Controller Documentation">
+<meta property='og:description' content='The Data Controller for SAS® enables users to self serve their data changes, and for data owners to retain control over those updates by reviewing and approving them.'/>

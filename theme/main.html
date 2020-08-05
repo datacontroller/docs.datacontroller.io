@@ -2,9 +2,27 @@
 
 {% block extrahead %}
 
-<meta property='og:title' content='Data Controller Documentation'/>
+
+
+<meta name="author" content="Allan Bowe">
+
+{% set title = config.site_name %}
+{% if page and page.meta and page.meta.title %}
+  {% set title = title ~ " - " ~ page.meta.title %}
+{% elif page and page.title and not page.is_homepage %}
+  {% set title = title ~ " - " ~ page.title | striptags %}
+{% endif %}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:url" content="{{ page.canonical_url }}" />
 <meta property='og:image' content='https://www.rawsas.com/wp-content/uploads/2018/07/dc_social.png'/>
-<meta property='og:description' content='The Data Controller for SAS® enables users to self serve their data changes, and for data owners to retain control over those updates by reviewing and approving them.'/>
-<meta property='og:url' content='https://docs.datacontroller.io/' />
+<meta property="og:image:type" content="image/png" />
+
+
+{% if page and page.meta and page.meta.description %}
+<meta property="og:description" content="{{ page.meta.description }}" />
+{% elif config.site_description %}
+<meta property="og:description" content="{{ config.site_description }}" />
+{% endif %}
 
 {% endblock %}

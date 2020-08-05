@@ -28,6 +28,6 @@ Deploy as follows:
 
 It should now be possible to use the application - simply navigate to `YOURSASWEBLOC.domain/yourRoot/datacontroller` and sign in!
 
-
+The next step is to [configure](dcc-tables.md) the tables.
 
 

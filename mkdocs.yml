@@ -1,6 +1,6 @@
 site_name: Data Controller for SAS® Product Documentation
 site_url: https://docs.datacontroller.io
-pages:
+nav:
 - Home: index.md
 - User Guide:
     - Overview: dc-overview.md
@@ -29,14 +29,19 @@ pages:
     - Privacy Policy: privacy.md
     - Evaluation Licence: evaluation-agreement.md
     - Other Licences: licences.md
+- Videos: videos.md
 
 markdown_extensions:
   - admonition
   - pymdownx.superfences
   - codehilite
   - fontawesome_markdown
+  - meta
   - toc:
       permalink: true
+      
+extra:
+  manifest: manifest.webmanifest
 
 extra_css: ['font-awesome.css']
 

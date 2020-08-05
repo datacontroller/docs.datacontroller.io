@@ -28,4 +28,4 @@ mkdocs build --clean
 
 #mkdocs serve
 
-rsync -avz --exclude .git/ --del -e "ssh -p 722" ~/git/dcdocs/site/ macropeo@77.72.0.226:/home/macropeo/docs.datacontroller.io
+rsync -avz --exclude .git/ --del -e "ssh -p 722" site/ macropeo@77.72.0.226:/home/macropeo/docs.datacontroller.io
