@@ -24,7 +24,7 @@ Deploy as follows:
 
 1 - Unzip dcfrontend.zip and upload the entire `datacontroller` directory to the static content server.
 
-2 - Open the `index.html` file and update the `appLoc` value to the location of the Stored Process deployed earlier. 
+2 - Open the `index.html` file and update the `appLoc` value to the location where the Stored Processes were deployed earlier. 
 
 It should now be possible to use the application - simply navigate to `YOURSASWEBLOC.domain/yourRoot/datacontroller` and sign in!
 
