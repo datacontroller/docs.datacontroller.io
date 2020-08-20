@@ -75,3 +75,9 @@ In unix environments, when attempting to edit a locked table, users are notified
 A short explainer video showing the core functionality of the product.
 
 <iframe src="https://player.vimeo.com/video/277472582" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
+## Use Case Video
+
+A short, fun cartoon to highlight the value of Data Controller.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iY3KQZL4ok0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

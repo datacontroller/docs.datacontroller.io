@@ -14,6 +14,22 @@ The following resources contain additional information on the Data Controller:
 - Data Controller [LinkedIn](https://www.linkedin.com/company/datacontroller/) page
 - Data Controller [website](https://datacontroller.io)
 - Data Controller flyer ([front](/marketing/flyer-front.pdf) / [back](/marketing/flyer-back.pdf))
+- Data Controller [videos](/videos)
+
+## Product Features
+
+Data Controller is regularly updated with new features.  If you see something that is not listed, and we agree it would be useful, you can engage us with Developer Days to build the feature in.
+
+* Excel uploads - drag n drop directly into SAS
+* Data Lineage - at both table and column level, export as image or CSV
+* Data Validation Rules - both automatic and user defined
+* Data Dictionary - map data definitions and ownership
+* Data Catalog - including primary key extraction
+* DDL generator - in SAS, TSQL and PGSQL flavours
+* Workflow - run a SAS program before or after an edit or approval
+* Role based security - editors, approvers, administrators
+* Data Models supported:  SCD2, Bitemporal, composite keys, retained keys, update and full replace
+* Email Alerts for data changes
 
 
 <meta name="title" property="og:title" content="Data Controller Documentation">

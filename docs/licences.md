@@ -77,7 +77,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: clarity
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/@clr/ui
 │  └─ licenseFile: node_modules/@clr/ui/README.md
-├─ @handsontable/angular@5.1.1
+├─ @handsontable/angular@6.0.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/handsontable/angular-handsontable
 │  ├─ publisher: Handsoncode
@@ -92,7 +92,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: hello@handsontable.com
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/@handsontable/formulajs
 │  └─ licenseFile: node_modules/@handsontable/formulajs/LICENSE
-├─ @sasjs/adapter@1.1.1
+├─ @sasjs/adapter@1.3.2
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/sasjs/adapter
 │  ├─ publisher: Allan Bowe
@@ -1254,7 +1254,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/isaacs/node-graceful-fs
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/graceful-fs
 │  └─ licenseFile: node_modules/graceful-fs/LICENSE
-├─ handsontable@7.4.2
+├─ handsontable@8.0.0
 │  ├─ licenses: Custom: https://raw.githubusercontent.com/handsontable/handsontable/develop/resources/handsontable-logo.svg
 │  ├─ repository: https://github.com/handsontable/handsontable
 │  ├─ publisher: Handsoncode
@@ -2819,7 +2819,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Tobias Koppers @sokra
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/webpack
 │  └─ licenseFile: node_modules/webpack/LICENSE
-├─ whatwg-fetch@3.3.1
+├─ whatwg-fetch@3.4.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/github/fetch
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/whatwg-fetch
