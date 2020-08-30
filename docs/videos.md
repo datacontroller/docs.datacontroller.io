@@ -55,13 +55,13 @@ The SAS 9 evaluation version of the Data Controller comes packaged in a single S
 
 
 ## Uploading a CSV and Downloading Datalines
-This video demonstrates 2 features in 30 seconds!
+This video demonstrates 2 features in 50 seconds!
 
-1 - File uploads.  Data Controller will let you upload CSVs (using any common separator) to any target table without having to specify variable formats etc in advance.  Changes are routed through the usual approval process with audit trail.
+1 - Excel uploads.  Data Controller will let you drag a spreadsheet into any target table without having to specify variable formats etc in advance.  Changes are routed through the usual approval process with audit trail.
 
-2 SAS File downloads.  Other than standard CSV / Excel files, it's possible to download a SAS program containing the data in datalines format.  This enables SAS developers to easily work with copies of the data, for testing and development purposes.
+2 - Audit trail with original excel.  Download a copy of the exact excel that was uploaded.
 
-<iframe src="https://player.vimeo.com/video/329213766" width="640" height="388" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QhShWNnNjIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Locked Datasets
 

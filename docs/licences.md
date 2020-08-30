@@ -92,7 +92,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: hello@handsontable.com
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/@handsontable/formulajs
 │  └─ licenseFile: node_modules/@handsontable/formulajs/LICENSE
-├─ @sasjs/adapter@1.3.2
+├─ @sasjs/adapter@1.3.10
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/sasjs/adapter
 │  ├─ publisher: Allan Bowe
@@ -903,7 +903,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://trentm.com
 │  ├─ path: /home/vrh/git/dcfrontend/node_modules/dashdash
 │  └─ licenseFile: node_modules/dashdash/LICENSE.txt
-├─ datacontroller@3.9.0
+├─ datacontroller@3.10.0
 │  ├─ licenses: UNLICENSED
 │  ├─ private: true
 │  ├─ path: ../dcfrontend
