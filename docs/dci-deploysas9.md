@@ -1,7 +1,14 @@
+---
+layout: article
+title: DC SAS 9 Deployment
+description: How to deploy Data Controller in a production SAS 9 environment
+og_image: https://docs.datacontroller.io/img/dci_deploymentdiagram.png
+---
+
 # SAS 9 Deployment
 
 ## Overview
-Data Controller consists of a frontend app, a set of Stored Processes and a database library.  The library can be a SAS Base engine if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
+Data Controller for SAS 9 consists of a frontend, a set of Stored Processes, a staging area, and a database library.  The library can be a SAS Base engine if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
 A database that supports concurrent access is recommended.
 
 ## Backend
@@ -26,8 +33,47 @@ Deploy as follows:
 
 2 - Open the `index.html` file and update the `appLoc` value to the location where the Stored Processes were deployed earlier. 
 
-It should now be possible to use the application - simply navigate to `YOURSASWEBLOC.domain/yourRoot/datacontroller` and sign in!
+It should now be possible to use the application - simply navigate to `YOURSASWEBLOC:port/yourRoot/datacontroller` and sign in!
 
 The next step is to [configure](dcc-tables.md) the tables.
 
+## Deployment Diagram
+
+The below areas of the SAS platform are modified when deploying Data Controller:
+
+<img src="/img/dci_deploymentdiagram.svg" height="350" style="border:3px solid black" >
+
+### Client Device
+
+Nothing needs to be deployed or modified on the client device.  We support a wide range of browsers (the same as SAS).  Browsers make requests to the SAS Web Server, and will cache assets such as JS, CSS and images.  Some items (such as dropdowns) are kept in local storage to improve responsiveness.
+
+### SAS Mid Tier
+
+The front end is deployed to the SAS Web Server as described [above](/dci-deploysas9/#frontend).  This requires making a dedicated public folder in the htdocs directory.  
+
+### SAS Application Server
+
+Given the enhanced permissions needed of the system account, a dedicated / secured STP instance is recommended as described [here](/dci-stpinstance).
+
+All deployments of Data Controller also make use of a staging directory.  This is used to store CSV and Excel files as uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account (eg sassrv) requires access to this directory.
+
+A typical small deployment will grow by a 10-20 mb each month.  A very large enterprise customer, with 100 or more editors, might generate up to 1 GB or so per month, depending on the size and frequency of the Excel EUCs and CSVs being uploaded.  Web modifications are restricted only to modified rows, so are typically just a few kb in size.
+
+### SAS Metadata Server
+
+The items deployed to metadata include:
+
+ * Folder tree
+ * Stored Processes
+ * Library Object & tables
+
+ After the installation process (which updates `settings` and removes the `makedata` STP), there are no write actions performed against metadata.
+
+### Databases
+
+We strongly recommend that the Data Controller configuration tables are stored in a database for concurrency reasons, however it is also possible to use a BASE engine library.
+
+We provide the DDL for creating the tables, we have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.
+
+Data Controller does NOT modify schemas! It will not create or drop tables, or add/modify columns or attributes.  Only rows can be modified using the tool.
 

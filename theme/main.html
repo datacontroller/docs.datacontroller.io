@@ -15,7 +15,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:url" content="{{ page.canonical_url }}" />
-<meta property='og:image' content='https://www.rawsas.com/wp-content/uploads/2018/07/dc_social.png'/>
+{% if page and page.meta and page.meta.og_image %}
+  {% set og_image = page.meta.og_image %}
+{% elif page %}
+  {% set og_image = 'https://www.rawsas.com/wp-content/uploads/2018/07/dc_social.png' %}
+{% endif %}
+<meta property='og:image' content="{{og_image}}"/>
 <meta property="og:image:type" content="image/png" />
 
 

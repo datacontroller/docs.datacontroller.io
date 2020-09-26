@@ -1,4 +1,4 @@
-site_name: Data Controller for SAS® Product Documentation
+site_name: Data Controller for SAS® Documentation
 site_url: https://docs.datacontroller.io
 nav:
 - Home: index.md
