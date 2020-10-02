@@ -1,15 +1,27 @@
 ---
 layout: article
-title: DC SAS 9 Deployment
-description: How to deploy Data Controller in a production SAS 9 environment
-og_image: https://docs.datacontroller.io/img/dci_deploymentdiagram.png
+title: DC SAS Viya Deployment
+description: How to deploy Data Controller in a production SAS Viya environment
+og_image: https://docs.datacontroller.io/img/dci_deploymentdiagramviya.png
 ---
 
 # SAS 9 Deployment
 
 ## Overview
-Data Controller for SAS 9 consists of a frontend, a set of Stored Processes, a staging area, and a database library.  The library can be a SAS Base engine if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
-A database that supports concurrent access is recommended.
+Data Controller for SAS Viya consists of a frontend, a set of Job Execution Services, a staging area, a Compute Context, and a database library.  The library can be a SAS Base engine if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
+A database that supports concurrent access is highly recommended.
+
+## Prerequisites
+
+Data Controller makes use of a system account for performing backend data updates and writing to the staging area.  This needs to be provisioned in advance using the Viya admin-cli.  The process is well described here:  https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992
+
+
+## Manual Deployment
+
+### Create Compute Context
+
+Data Controller makes use of a dedicated compute context,
+
 
 ## Backend
 
