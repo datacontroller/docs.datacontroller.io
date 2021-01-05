@@ -15,14 +15,14 @@ A database that supports concurrent access is highly recommended.
 
 ### System Account
 
-Data Controller makes use of a system account for performing backend data updates and writing to the staging area.  This needs to be provisioned in advance using the Viya admin-cli.  The process is well described here:  https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992
+Data Controller makes use of a system account for performing backend data updates and writing to the staging area.  This needs to be provisioned in advance using the Viya admin-cli.  The process is well described here:  [https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992](https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992)
 
 ### Database
 We strongly recommend that the Data Controller configuration tables are stored in a database for concurrency reasons, however it is also possible to use a BASE engine library.
 
 Let us know which database you are using and we will provide the DDL. We have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.
 
-Simply run the provided DDL script to create the tables and initial configuration data in your chosen database.  Make sure the system account (see prerequisites) has full read / write access.  
+Simply run the provided DDL script to create the tables and initial configuration data in your chosen database.  Make sure the system account (see prerequisites) has full read / write access.
 
 !!! note
     "Modify schema" privileges are not required.
@@ -64,7 +64,7 @@ We strongly recommend a dedicated compute context for running Data Controller.  
 * Now switch to the Advanced tab and enter the following autoexec statements:
 
 ```
-%let DC_LIBREF=DCDBVIYA; 
+%let DC_LIBREF=DCDBVIYA;
 %let DC_ADMIN_GROUP={{YOUR DC ADMIN GROUP}};
 %let DC_STAGING_AREA={{YOUR DEDICATED FILE SYSTEM DRIVE}};
 libname &dc_libref {{YOUR DC DATABASE}};
@@ -72,7 +72,7 @@ libname &dc_libref {{YOUR DC DATABASE}};
 
 To explain each of these lines:
 
-* `DC_LIBREF` can be any valid 8 character libref.  
+* `DC_LIBREF` can be any valid 8 character libref.
 * `DC_ADMIN_GROUP` is the name of a group which will be granted unrestricted access to Data Controller
 * `DC_STAGING_AREA` should point to a location on the filesystem (this is where the staging files and logs will be stored)
 * The final libname statement should be configured to point at the database that was figured in [prerequisites](#prerequisites)
@@ -99,7 +99,7 @@ You can now launch the application!
 The automated deploy makes use of the SASjs CLI to create the dependent context and job execution services.  In addition to the standard prerequisites (a registered viya system account and a prepared database) you will also need:
 
 * a local copy of the [SASjs CLI](https://sasjs.io/sasjs-cli/#installation)
-* a Client / Secret - with an administrator group in SCOPE, and an authorization_code GRANT_TYPE.  The SASjs [Viya Token Generator](https://github.com/sasjs/viyatoken) may help with this.  
+* a Client / Secret - with an administrator group in SCOPE, and an authorization_code GRANT_TYPE.  The SASjs [Viya Token Generator](https://github.com/sasjs/viyatoken) may help with this.
 
 ### Prepare the Target and Token
 

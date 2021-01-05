@@ -21,6 +21,7 @@ nav:
 - Installation:
     - System Requirements: dci-requirements.md
     - SAS 9 Deploy: dci-deploysas9.md
+    - SAS Viya Deploy: dci-deploysasviya.md
     - Troubleshooting: dci-troubleshooting.md
     - Dedicated STP: dci-stpinstance.md
 - Evaluation (Demo) Version:
@@ -39,7 +40,7 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
-      
+
 extra:
   manifest: manifest.webmanifest
 
