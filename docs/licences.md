@@ -5,67 +5,67 @@
 Data Controller source licences are extracted automatically from our repo using the [license-checker](https://www.npmjs.com/package/license-checker) NPM module
 
 ```
-├─ @angular/animations@10.2.1
+├─ @angular/animations@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/animations
 │  └─ licenseFile: node_modules/@angular/animations/README.md
-├─ @angular/common@10.2.1
+├─ @angular/common@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/common
 │  └─ licenseFile: node_modules/@angular/common/README.md
-├─ @angular/compiler@10.2.1
+├─ @angular/compiler@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/compiler
 │  └─ licenseFile: node_modules/@angular/compiler/README.md
-├─ @angular/core@10.2.1
+├─ @angular/core@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/core
 │  └─ licenseFile: node_modules/@angular/core/README.md
-├─ @angular/forms@10.2.1
+├─ @angular/forms@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/forms
 │  └─ licenseFile: node_modules/@angular/forms/README.md
-├─ @angular/platform-browser-dynamic@10.2.1
+├─ @angular/platform-browser-dynamic@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/platform-browser-dynamic
 │  └─ licenseFile: node_modules/@angular/platform-browser-dynamic/README.md
-├─ @angular/platform-browser@10.2.1
+├─ @angular/platform-browser@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/platform-browser
 │  └─ licenseFile: node_modules/@angular/platform-browser/README.md
-├─ @angular/router@10.2.1
+├─ @angular/router@10.2.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
 │  ├─ publisher: angular
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@angular/router
 │  └─ licenseFile: node_modules/@angular/router/README.md
-├─ @clr/angular@4.0.5
+├─ @clr/angular@4.0.9
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/vmware/clarity
 │  ├─ publisher: Clarity Design System
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@clr/angular
 │  └─ licenseFile: node_modules/@clr/angular/README.md
-├─ @clr/icons@4.0.5
+├─ @clr/icons@4.0.9
 │  ├─ licenses: MIT
 │  ├─ repository: ssh://git@git.eng.vmware.com/clarity
 │  ├─ publisher: clarity
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@clr/icons
 │  └─ licenseFile: node_modules/@clr/icons/README.md
-├─ @clr/ui@4.0.5
+├─ @clr/ui@4.0.9
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/vmware/clarity
 │  ├─ publisher: clarity
@@ -86,23 +86,23 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: hello@handsontable.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@handsontable/formulajs
 │  └─ licenseFile: node_modules/@handsontable/formulajs/LICENSE
-├─ @npmcli/move-file@1.0.1
+├─ @npmcli/move-file@1.1.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/npm/move-file
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@npmcli/move-file
 │  └─ licenseFile: node_modules/@npmcli/move-file/LICENSE.md
-├─ @sasjs/adapter@1.17.0
+├─ @sasjs/adapter@1.21.0
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/sasjs/adapter
 │  ├─ publisher: Allan Bowe
 │  ├─ email: support@macropeople.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@sasjs/adapter
 │  └─ licenseFile: node_modules/@sasjs/adapter/LICENSE
-├─ @sheet/perf@1.20200908.1
-│  ├─ licenses: MIT*
-│  ├─ publisher: sheetjs
-│  ├─ path: /home/zah/git/dcfrontend/node_modules/@sheet/perf
-│  └─ licenseFile: node_modules/@sheet/perf/README.html
+├─ @sasjs/utils@1.5.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/sasjs/utils
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/@sasjs/utils
+│  └─ licenseFile: node_modules/@sasjs/utils/README.md
 ├─ @types/d3-color@1.4.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -133,12 +133,12 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/d3-zoom
 │  └─ licenseFile: node_modules/@types/d3-zoom/LICENSE
-├─ @types/json-schema@7.0.6
+├─ @types/json-schema@7.0.7
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/json-schema
 │  └─ licenseFile: node_modules/@types/json-schema/LICENSE
-├─ @types/marked@1.1.0
+├─ @types/marked@1.2.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/marked
@@ -148,7 +148,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/minimatch
 │  └─ licenseFile: node_modules/@types/minimatch/LICENSE
-├─ @types/node@12.19.3
+├─ @types/node@12.19.14
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/node
@@ -158,6 +158,11 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/pikaday
 │  └─ licenseFile: node_modules/@types/pikaday/LICENSE
+├─ @types/text-encoding@0.0.35
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/@types/text-encoding
+│  └─ licenseFile: node_modules/@types/text-encoding/LICENSE
 ├─ @webassemblyjs/ast@1.9.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/xtuc/webassemblyjs
@@ -437,15 +442,15 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://juliangruber.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/balanced-match
 │  └─ licenseFile: node_modules/balanced-match/LICENSE.md
-├─ base64-arraybuffer@0.1.4
+├─ base64-arraybuffer@0.2.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/niklasvh/base64-arraybuffer
 │  ├─ publisher: Niklas von Hertzen
 │  ├─ email: niklasvh@gmail.com
-│  ├─ url: http://hertzen.com
+│  ├─ url: https://hertzen.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/base64-arraybuffer
 │  └─ licenseFile: node_modules/base64-arraybuffer/LICENSE-MIT
-├─ base64-js@1.3.1
+├─ base64-js@1.5.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/beatgammit/base64-js
 │  ├─ publisher: T. Jameson Little
@@ -477,7 +482,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: M8ch88l@gmail.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/bignumber.js
 │  └─ licenseFile: node_modules/bignumber.js/LICENCE
-├─ binary-extensions@2.1.0
+├─ binary-extensions@2.2.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/sindresorhus/binary-extensions
 │  ├─ publisher: Sindre Sorhus
@@ -541,7 +546,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: calvin.metcalf@gmail.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/browserify-des
 │  └─ licenseFile: node_modules/browserify-des/license
-├─ browserify-rsa@4.0.1
+├─ browserify-rsa@4.1.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/crypto-browserify/browserify-rsa
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/browserify-rsa
@@ -569,7 +574,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Daniel Cousens
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/buffer-xor
 │  └─ licenseFile: node_modules/buffer-xor/LICENSE
-├─ buffer@5.7.0
+├─ buffer@5.7.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/feross/buffer
 │  ├─ publisher: Feross Aboukhadijeh
@@ -620,7 +625,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/chalk/chalk
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/chalk
 │  └─ licenseFile: node_modules/chalk/license
-├─ chokidar@3.4.3
+├─ chokidar@3.5.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/paulmillr/chokidar
 │  ├─ publisher: Paul Miller
@@ -683,12 +688,6 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: sindresorhus.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/code-point-at
 │  └─ licenseFile: node_modules/code-point-at/license
-├─ codepage@1.13.1
-│  ├─ licenses: Apache-2.0
-│  ├─ repository: https://github.com/SheetJS/js-codepage
-│  ├─ publisher: SheetJS
-│  ├─ path: /home/zah/git/dcfrontend/node_modules/codepage
-│  └─ licenseFile: node_modules/codepage/LICENSE
 ├─ combined-stream@1.0.8
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/felixge/node-combined-stream
@@ -720,6 +719,11 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://substack.net
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/concat-map
 │  └─ licenseFile: node_modules/concat-map/LICENSE
+├─ consola@2.15.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nuxt/consola
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/consola
+│  └─ licenseFile: node_modules/consola/README.md
 ├─ console-browserify@1.2.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/browserify/console-browserify
@@ -743,7 +747,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://juliangruber.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/constants-browserify
 │  └─ licenseFile: node_modules/constants-browserify/README.md
-├─ core-js@2.6.11
+├─ core-js@2.6.12
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/zloirock/core-js
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/core-js
@@ -893,7 +897,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://trentm.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/dashdash
 │  └─ licenseFile: node_modules/dashdash/LICENSE.txt
-├─ datacontroller@3.10.0
+├─ datacontroller@3.11.0
 │  ├─ licenses: UNLICENSED
 │  ├─ private: true
 │  ├─ path: ../dcfrontend
@@ -945,6 +949,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://bevry.me
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/domain-browser
 │  └─ licenseFile: node_modules/domain-browser/LICENSE.md
+├─ dompurify@2.2.6
+│  ├─ licenses: (MPL-2.0 OR Apache-2.0)
+│  ├─ repository: https://github.com/cure53/DOMPurify
+│  ├─ publisher: Mario Heiderich
+│  ├─ email: mario@cure53.de
+│  ├─ url: https://cure53.de/
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/dompurify
+│  └─ licenseFile: node_modules/dompurify/LICENSE
 ├─ ecc-jsbn@0.1.2
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/quartzjer/ecc-jsbn
@@ -988,7 +1000,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Tobias Koppers @sokra
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/enhanced-resolve
 │  └─ licenseFile: node_modules/enhanced-resolve/README.md
-├─ errno@0.1.7
+├─ errno@0.1.8
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/rvagg/node-errno
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/errno
@@ -1043,12 +1055,6 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: calvin.metcalf@gmail.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/evp_bytestokey
 │  └─ licenseFile: node_modules/evp_bytestokey/LICENSE
-├─ exit-on-epipe@1.0.1
-│  ├─ licenses: Apache-2.0
-│  ├─ repository: https://github.com/SheetJS/node-exit-on-epipe
-│  ├─ publisher: sheetjs
-│  ├─ path: /home/zah/git/dcfrontend/node_modules/exit-on-epipe
-│  └─ licenseFile: node_modules/exit-on-epipe/LICENSE
 ├─ extend@3.0.2
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/justmoon/node-extend
@@ -1229,7 +1235,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Yehuda Katz
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/handlebars
 │  └─ licenseFile: node_modules/handlebars/LICENSE
-├─ handsontable@8.1.0
+├─ handsontable@8.2.0
 │  ├─ licenses: Custom: https://raw.githubusercontent.com/handsontable/handsontable/develop/resources/handsontable-logo.svg
 │  ├─ repository: https://github.com/handsontable/handsontable
 │  ├─ publisher: Handsoncode
@@ -1289,7 +1295,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: fedor@indutny.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/hash.js
 │  └─ licenseFile: node_modules/hash.js/README.md
-├─ highlight.js@10.3.2
+├─ highlight.js@9.18.5
 │  ├─ licenses: BSD-3-Clause
 │  ├─ repository: https://github.com/highlightjs/highlight.js
 │  ├─ publisher: Ivan Sagalaev
@@ -1414,7 +1420,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: sindresorhus.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/is-binary-path
 │  └─ licenseFile: node_modules/is-binary-path/license
-├─ is-core-module@2.0.0
+├─ is-core-module@2.2.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/inspect-js/is-core-module
 │  ├─ publisher: Jordan Harband
@@ -1611,7 +1617,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/joyent/node-jsprim
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/jsprim
 │  └─ licenseFile: node_modules/jsprim/LICENSE
-├─ jsrsasign@10.0.4
+├─ jsrsasign@10.1.5
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/kjur/jsrsasign
 │  ├─ publisher: Kenji Urushima
@@ -1637,6 +1643,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://github.com/jonschlinkert
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/kind-of
 │  └─ licenseFile: node_modules/kind-of/LICENSE
+├─ kleur@3.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lukeed/kleur
+│  ├─ publisher: Luke Edwards
+│  ├─ email: luke.edwards05@gmail.com
+│  ├─ url: lukeed.com
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/kleur
+│  └─ licenseFile: node_modules/kleur/license
 ├─ load-json-file@1.1.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/sindresorhus/load-json-file
@@ -1701,7 +1715,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: sindresorhus.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/map-obj
 │  └─ licenseFile: node_modules/map-obj/license
-├─ marked@1.2.2
+├─ marked@1.2.7
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/markedjs/marked
 │  ├─ publisher: Christopher Jeffrey
@@ -1750,12 +1764,12 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: fedor@indutny.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/miller-rabin
 │  └─ licenseFile: node_modules/miller-rabin/README.md
-├─ mime-db@1.44.0
+├─ mime-db@1.45.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/jshttp/mime-db
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/mime-db
 │  └─ licenseFile: node_modules/mime-db/LICENSE
-├─ mime-types@2.1.27
+├─ mime-types@2.1.28
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/jshttp/mime-types
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/mime-types
@@ -2144,7 +2158,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: sindresorhus.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/pkg-dir
 │  └─ licenseFile: node_modules/pkg-dir/license
-├─ prismjs@1.22.0
+├─ prismjs@1.23.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/PrismJS/prism
 │  ├─ publisher: Lea Verou
@@ -2177,6 +2191,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://re-becca.org/
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/promise-inflight
 │  └─ licenseFile: node_modules/promise-inflight/LICENSE
+├─ prompts@2.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/terkelg/prompts
+│  ├─ publisher: Terkel Gjervig
+│  ├─ email: terkel@terkel.com
+│  ├─ url: https://terkel.com
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/prompts
+│  └─ licenseFile: node_modules/prompts/license
 ├─ prr@1.0.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/rvagg/prr
@@ -2317,7 +2339,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: ben@npmjs.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/require-main-filename
 │  └─ licenseFile: node_modules/require-main-filename/LICENSE.txt
-├─ resolve@1.18.1
+├─ resolve@1.19.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/browserify/resolve
 │  ├─ publisher: James Halliday
@@ -2453,6 +2475,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: ben@npmjs.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/signal-exit
 │  └─ licenseFile: node_modules/signal-exit/LICENSE.txt
+├─ sisteransi@1.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/terkelg/sisteransi
+│  ├─ publisher: Terkel Gjervig
+│  ├─ email: terkel@terkel.com
+│  ├─ url: https://terkel.com
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/sisteransi
+│  └─ licenseFile: node_modules/sisteransi/license
 ├─ sl-blip@1.0.0
 │  ├─ licenses: UNKNOWN
 │  ├─ repository: none
@@ -2497,7 +2527,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://kemitchell.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/spdx-expression-parse
 │  └─ licenseFile: node_modules/spdx-expression-parse/LICENSE
-├─ spdx-license-ids@3.0.6
+├─ spdx-license-ids@3.0.7
 │  ├─ licenses: CC0-1.0
 │  ├─ repository: https://github.com/jslicense/spdx-license-ids
 │  ├─ publisher: Shinnosuke Watanabe
@@ -2609,6 +2639,13 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://lisperator.net/
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/terser
 │  └─ licenseFile: node_modules/terser/LICENSE
+├─ text-encoding@0.7.0
+│  ├─ licenses: (Unlicense OR Apache-2.0)
+│  ├─ repository: https://github.com/inexorabletash/text-encoding
+│  ├─ publisher: Joshua Bell
+│  ├─ email: inexorabletash@gmail.com
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/text-encoding
+│  └─ licenseFile: node_modules/text-encoding/LICENSE.md
 ├─ timers-browserify@2.0.12
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/jryans/timers-browserify
@@ -2664,7 +2701,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: hochelmartin@gmail.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/ts-helpers
 │  └─ licenseFile: node_modules/ts-helpers/LICENSE
-├─ tslib@2.0.3
+├─ tslib@2.1.0
 │  ├─ licenses: 0BSD
 │  ├─ repository: https://github.com/Microsoft/tslib
 │  ├─ publisher: Microsoft Corp.
@@ -2692,12 +2729,12 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: TweetNaCl-js contributors
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/tweetnacl
 │  └─ licenseFile: node_modules/tweetnacl/LICENSE
-├─ typedoc-default-themes@0.10.2
+├─ typedoc-default-themes@0.12.4
 │  ├─ licenses: Apache-2.0
 │  ├─ repository: https://github.com/TypeStrong/typedoc-default-themes
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/typedoc-default-themes
 │  └─ licenseFile: node_modules/typedoc-default-themes/LICENSE
-├─ typedoc-neo-theme@1.0.10
+├─ typedoc-neo-theme@1.1.0
 │  ├─ licenses: Apache-2.0
 │  ├─ repository: https://github.com/google/typedoc-neo-theme
 │  ├─ publisher: Nick Felker, based on work by Sebastian Lenz
@@ -2714,7 +2751,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Microsoft Corp.
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/typescript
 │  └─ licenseFile: node_modules/typescript/LICENSE.txt
-├─ uglify-js@3.11.4
+├─ uglify-js@3.12.5
 │  ├─ licenses: BSD-2-Clause
 │  ├─ repository: https://github.com/mishoo/UglifyJS
 │  ├─ publisher: Mihai Bazon
@@ -2745,7 +2782,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: opensrc@ryanzim.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/universalify
 │  └─ licenseFile: node_modules/universalify/LICENSE
-├─ uri-js@4.4.0
+├─ uri-js@4.4.1
 │  ├─ licenses: BSD-2-Clause
 │  ├─ repository: https://github.com/garycourt/uri-js
 │  ├─ publisher: Gary Court
@@ -2777,6 +2814,11 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/uuidjs/uuid
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/uuid
 │  └─ licenseFile: node_modules/uuid/LICENSE.md
+├─ valid-url@1.0.9
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/ogt/valid-url
+│  ├─ path: /home/zah/git/dcfrontend/node_modules/valid-url
+│  └─ licenseFile: node_modules/valid-url/LICENSE
 ├─ validate-npm-package-license@3.0.4
 │  ├─ licenses: Apache-2.0
 │  ├─ repository: https://github.com/kemitchell/validate-npm-package-license.js
@@ -2805,12 +2847,12 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://substack.net
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/vm-browserify
 │  └─ licenseFile: node_modules/vm-browserify/LICENSE
-├─ watchpack-chokidar2@2.0.0
+├─ watchpack-chokidar2@2.0.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/webpack/watchpack
 │  ├─ publisher: Tobias Koppers @sokra
 │  └─ path: /home/zah/git/dcfrontend/node_modules/watchpack-chokidar2
-├─ watchpack@1.7.4
+├─ watchpack@1.7.5
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/webpack/watchpack
 │  ├─ publisher: Tobias Koppers @sokra
@@ -2833,7 +2875,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: Tobias Koppers @sokra
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/webpack
 │  └─ licenseFile: node_modules/webpack/LICENSE
-├─ whatwg-fetch@3.4.1
+├─ whatwg-fetch@3.5.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/github/fetch
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/whatwg-fetch
@@ -2891,7 +2933,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: raynos2@gmail.com
 │  ├─ path: /home/zah/git/dcfrontend/node_modules/xtend
 │  └─ licenseFile: node_modules/xtend/LICENSE
-├─ y18n@4.0.0
+├─ y18n@4.0.1
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/yargs/y18n
 │  ├─ publisher: Ben Coe
