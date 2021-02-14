@@ -16,3 +16,9 @@ Set to YES to restrict the list of libraries and tables in VIEWER to only those 
 Set to YES to enable library validity checking in viewLibs service. This means that on first load, SAS will attempt to open each library to see if it is possible to do so.  This reduces the number of libraries in the list, but means that it is slow to load the first time around.
 
 The default is NO.
+
+## DC_LOCALE
+Set to a locale (such as `en_gb` or `en_be`) to override the system value (which may be derived from client browser settings).
+This feature is useful when importing ambiguous dates from CSV or Excel (eg 1/2/20 vs 2/1/20) as DC uses the `anydtdtm.` informats for import.
+
+Default=SYSTEM.
