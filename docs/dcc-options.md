@@ -24,4 +24,4 @@ This feature is useful when importing ambiguous dates from CSV or Excel (eg 1/2/
 Default=SYSTEM.
 
 !!! note
-    If you have clients in different geographies loading excel in local formats, you can also address this issue by ensuring the locale of the _user_ profile is not set to the default (eg `English (United States)`).  When leaving the DC_LOCALE as SYSTEM, the locale settings in SAS are not added or modified.
+    If you have clients in different geographies loading excel in local formats, you can also address this issue by ensuring the locale of the windows _user_ profile is not set to the default (eg `English (United States)`).  When leaving the DC_LOCALE as SYSTEM, the locale settings in SAS are not added or modified.
