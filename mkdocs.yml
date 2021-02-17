@@ -18,6 +18,7 @@ nav:
     - Selectboxes: dcc-selectbox.md
     - Tables: dcc-tables.md
     - Validations: dcc-validations.md
+- Macros: macros.md
 - Installation:
     - System Requirements: dci-requirements.md
     - SAS 9 Deploy: dci-deploysas9.md
