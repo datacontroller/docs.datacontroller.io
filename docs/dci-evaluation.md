@@ -17,7 +17,7 @@ Be sure that the user account you will use in the [configuration](#configuration
 
 ### Configuration
 
-Navigate to the web application (eg `https://[YOURHOST]/SASStoredProcess?_action=1063`) and find the location where the app was imported.  Then run the `/DataController/Admin/configurator` stored process.
+Navigate to the web application (eg `https://[YOURHOST]/SASStoredProcess?_action=1063`) and find the location where the app was imported.  Then run the `DataController/services/admin/configurator` stored process.
 
 !!! note
     Use the same user account as you used to import the SPK, to avoid metadata permissions issues!  This may mean logging out / logging back in to the web application.
