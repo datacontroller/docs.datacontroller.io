@@ -37,6 +37,8 @@ Multiple load types are supported (full REPLACE, regular UPDATE, SCD2 loads, eve
 
 A column (eg PROCESSED_DTTM) may be nominated to retain the current timestamp when doing any type of upload.
 
+If the stage table has columns that are not in the base table, the extra columns are ignored.  If the base table has columns that are not in the stage table, the process aborts.
+
 There is also a locking mechanism to avoid conflict where multiple users (or jobs) are trying to load the same table at the same time.  If the loader cannot get a lock, it will keep trying for a configurable amount of time, until it does.
 
 In the process of data discovery and comparing the hashes of the data values there are checks at every step of the way - the macro will abort if there are any WARNINGs or ERRORs or anything else awry.  Some of these checks may be turned off for performance (eg the check for uniqueness of the business key in the staging table).
