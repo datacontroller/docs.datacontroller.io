@@ -1,3 +1,10 @@
+---
+layout: article
+title: MPE_TABLES
+description: Adding tables to the Data Controller is a matter of configuration, specifically the addition of a new record to `DATACTRL.MPE_TABLES`, and corresponding entries in `DATACTRL.MPE_SECURITY`.
+og_image:  https://i.imgur.com/DtVU62u.png
+---
+
 # Data Controller for SAS® - Adding Tables
 
 ## Overview
@@ -15,7 +22,7 @@ Each table to be edited in the Data Controller is represented by one record in `
 
 ### LIBREF
 
-The libref of the table. If not pre-assigned, DC will assign it at runtime using the first definition found in metadata, using this [macro](https://github.com/macropeople/macrocore/blob/master/meta/mm_assigndirectlib.sas).
+The libref of the table. If not pre-assigned, DC will assign it at runtime using the first definition found in metadata, using this [macro](https://core.sasjs.io/mm__assigndirectlib_8sas.html).
 
 ### DSN
 
