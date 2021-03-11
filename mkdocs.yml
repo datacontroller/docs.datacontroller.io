@@ -32,6 +32,7 @@ nav:
     - Evaluation Licence: evaluation-agreement.md
     - Other Licences: licences.md
 - Videos: videos.md
+- Roadmap: roadmap.md
 
 markdown_extensions:
   - admonition
