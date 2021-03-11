@@ -66,8 +66,15 @@ Leave blank if not required.
 
 ### PRE_EDIT_HOOK
 
-The full path / location (unquoted) of a SAS program that will be `%inc`'d prior to an edit being made. This allows a particular view of a table to be presented to a user for editing (eg masking columns etc).
-Leave blank if not required.
+The full path / location (unquoted) of a SAS program to execute prior to an edit being made. This allows a particular view of a table to be presented to a user for editing (eg masking columns, removing rows etc). Leave blank if not required.
+
+#### SAS Developer Notes
+The PRE_EDIT_HOOK program will be `%inc`'d after the data has already been extracted.  A table called `work.out` will be available that has all the same columns (in the same order) as that shown on the EDIT screen on the frontend.  The observations will have been sorted on the [BUSKEY](#buskey).  The surrounding code looks like this:
+
+![pre edit hook SAS code](https://i.imgur.com/ezQWU4W.png)
+
+You can make any changes you wish, just be sure that the final table is also called `work.out`.
+
 
 ### POST_EDIT_HOOK
 
