@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Roadmap
-description: The Data Controller roadmap is aligned with the needs of our customers - we continue to build and prioritise on features requested by, and funded by, new and existing customers.
+description: The Data Controller roadmap is aligned with the needs of our customers - we continue to build and prioritise on Features requested by, and funded by, new and existing customers.
 og_image:  https://i.imgur.com/xFGhgg0.png
 ---
 
@@ -9,9 +9,9 @@ og_image:  https://i.imgur.com/xFGhgg0.png
 
 ## Overview
 
-On this page you can find details of the features that have currently been requested, that we agree would add value to the product, and are therefore in our development roadmap.
+On this page you can find details of the Features that have currently been requested, that we agree would add value to the product, and are therefore in our development roadmap.
 
-Where customers are paying for the new features (eg with our discounted Developer Days offer), then those features will always take priority.  Where funding is not available, new features will be addressed during the Bench Time of our developers, and will always be performed after Bug Fixes.
+Where customers are paying for the new Features (eg with our discounted Developer Days offer), then those Features will always take priority.  Where funding is not available, new Features will be addressed during the Bench Time of our developers, and will always be performed after Bug Fixes.
 
 If you would like to see a new Feature added to Data Controller, then let's have a chat!
 
@@ -71,7 +71,7 @@ This approach provides maximum flexibility for delivering bespoke values in the 
 
 ## Delivered Features
 
-Below are some examples of features that have been requested (and delivered) into Data Controller.
+Below are some examples of Features that have been requested (and delivered) into Data Controller.
 
 ### Configurable Locale
 
