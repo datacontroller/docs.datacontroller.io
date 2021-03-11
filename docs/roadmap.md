@@ -45,15 +45,33 @@ Currently when calling the 'public/getcolvals' service we provide a single table
 
 The service will need to safely validate this input query, to prevent the risk of SQL injection.  It can then be used to filter the returned output.
 
-Additional automated SAS tests required:
+Additional automated SASjs tests required:
 
 * malicious code injection
 * Very large clause (so that filter query exceeds 50k characters)
 * accuracy checks
 
+### Dynamic Grid Cell Validation
 
+#### Problem Statement
+
+The challenge here is similar to that of [Dynamic Filtering](/roadmap/#dynamic-filtering) - when editing a value in a grid, the values presented to the user should be filtered according to additional rules, based on the values of other cells in the same row.
+
+![](https://i.imgur.com/J1q4lqo.png)
+
+#### Proposed Solution
+
+Given the near infinite possibilities by which this list could be generated, the solution proposed is that provide a new config item - one that links an editable column to a FILTER_HOOK script via a web service.
+
+In this way, the entire record can be sent to SAS, for processing by the FILTER_HOOK script, before returning the desired list of values.
+
+This approach provides maximum flexibility for delivering bespoke values in the edit grid dropdown.
+
+### Row Level Security
 
 ## Delivered Features
+
+Below are some examples of features that have been requested (and delivered) into Data Controller.
 
 ### Configurable Locale
 
