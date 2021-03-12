@@ -37,21 +37,6 @@ It's also worth being aware of the `DC_VIEWLIB_CHECK` option in MPE_CONFIG.  Whe
 
 ## Determining Group Members
 
-Before adding a group to Data Controller, it helps to know the members of that group!  The following options are available:
+Before adding a group to Data Controller, it helps to know the members of that group!  A User navigator is available in both the SAS 9 and Viya version of Data Controller.  You can navigate Users, Groups and Roles (roles are only visible in the SAS 9 version).
 
-1 - Use SAS Management Console
-
-2- Use Code
-
-The "code" option can be performed as follows:
-
-```
-/* get macro library */
-filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
-%inc mc;
-/* call macro */
-%mm_getgroupmembers(YOURGROUPNAME)
-/* the above will create a dataset containing the group members */
-```
-
-Another option is to use the custom groups feature by defining your own groups in the [MPE_GROUPS](dcc-groups.md) table.
+This means you do not need SAS Management Console or SAS Environment Manager to manage Data Controller users. However you will need those tools for managing SAS Groups, unless you define your own groups in the [MPE_GROUPS](dcc-groups.md) table.

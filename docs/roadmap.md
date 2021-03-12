@@ -78,8 +78,9 @@ Backend:
 - [ ] Two new validation types to be added for MPE_VALIDATIONS in MPE_SELECTBOX
 - [ ] `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT
 - [ ] A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic for auto-filtering if no hook script provided
-- [ ] Documentation updated
-- [ ] SASjs tests (with / without hook scripts) written and integrated
+- [ ] Service Documentation added / updated
+- [ ] User Documentation updated, including screenshots
+- [ ] SASjs unit tests (with / without hook scripts) added to test harness
 
 Frontend:
 
@@ -155,7 +156,8 @@ The implementation will be entirely backend (no impact to frontend).  Tasks incl
 - [ ] Creation of a macro to formulate the filter clause
 - [ ] Creation of a series of SASjs tests to validate the macro logic
 - [ ] Macro Documentaton
-- [ ] User Documentation
+- [ ] Service Documentation
+- [ ] User Documentation, including screenshots
 
 The following Services will require modification to use the new macro:
 
@@ -176,10 +178,20 @@ Below are some examples of Features that have been requested (and delivered) int
 
 ### Configurable Locale
 
-#### Problem Statement
-
 When importing spreadsheets with ambiguous dates (eg 01/02 or 02/01) the ANYDTDTM. informat was using the locale of the browser (en_us) instead of that of the client's actual country, resulting in incorrect dates being loaded.  This is due to the [default behaviour](https://rawsas.com/look-out-locale-gotcha/) of the SAS Stored Process server.
 
 #### Solution
 
 We added a [new config item](/dcc-options/#dc_locale) so that the locale can be explicitly set for all Data Controller users.
+
+### Restricted Viewer
+
+Data Controller relies on metadata permissions (in SAS 9) or authorization rules (in Viya) to determine who can see which table.
+
+We had a customer who was using Data Controller to provide data access to a company wide audience, most of whom did not have access to SAS client tools (such as Enterprise Guide) and so had not been set up in metadata before.
+
+It was necessary to find a way to restrict the tables which certain groups could see, without having to tweak permissions in SAS Management Console.
+
+#### Solution
+
+We added a [new access level](/dcc-security/#view) in the MPE_SECURITY table so that access could be restricted at both TABLE and LIBRARY level.
