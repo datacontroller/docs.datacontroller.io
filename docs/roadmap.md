@@ -20,8 +20,6 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 ### Dynamic Filtering
 
-#### Problem Statement
-
 The existing filter box provides a list of values when selecting operators such as "IN", "=" etc.  The problem is that this dropdown does not consider existing filter selections.  So if a user filters on, say, "region", and then filters on "store", they will see stores for ALL regions (not just the region/regions already selected in the filter).
 
 ![](https://i.imgur.com/KDEVvDi.png)
@@ -53,21 +51,124 @@ Additional automated SASjs tests required:
 
 ### Dynamic Grid Cell Validation
 
-#### Problem Statement
-
 The challenge here is similar to that of [Dynamic Filtering](/roadmap/#dynamic-filtering) - when editing a value in a grid, the values presented to the user should be filtered according to additional rules, based on the values of other cells in the same row.
 
 ![](https://i.imgur.com/J1q4lqo.png)
 
 #### Proposed Solution
 
-Given the near infinite possibilities by which this list could be generated, the solution proposed is that provide a new config item - one that links an editable column to a FILTER_HOOK script via a web service.
+Given the near infinite possibilities by which this list could be generated, the solution proposed is that provide a new config item in the MPE_VALIDATIONS table - one that links an editable column to a HOOK script via a web service.
+
+The configuration would like like so:
+
+![](https://i.imgur.com/8Hx05GP.png)
 
 In this way, the entire record can be sent to SAS, for processing by the FILTER_HOOK script, before returning the desired list of values.
 
+If RULE_VALUE is left empty, we can default to filtering according to the value of the (remaining) primary key value(s).
+
+The HOOK_SCRIPT can be either a SAS program on a filesystem (identified by a ".sas" extension) or the path to a registered SAS Service (STP or JES).  The latter is identified by the absence of an extension.
+
 This approach provides maximum flexibility for delivering bespoke values in the edit grid dropdown.
 
+#### Technical Implementation
+
+Backend:
+
+- [ ] Two new validation types to be added for MPE_VALIDATIONS in MPE_SELECTBOX
+- [ ] `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT
+- [ ] A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic for auto-filtering if no hook script provided
+- [ ] Documentation updated
+- [ ] SASjs tests (with / without hook scripts) written and integrated
+
+Frontend:
+
+- [ ] Prepare hooks for all target cols as defined in the `editors/getdata` response
+- [ ] When in EDIT mode and the user selects the dropdown, call the `editors/get_dynamic_col_vals` service with the currentrow as input
+- [ ] Whilst calling the service, a spinner should be presented and the page frozen
+- [ ] On response, the dropdown is populated, and the service is not triggered again unless another cell in that same row ismodified (so if the user navigates away, and comes back, the service is not necessarily triggered again)
+- [ ] If a user PASTES input (or provides input via Excel upload), then the hook is NOT triggered, even if it is a HARD select(in this case we would rely on backend validation, which is NOT yet implemented)
+- [ ] Prepare tests covering all use cases in the Cypress test suite
+- [ ] New functions are well documented in JSDoc
+
+
 ### Row Level Security
+
+Row level security is provided by various products in both SAS 9 and Viya, based on the logged in user identity.
+
+This is problematic for the EDIT page, which - by necessity - operates under system account credentials.
+
+It is also the case that some customers need row level security but the data access engine does not support that.
+
+Therefore, there is a need to configure such a feature within the Data Controller product.
+
+#### Proposed Solution
+
+A new table (MPE_ROW_LEVEL_SECURITY) will be added to the data controller library with the following attributes:
+
+|Variable|Description|
+|---|---|
+|RLS_SCOPE| Does the rule apply to the VIEW page, the EDIT page, or ALL pages|
+|RLS_GROUP| The SAS Group to which the rule applies.  If a user is in none of these groups, no rules apply. If the user is in multiple groups, then the rules for each are applied with an OR condition.|
+|RLS_LIBREF|The library of the target table|
+|RLS_TABLE|The table to which to apply the rule|
+|RLS_COLUMN|The column to which to apply the rule|
+|RLS_OPERATOR|The operator to apply, such as `=`, `<`, `>`,`!=`, `IN` and `CONTAINS`|
+|RLS_VALUE|The value to which be used in the comparator|
+|RLS_ACTIVE|Set to 1 to include the record in the filter, else 0|
+|||
+
+Example values as follows:
+
+RLS_SCOPE $4|RLS_GROUP $64|RLS_LIBREF $8| RLS_TABLE $32| RLS_COLUMN $32| RLS_OPERATOR $16| RLS_VALUE $2048|RLS_ACTIVE|
+|---|---|---|---|---|---|---|---|
+|EDIT|Group 1|MYLIB|MYDS|VAR_1|=|Some text value|1|
+|ALL|Group 1|MYLIB|MYDS|VAR_2|IN|this|1|
+|ALL|Group 1|MYLIB|MYDS|VAR_2|IN|or|1|
+|VIEW|Group 1|MYLIB|MYDS|VAR_2|IN|that|1|
+|ALL|Group 1|MYLIB|MYDS|VAR_3|<|42|1|
+|ALL|Group 2|MYLIB|MYDS|VAR_4|Contains|;%badmacro()|1|
+
+If a user is in Group 2, and querying an EDIT table, the query will look like this:
+
+```
+select * from mylib.myds
+where ( var_4 CONTAINS ';%badmacro()' )
+```
+
+If the user is in both Group 1 AND Group 2, querying a VIEW-only table, the filter will be as follows:
+
+```
+select * from mylib.myds
+where (var_2 IN ('this','or','that') AND var_3 < 42 )
+  OR
+    ( var_4 CONTAINS ';%badmacro()' )
+```
+
+#### Technical Implementation
+
+The implementation will be entirely backend (no impact to frontend).  Tasks include:
+
+- [ ] Creation of new table using SCD2 for history retention
+- [ ] Inclusion of new table in the build process
+- [ ] Update the migration scripts for customer upgrades
+- [ ] Creation of a macro to formulate the filter clause
+- [ ] Creation of a series of SASjs tests to validate the macro logic
+- [ ] Macro Documentaton
+- [ ] User Documentation
+
+The following Services will require modification to use the new macro:
+
+* `public/getcolvals`
+* `public/getrawdata`
+* `public/viewdata`
+* `editors/getdata`
+* `editors/loadfile`
+* `editors/stagedata`
+
+The macro should also be available to developers using hook scripts in `editors/get_dynamic_col_vals`.
+
+
 
 ## Delivered Features
 
