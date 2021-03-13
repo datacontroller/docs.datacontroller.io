@@ -18,6 +18,15 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 ## Requested Features
 
+Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.  Each task is given a Story Point (SP) value, and each SP is roughly 0.5 days (SCRUM masters - please don't lose your T-Shirt over this sizing approach!)
+
+There are currently four features requested and sized, with estimates as follows:
+
+* Dynamic Filtering
+* Dynamic Cell Validation
+* Row Level Security
+* Formula Preservation
+
 ### Dynamic Filtering
 
 The existing filter box provides a list of values when selecting operators such as "IN", "=" etc.  The problem is that this dropdown does not consider existing filter selections.  So if a user filters on, say, "region", and then filters on "store", they will see stores for ALL regions (not just the region/regions already selected in the filter).
@@ -30,26 +39,35 @@ We add a checkbox to the top right of the filter dialog (default ON) for "Dynami
 
 #### Technical Implementation
 
-It will be necessary to first ensure that every filter clause is valid (currently, it is possible for two clauses to be invalid whilst they are being worked on).  We will need several (automated) test cases in the cypress suite:
-
-* Simple (just two clauses)
-* Multiple clauses (up to 6)
-* Multiple grouped clauses
-* Very large clause (so that filter query exceeds 50k characters)
-* An attempt to work on several clauses in quick succession
-* Both character & numeric
-
-Currently when calling the 'public/getcolvals' service we provide a single table (iwant) with two values (libds & col).  This service needs to be extended to include an additional input (filtertable) with one column (filterline).  The filter query will be split across multiple rows in this table.
+##### Backend
 
 The service will need to safely validate this input query, to prevent the risk of SQL injection.  It can then be used to filter the returned output.
 
-Additional automated SASjs tests required:
+- [1] Update & document the filter query macro
+- [1] Update the `public/getcolvals` macro to accept the new input table
+- [1] SASjs tests for malicious code injection
+- [0] SASjs tests for very large clause (so that filter query exceeds 50k characters)
+- [1] SASjs tests for accuracy
+- [1] Documentation of the `getcolvals` service and functional user documentation (with screenshots)
 
-* malicious code injection
-* Very large clause (so that filter query exceeds 50k characters)
-* accuracy checks
 
-### Dynamic Grid Cell Validation
+##### Frontend
+
+Currently when calling the 'public/getcolvals' service we provide a single table (iwant) with two values (libds & col).  This service needs to be extended to include an additional input (filtertable) with one column (filterline).  The filter query will be split across multiple rows in this table.
+
+- [ ] Ensure that every filter clause is valid - currently, it is possible for two clauses to be invalid whilst they are being worked on.
+- [ ] Add filter checkbox (default on) for Dynamic F iltering
+- [ ] Prepare first query, sending to `public/getcolvals`
+- [ ] Tests covering all operators
+- [ ] Test for multiple clauses (up to 6)
+- [ ] Test for multiple grouped clauses
+- [ ] Cypress test to work on several clauses in quick s uccession
+- [ ] JSDoc documentation is improved / updated
+
+
+
+
+### Dynamic Cell Validation
 
 The challenge here is similar to that of [Dynamic Filtering](/roadmap/#dynamic-filtering) - when editing a value in a grid, the values presented to the user should be filtered according to additional rules, based on the values of other cells in the same row.
 
@@ -75,8 +93,8 @@ This approach provides maximum flexibility for delivering bespoke values in the 
 
 Backend:
 
-- [ ] Two new validation types to be added for MPE_VALIDATIONS in MPE_SELECTBOX
-- [ ] `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT
+- [0] Two new validation types to be added for MPE_VALIDATIONS in MPE_SELECTBOX
+- [1] `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT
 - [ ] A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic for auto-filtering if no hook script provided
 - [ ] Service Documentation added / updated
 - [ ] User Documentation updated, including screenshots
@@ -170,7 +188,54 @@ The following Services will require modification to use the new macro:
 
 The macro should also be available to developers using hook scripts in `editors/get_dynamic_col_vals`.
 
+### Formula Preservation
 
+Data Controller uses an OEM licence with the excellent [sheetJS](https://sheetjs.com/) library.  This enables us to read pretty much any version of Excel at breakneck speeds.
+
+By default, Data Controller will use the data model of the target table when extracting data, eg to determine whether a column should be character, numeric, date, datetime or time.
+
+Formats are ignored and the cell _values_ are extracted when formulas are being used.
+
+We now have a use case that the customer would like to extract and retain the actual formula itself, so it can e re-used when downloading the data again later.
+
+#### Proposed Solution
+
+A new table (MPE_EXCEL_CONFIG) will be added to the data controller library with the following attributes:
+
+|Variable|Description|
+|---|---|
+|XL_LIBREF|The library of the target table|
+|XL_TABLE|The table to which to apply the rule|
+|XL_COLUMN|The column to which to apply the rule|
+|XL_RULE|The rule to apply, such as FORMULA|
+|XL_ACTIVE|Set to 1 to make the rule active, else 0|
+|||
+
+#### Technical Implementation
+
+The additional configuration table must be provided to the frontend so that any imported Excel files may have the corresponding rules applied.  Formulae will be imported as simple text strings - the target column must therefore be of character type and be fairly wide (at least $64 but preferably wider to avoid formula truncation)
+
+Backend:
+
+- [ ] Creation of new table using SCD2 for history retention
+- [ ] Inclusion of new table in the build process
+- [ ] Update the migration scripts for customer upgrades
+- [ ] Update the `edit/getdata` Service to include a new output table for excel config
+- [ ] Create a post edit hook service to ensure that any new FORMULA fields added do in fact exist, and have character type, with a minimum width of $64
+- [ ] SASjs tests to validate the new service output, and validation logic
+- [ ] Macro Documentaton
+- [ ] Service Documentation
+- [ ] User Documentation, including screenshots
+
+Frontend:
+
+- [ ] Where configured, columns are extracted by formula rather than value
+- [ ] Cypress tests (with corresponding excel files) are created to cover cases such as:  one formula column, 3 formula columns, formula columns where values are not formulas, complex formulas, formatted formulas.
+- [ ] JSDoc documentation is updated
+
+
+
+---
 
 ## Delivered Features
 
