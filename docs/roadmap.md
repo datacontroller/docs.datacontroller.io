@@ -22,12 +22,14 @@ Where features are requested, whether there is budget or not, we will describe t
 
 There are currently four features requested:
 
-* Dynamic Filtering - 2.75 + 2.75 = 5.5days
-* Dynamic Cell Validation 3.75 + 3 = 6.75 days
-* Row Level Security = 4.75 days
+* Dynamic Filtering - 6 days
+* Dynamic Cell Validation - 6.5 days
+* Row Level Security - 4.75 days
+
+Total: 17.25 days
+
 * Formula Preservation = under review
 
-Total: 17 days
 
 ### Dynamic Filtering
 
@@ -54,17 +56,21 @@ The backend will need to extract and safely validate the input query, to prevent
 |Backend|SASjs tests for accuracy of filtered output|4|
 |Backend|Documentation of the `getcolvals` service and functional user documentation (with screenshots)|2|
 |Frontend|Ensure that every filter clause is valid - currently, it is possible for two clauses (or groups) to be invalid whilst they are being worked on.|2|
-|Frontend|Add filter checkbox (default on) for Dynamic Filtering|1|
+|Frontend|Add filter checkbox (default on) for Dynamic Filtering and apply for all requests|2|
 |Frontend|Prepare first query, sending to `public/getcolvals`|8|
 |Frontend|Tests covering all operators|4|
 |Frontend|Test for multiple clauses (2 clauses and 4 clauses)|2|
 |Frontend|Test for multiple grouped clauses (2 groups & 4 groups)|2|
 |Frontend|Cypress tests for non logical user behaviour|2|
-|Frontend|JSDoc documentation is improved / updated|1|
+|Frontend|JSDoc documentation is improved / updated, and Dev Docs updated|2|
 
-* Total Backend:  2.75 days
-* Total Frontend: 2.75 days
 
+* Backend:  2.75 days
+* Frontend: 3 days
+* Planning, Collaboration & Design - 0.25 days
+* Total:  6 days
+
+---
 
 ### Dynamic Cell Validation
 
@@ -82,8 +88,6 @@ The configuration would like like so:
 
 In this way, the entire record can be sent to SAS, for processing by the FILTER_HOOK script, before returning the desired list of values.
 
-If RULE_VALUE is left empty, we can default to filtering according to the value of the (remaining) primary key value(s).
-
 The HOOK_SCRIPT can be either a SAS program on a filesystem (identified by a ".sas" extension) or the path to a registered SAS Service (STP or JES).  The latter is identified by the absence of an extension.
 
 This approach provides maximum flexibility for delivering bespoke values in the edit grid dropdown.
@@ -94,11 +98,10 @@ The frontend will make requests to SAS whenever a user tries to select a dropdow
 
 * %include the .sas program, if provided
 * %include the SAS code from a web service, if provided
-* perform logic to filter on (remaining) PK values, if no script provided
 
-The frontend will pause whilst this service runs.  If values are pasted (or imported), the validation will NOT take place.  This would depend on a backend validation, if this case needs to be handled.
+The request will run in the background (user can continue to work on the grid).  If values are pasted (or imported) the validation will NOT take place.  Similarly, if other cells in the row are modified, the request is not re-executed unless the user selects the calle again.  If these validations are necessary, they should be performed at backend.
 
-The frontend will take an md5() hash of every value in the row (with a separator, the target column will be assigned a blank value) and store this in a global arrray.  This is used as a lookup when fetching values, to see if the record has changed or not.  This event will take place when the user selects the cell (and only that cell).  It will not take place for cells that are pasted / copied in, or for excel uploads.
+To detect changes, the frontend will take an md5() hash of every value in the row (with a separator, the target column will be assigned a blank value) and store this in a global arrray.  This is used as a lookup when fetching values, to see if the record has changed or not.  This event will take place when the user selects the cell (and only that cell).  It will not take place for cells that are pasted / copied in, or for excel uploads.
 
 The last 10 dropdown value lists will be saved.
 
@@ -106,18 +109,22 @@ The last 10 dropdown value lists will be saved.
 |---|---|---|
 |Backend|Two new validation types (SOFTSELECT_HOOK and HARDSELECT_HOOK) to be added for MPE_VALIDATIONS in MPE_SELECTBOX, and in the migration script|1|
 |Backend| The `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT, in a new output table|2|
-|Backend|A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic for auto-filtering if no hook script provided, and logic to extract Service code if no program is provided|16|
+|Backend|A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic to extract Service code if needed, and appropriate error handling|8|
 |Backend|Service Documentation added / updated for both services|1|
 |Backend|User Documentation updated, including screenshots|2|
 |Backend|SASjs unit tests added to test harness to cover all three configurations|8|
 |Frontend|Prepare hooks for all target cols as defined in the `editors/getdata` response|2|
-|Frontend|When in EDIT mode and the user selects the cell, take a hash of the values, check this in the array, and if not found - call the `editors/get_dynamic_col_vals` service (non blocking) with the currentrow as table input to SAS.  If found the previous lookup will be presented.|8|
+|Frontend|When in EDIT mode and the user selects the cell, take a hash of the values, check this in the array, and if not found - call the `editors/get_dynamic_col_vals` service (non blocking) with the currentrow as table input to SAS.  If found the previous lookup will be presented.|12|
 |Frontend| If a HARD response, the cell will be red if not found.  If SOFT, new values are permitted. The user may type before the response arrives.  If a HARD select then they should not be able to submit unless the values are valid|2|
 |Frontend|Prepare test environment and a series of tests covering all use cases in the Cypress test suite|8|
 |Frontend|New functions are documented in JSDoc, and well explained in the developer docs (with screenshots)|4|
 
-* Backend - 3.75 days
-* Frontend - 3 days
+* Backend - 2.75 days
+* Frontend - 3.5 days
+* Planning, Collaboration & Design - 0.25 days
+* Total - 6.5 days
+
+---
 
 ### Row Level Security
 
@@ -194,7 +201,7 @@ Tasks include:
 |Backend|Creation & documentation of a macro to formulate the filter clause|8|
 |Backend|Creation of a series (10-20) of automated SASjs tests to validate the macro logic|12|
 |Backend|Including the macro in all relevant services, and updating the documentation of each|4|
-|Backend|Additional tests to ensure that the updated services are working for user accounts with RLS enabled|8|
+|Backend|Additional tests to ensure that the updated services are working for different user accounts with RLS enabled|8|
 |Backend|User Documentation, including screenshots|4|
 
 
@@ -202,6 +209,7 @@ Estimates:
 
 * Backend: 4.75 days
 
+---
 
 ### Formula Preservation
 
@@ -246,6 +254,7 @@ The additional configuration table must be provided to the frontend so that any 
 * Total Backend: 2 days
 * Total Frontend:
 
+---
 
 ## Delivered Features
 
