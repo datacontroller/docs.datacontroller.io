@@ -18,14 +18,16 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 ## Requested Features
 
-Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.  Each task is given a Story Point (SP) value, and each SP is roughly 0.5 days (SCRUM masters - please don't lose your T-Shirt over this sizing approach!)
+Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.
 
-There are currently four features requested and sized, with estimates as follows:
+There are currently four features requested:
 
-* Dynamic Filtering
-* Dynamic Cell Validation
-* Row Level Security
-* Formula Preservation
+* Dynamic Filtering - 2.75 + 2.75 = 5.5days
+* Dynamic Cell Validation 3.75 + 3 = 6.75 days
+* Row Level Security = 4.75 days
+* Formula Preservation = under review
+
+Total: 17 days
 
 ### Dynamic Filtering
 
@@ -39,32 +41,29 @@ We add a checkbox to the top right of the filter dialog (default ON) for "Dynami
 
 #### Technical Implementation
 
-##### Backend
+The frontend will pass the query to the `public/getcolvals` service in a new input table (`filtertable`) with one column (`filterline`).  The filter query will be split across multiple rows in this table.  No single row will exceed 1000 characters in length.
 
-The service will need to safely validate this input query, to prevent the risk of SQL injection.  It can then be used to filter the returned output.
+The backend will need to extract and safely validate the input query, to prevent the risk of SQL injection.  The query can then be used to filter the returned output.
 
-- [1] Update & document the filter query macro
-- [1] Update the `public/getcolvals` macro to accept the new input table
-- [1] SASjs tests for malicious code injection
-- [0] SASjs tests for very large clause (so that filter query exceeds 50k characters)
-- [1] SASjs tests for accuracy
-- [1] Documentation of the `getcolvals` service and functional user documentation (with screenshots)
+|Developer|Task|Estimate (hours)|
+|---|---|---|
+|Backend|Update & document the filter query macro|4|
+|Backend|Update the `public/getcolvals` service to accept the new input table, validate the query, and handle any errors|4|
+|Backend|SASjs tests for malicious code injection|4|
+|Backend|SASjs tests for very large clause (Valid + invalid queries exceeding 50k characters)|4|
+|Backend|SASjs tests for accuracy of filtered output|4|
+|Backend|Documentation of the `getcolvals` service and functional user documentation (with screenshots)|2|
+|Frontend|Ensure that every filter clause is valid - currently, it is possible for two clauses (or groups) to be invalid whilst they are being worked on.|2|
+|Frontend|Add filter checkbox (default on) for Dynamic Filtering|1|
+|Frontend|Prepare first query, sending to `public/getcolvals`|8|
+|Frontend|Tests covering all operators|4|
+|Frontend|Test for multiple clauses (2 clauses and 4 clauses)|2|
+|Frontend|Test for multiple grouped clauses (2 groups & 4 groups)|2|
+|Frontend|Cypress tests for non logical user behaviour|2|
+|Frontend|JSDoc documentation is improved / updated|1|
 
-
-##### Frontend
-
-Currently when calling the 'public/getcolvals' service we provide a single table (iwant) with two values (libds & col).  This service needs to be extended to include an additional input (filtertable) with one column (filterline).  The filter query will be split across multiple rows in this table.
-
-- [ ] Ensure that every filter clause is valid - currently, it is possible for two clauses to be invalid whilst they are being worked on.
-- [ ] Add filter checkbox (default on) for Dynamic F iltering
-- [ ] Prepare first query, sending to `public/getcolvals`
-- [ ] Tests covering all operators
-- [ ] Test for multiple clauses (up to 6)
-- [ ] Test for multiple grouped clauses
-- [ ] Cypress test to work on several clauses in quick s uccession
-- [ ] JSDoc documentation is improved / updated
-
-
+* Total Backend:  2.75 days
+* Total Frontend: 2.75 days
 
 
 ### Dynamic Cell Validation
@@ -91,25 +90,34 @@ This approach provides maximum flexibility for delivering bespoke values in the 
 
 #### Technical Implementation
 
-Backend:
+The frontend will make requests to SAS whenever a user tries to select a dropdown in a dynamic cell.  The backend will either:
 
-- [0] Two new validation types to be added for MPE_VALIDATIONS in MPE_SELECTBOX
-- [1] `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT
-- [ ] A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic for auto-filtering if no hook script provided
-- [ ] Service Documentation added / updated
-- [ ] User Documentation updated, including screenshots
-- [ ] SASjs unit tests (with / without hook scripts) added to test harness
+* %include the .sas program, if provided
+* %include the SAS code from a web service, if provided
+* perform logic to filter on (remaining) PK values, if no script provided
 
-Frontend:
+The frontend will pause whilst this service runs.  If values are pasted (or imported), the validation will NOT take place.  This would depend on a backend validation, if this case needs to be handled.
 
-- [ ] Prepare hooks for all target cols as defined in the `editors/getdata` response
-- [ ] When in EDIT mode and the user selects the dropdown, call the `editors/get_dynamic_col_vals` service with the currentrow as input
-- [ ] Whilst calling the service, a spinner should be presented and the page frozen
-- [ ] On response, the dropdown is populated, and the service is not triggered again unless another cell in that same row ismodified (so if the user navigates away, and comes back, the service is not necessarily triggered again)
-- [ ] If a user PASTES input (or provides input via Excel upload), then the hook is NOT triggered, even if it is a HARD select(in this case we would rely on backend validation, which is NOT yet implemented)
-- [ ] Prepare tests covering all use cases in the Cypress test suite
-- [ ] New functions are well documented in JSDoc
+The frontend will take an md5() hash of every value in the row (with a separator, the target column will be assigned a blank value) and store this in a global arrray.  This is used as a lookup when fetching values, to see if the record has changed or not.  This event will take place when the user selects the cell (and only that cell).  It will not take place for cells that are pasted / copied in, or for excel uploads.
 
+The last 10 dropdown value lists will be saved.
+
+|Developer|Task|Estimate (hours)|
+|---|---|---|
+|Backend|Two new validation types (SOFTSELECT_HOOK and HARDSELECT_HOOK) to be added for MPE_VALIDATIONS in MPE_SELECTBOX, and in the migration script|1|
+|Backend| The `editors/getdata` service needs to mark those columns that require dynamic dropdowns, and whether they are HARD or SOFT, in a new output table|2|
+|Backend|A new service (`editors/get_dynamic_col_vals`) needs to be created, with logic for auto-filtering if no hook script provided, and logic to extract Service code if no program is provided|16|
+|Backend|Service Documentation added / updated for both services|1|
+|Backend|User Documentation updated, including screenshots|2|
+|Backend|SASjs unit tests added to test harness to cover all three configurations|8|
+|Frontend|Prepare hooks for all target cols as defined in the `editors/getdata` response|2|
+|Frontend|When in EDIT mode and the user selects the cell, take a hash of the values, check this in the array, and if not found - call the `editors/get_dynamic_col_vals` service (non blocking) with the currentrow as table input to SAS.  If found the previous lookup will be presented.|8|
+|Frontend| If a HARD response, the cell will be red if not found.  If SOFT, new values are permitted. The user may type before the response arrives.  If a HARD select then they should not be able to submit unless the values are valid|2|
+|Frontend|Prepare test environment and a series of tests covering all use cases in the Cypress test suite|8|
+|Frontend|New functions are documented in JSDoc, and well explained in the developer docs (with screenshots)|4|
+
+* Backend - 3.75 days
+* Frontend - 3 days
 
 ### Row Level Security
 
@@ -166,17 +174,6 @@ where (var_2 IN ('this','or','that') AND var_3 < 42 )
 
 #### Technical Implementation
 
-The implementation will be entirely backend (no impact to frontend).  Tasks include:
-
-- [ ] Creation of new table using SCD2 for history retention
-- [ ] Inclusion of new table in the build process
-- [ ] Update the migration scripts for customer upgrades
-- [ ] Creation of a macro to formulate the filter clause
-- [ ] Creation of a series of SASjs tests to validate the macro logic
-- [ ] Macro Documentaton
-- [ ] Service Documentation
-- [ ] User Documentation, including screenshots
-
 The following Services will require modification to use the new macro:
 
 * `public/getcolvals`
@@ -187,6 +184,24 @@ The following Services will require modification to use the new macro:
 * `editors/stagedata`
 
 The macro should also be available to developers using hook scripts in `editors/get_dynamic_col_vals`.
+The implementation will be entirely backend (no impact to frontend).
+Tasks include:
+
+|Developer|Task|Estimate (hours)|
+|---|---|---|
+|Backend|Creation of new table using SCD2 for history retention, and inclusion in the build process|1|
+|Backend|Update the migration scripts for customer upgrades|1|
+|Backend|Creation & documentation of a macro to formulate the filter clause|8|
+|Backend|Creation of a series (10-20) of automated SASjs tests to validate the macro logic|12|
+|Backend|Including the macro in all relevant services, and updating the documentation of each|4|
+|Backend|Additional tests to ensure that the updated services are working for user accounts with RLS enabled|8|
+|Backend|User Documentation, including screenshots|4|
+
+
+Estimates:
+
+* Backend: 4.75 days
+
 
 ### Formula Preservation
 
@@ -215,27 +230,22 @@ A new table (MPE_EXCEL_CONFIG) will be added to the data controller library with
 
 The additional configuration table must be provided to the frontend so that any imported Excel files may have the corresponding rules applied.  Formulae will be imported as simple text strings - the target column must therefore be of character type and be fairly wide (at least $64 but preferably wider to avoid formula truncation)
 
-Backend:
-
-- [ ] Creation of new table using SCD2 for history retention
-- [ ] Inclusion of new table in the build process
-- [ ] Update the migration scripts for customer upgrades
-- [ ] Update the `edit/getdata` Service to include a new output table for excel config
-- [ ] Create a post edit hook service to ensure that any new FORMULA fields added do in fact exist, and have character type, with a minimum width of $64
-- [ ] SASjs tests to validate the new service output, and validation logic
-- [ ] Macro Documentaton
-- [ ] Service Documentation
-- [ ] User Documentation, including screenshots
-
-Frontend:
-
-- [ ] Where configured, columns are extracted by formula rather than value
-- [ ] Cypress tests (with corresponding excel files) are created to cover cases such as:  one formula column, 3 formula columns, formula columns where values are not formulas, complex formulas, formatted formulas.
-- [ ] JSDoc documentation is updated
+|Developer|Task|Estimate (hours)|
+|---|---|---|
+|Backend|Creation of new table using SCD2 for history retention & include in the build process|1|
+|Backend|Update the migration scripts for customer upgrades|1|
+|Backend|Update the `edit/getdata` Service to include a new output table for excel config|2|
+|Backend|Create a post edit hook service to ensure that any new FORMULA fields added do in fact exist, and have character type, with a minimum width of $64 4|
+|Backend|SASjs tests to validate the new service output, and validation logic|8|
+|Backend|Service & User Documentation, including screenshots|4|
+|Frontend|Where configured, columns are extracted by formula rather than value|?|
+|Frontend|Cypress tests (with corresponding excel files) are created to cover cases such as:  one formula column, 3 formula columns, formula columns where values are not formulas, complex formulas, formatted formulas.|?|
+|Frontend|JSDoc documentation is updated|?|
 
 
+* Total Backend: 2 days
+* Total Frontend:
 
----
 
 ## Delivered Features
 
