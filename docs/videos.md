@@ -1,17 +1,15 @@
 ---
 layout: article
 title: Data Controller Videos
-description: A collection of videos made in relation to Data Controller.  Some of them were recorded on earlier versions, hence the slight UI differences. 
+description: A collection of videos made in relation to Data Controller.  Some were recorded on earlier versions, hence the UI differences with the current product.
+og_image: https://i.imgur.com/PHQlyUN.png
 ---
 
-<!--meta name="description" content="A collection of videos made in relation to Data Controller.  Some of them were recorded on earlier versions, hence the slight UI differences.  ">
-
-<meta name="title" property="og:title" content="Data Controller Videos"--->
 
 Data Controller Videos
 ====================
 
-A collection of videos made in relation to Data Controller.  Some of them were recorded on earlier versions, hence the slight UI differences.  
+A collection of videos made in relation to Data Controller.  Some of them were recorded on earlier versions, hence the slight UI differences.
 
 
 ## Full Table Search
@@ -32,13 +30,18 @@ Data Controller for SAS® isn't just for editing (and approving) data - it can a
 ## Data Lineage
 Data Lineage is one of the most powerful features of DI Studio generated ETL.  This tool queries it and makes a graphical output to help DI Developers, Data Modellers, and Business Analysts understand the data from both Source to Target and Target to Source.
 
+It is possible to share the URL to any lineage diagram, and export in PNG, SVG and CSV formats.  Lineage can be viewed forwards or backwards.
+
+This feature is only available on the SAS 9 version of Data Controller.
+
 ### Table Level
-Table level lineage shows tables (colour coded per library) and associated jobs (with links to metadata definitions)
+Table level lineage shows tables (colour coded per library) and associated jobs (with links to metadata definitions). The extraction method is built with `proc metadata` and runs extremely fast.
 
 <iframe src="https://player.vimeo.com/video/424504424" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ### Column Level
 Column level lineage shows the transformations and any business logic applied to each variable during the flow.  Data items are distinguished between files, database tables, and SAS datasets.
+The extraction is a little slower than table level lineage due to the additional detail, however the impact is lessened for second and subsequent requests thanks to backend caching.
 
 <iframe src="https://player.vimeo.com/video/383391622" width="640" height="540" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
