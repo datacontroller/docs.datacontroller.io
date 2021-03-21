@@ -1,3 +1,11 @@
+---
+layout: article
+title: Data Validation
+description: Quality in, Quality out! Enforce data quality checks at the point of SAS data entry, both directly via the web interface and also via Excel uploads.
+og_image: https://i.imgur.com/P64ijBB.png
+---
+
+
 # Data Controller for SAS® - DQ Validations
 
 ## Overview
