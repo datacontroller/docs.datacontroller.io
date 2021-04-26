@@ -59,3 +59,18 @@ If you wish to change the default *libref* or *libname* then there are TWO items
 
 !!! note
     Be sure to make this change *after* running the configurator, to ensure the tables are first registered!
+
+
+## Permission is needed to access the ServerContext Object
+
+After a successful install, your business user may see the following message:
+
+![Permission is needed to access the ServerContext object attached to the stored process.](img/error_obtaining_stp.png)
+
+> Error obtaining stored process from repository
+>
+> Permission is needed to access the ServerContext object attached to the stored process.
+
+The reason is that the context chosen when importing the SPK (perhaps, SASApp) is not available to your business user.  It's likely you have multiple contexts.
+
+The SPK must be re-imported with the correct context chosen.  This may require regenerating the tables, or adjusting the permissions, if the new context uses a different system account.
