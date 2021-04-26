@@ -24,7 +24,7 @@ The imported version of Data Controller is set up to work with the Stored Proces
 
 ```
 /* get the macros (or download / %include seperately) */
-filename mc url "https://raw.githubusercontent.com/macropeople/macrocore/master/mc_all.sas";
+filename mc url "https://raw.githubusercontent.com/sasjs/core/main/all.sas";
 %inc mc;
 
 /* put the path to your Data Controller folder here */
