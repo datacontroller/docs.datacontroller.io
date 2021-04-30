@@ -3,6 +3,9 @@
 # PROJECT: Data Controller Docs                                    #
 ####################################################################
 
+# update slides
+npx @marp-team/marp-cli docs/slides/innovation/innovation.md -o ./docs/slides/innovation/index.html
+
 ## Create regular mkdocs docs
 
 echo 'extracting licences'

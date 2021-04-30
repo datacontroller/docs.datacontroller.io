@@ -5,7 +5,7 @@ backgroundColor: white
 theme: default
 
 <!--
-npx @marp-team/marp-cli slides/innovation/innovation.md -o ./theme/slides/innovation.html
+npx @marp-team/marp-cli docs/slides/innovation/innovation.md -o ./docs/slides/innovation.html
 -->
 
 ---
@@ -27,7 +27,7 @@ section img {
 
 _Capturing Business Data_
 
-![bg right:62% height:380](https://datacontroller.io/wp-content/uploads/2020/10/abow.png)![bg right:62% height:380](https://docs.datacontroller.io/img/dc_bg_Asset-5@2x.png)   
+![bg right:62% height:380](https://datacontroller.io/wp-content/uploads/2020/10/abow.png)![bg right:62% height:380](https://docs.datacontroller.io/img/dc_bg_Asset-5@2x.png)
 
 ---
 ![bg right height:600](./innovation2.png)
@@ -60,7 +60,7 @@ _Capturing Business Data_
 ![bg right height:600](./innovation3.png)
 
 # Complementary Products
-- DI Studio 
+- DI Studio
 - DDS Implementations
 - Viya 4
 
@@ -85,7 +85,7 @@ SAS Dev Ops framework
 
 - [@sasjs/core](https://github.com/sasjs/core) - Macro library
 - [@sasjs/adapter](https://github.com/sasjs/adapter) - SAS Connectivity
-- [@sasjs/cli](https://github.com/sasjs/cli) - CI / CD 
+- [@sasjs/cli](https://github.com/sasjs/cli) - CI / CD
 
 ---
 ![bg right height:600](./innovation4.png)
