@@ -22,6 +22,5 @@
     "url": "https://github.com/macropeople/dcdocs.github.io/issues"
   },
   "homepage": "https://docs.datacontroller.io",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
