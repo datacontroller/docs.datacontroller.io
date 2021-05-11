@@ -11,6 +11,25 @@ Data Controller Videos
 
 A collection of videos made in relation to Data Controller.  Some of them were recorded on earlier versions, hence the slight UI differences.
 
+## Explainer Videos
+
+
+### Data Controller - a Customer Story
+An illustration of the utility of Data Controller for Data & Analytics teams in regulated industries.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M8hafkS4zY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Use Case Video - Manual Overrides
+
+A 1 minute video illustrating the value of using of Data Controller to make manual overrides.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iY3KQZL4ok0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Explainer Videos
+A short explainer video showing the core functionality of the product.
+
+<iframe src="https://player.vimeo.com/video/277472582" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
 
 ## Full Table Search
 Data Controller for SAS®  enables full text search on Global CASLIB tables (and SAS 9 tables too)
@@ -72,15 +91,3 @@ In unix environments, when attempting to edit a locked table, users are notified
 
 <iframe src="https://player.vimeo.com/video/293557084" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
-
-## Explainer Video
-
-A short explainer video showing the core functionality of the product.
-
-<iframe src="https://player.vimeo.com/video/277472582" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-
-## Use Case Video
-
-A short, fun cartoon to highlight the value of Data Controller.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iY3KQZL4ok0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

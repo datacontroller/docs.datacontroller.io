@@ -85,10 +85,15 @@ You can make any changes you wish, just be sure that the final table is also cal
 
 ### POST_EDIT_HOOK
 
-The full path / location (unquoted) of a SAS program that will be `%inc`'d after an edit has been made. This program can modify the dataset (`work.staging_ds&x`) that is created in the staging area, which is useful for augmenting data / applying complex DQ rules. If your DQ check means that the program should not be submitted, then simply exit with `syscc > 4` . If you'd like to show a specific message to the user, you can use the following macro:
+The path / location (unquoted) of a SAS Program that is `%include`'d after an edit has been made. The program may be:
+
+* A .sas program on the server directory
+* A SAS 9 Stored Process or Viya Job
+
+This program code can modify the dataset (`work.staging_ds`) that is created in the staging area, which is useful for augmenting data / applying complex DQ rules. If your DQ check means that the program should not be submitted, then simply exit with `syscc > 4` . If you'd like to show a specific message to the user, you can use the following macro:
 
 ```
-%mf_abort(iftrue= (&syscc ne 0) /* if this condition is true, the process will exit */
+%mp_abort(iftrue= (&syscc ne 0) /* if this condition is true, the process will exit */
   ,msg=%str(YOUR MESSAGE GOES HERE)
 )
 ```
