@@ -5,7 +5,7 @@ backgroundColor: white
 theme: default
 
 <!--
-npx @marp-team/marp-cli docs/slides/innovation/innovation.md -o ./docs/slides/innovation.html
+npx @marp-team/marp-cli docs/slides/innovation/innovation.md -o ./docs/slides/innovation/index.html
 -->
 
 ---
@@ -62,7 +62,7 @@ _Capturing Business Data_
 # Complementary Products
 - DI Studio
 - DDS Implementations
-- Viya 4
+- Viya
 
 ---
 ![bg right height:600](./innovation3.png)
