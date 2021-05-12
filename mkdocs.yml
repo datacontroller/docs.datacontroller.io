@@ -13,6 +13,7 @@ nav:
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md
+    - Excel Formulas: excel.md
     - Groups: dcc-groups.md
     - Options: dcc-options.md
     - Security: dcc-security.md
