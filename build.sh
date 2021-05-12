@@ -4,7 +4,7 @@
 ####################################################################
 
 # update slides
-npx @marp-team/marp-cli docs/slides/innovation/innovation.md -o ./docs/slides/innovation/index.html
+npx @marp-team/marp-cli slides/innovation/innovation.md -o ./docs/slides/innovation/index.html
 
 ## Create regular mkdocs docs
 
@@ -27,7 +27,7 @@ license-checker --production --relativeLicensePath --direct --start ../dcfronten
 echo '```' >> docs/licences.md
 
 echo 'building mkdocs'
-mkdocs build --clean
+python3 -m mkdocs build --clean
 
 #mkdocs serve
 

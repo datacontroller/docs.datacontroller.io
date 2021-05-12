@@ -5,10 +5,11 @@ nav:
 - User Guide:
     - Overview: dc-overview.md
     - DC User Guide: dc-userguide.md
-    - File Uploads: dcu-fileupload.md
-    - Table Viewer: dcu-tableviewer.md
-    - Data Lineage: dcu-lineage.md
     - Data Catalog: dcu-datacatalog.md
+    - Data Lineage: dcu-lineage.md
+    - File Uploads: dcu-fileupload.md
+    - Filter Mechanism: filter.md
+    - Table Viewer: dcu-tableviewer.md
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
     - Emails: emails.md

@@ -86,6 +86,7 @@ Unzip the frontend into `/var/www/html` directory of the SAS Web Server.  Open `
 
 - `appLoc` attribute - this should point to the root folder on SAS Drive where the Job Execution services will be created.
 - `contextName` attribute - here you should put the compute context that you created in the earlier step.
+- `dcPath` attribute - ensures auto deploy to this physical location on the filesystem.
 
 ### Deploy backend
 The services can be deployed using a hidden menu in Data Controller.  Navigate to the app, and add `/deploy` to the url.
