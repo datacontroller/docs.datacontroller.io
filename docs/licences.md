@@ -5,14 +5,6 @@
 Data Controller source licences are extracted automatically from our repo using the [license-checker](https://www.npmjs.com/package/license-checker) NPM module
 
 ```
-```
-
-└─ datacontroller@3.11.0
-   ├─ licenses: UNLICENSED
-   ├─ private: true
-   ├─ path: ../dcfrontend
-   └─ licenseFile: licence.md
-
 ├─ @angular/animations@11.2.7
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/angular/angular
@@ -99,14 +91,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/npm/move-file
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/@npmcli/move-file
 │  └─ licenseFile: node_modules/@npmcli/move-file/LICENSE.md
-├─ @sasjs/adapter@2.2.13
+├─ @sasjs/adapter@2.2.17
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/sasjs/adapter
 │  ├─ publisher: Allan Bowe
 │  ├─ email: support@macropeople.com
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/@sasjs/adapter
 │  └─ licenseFile: node_modules/@sasjs/adapter/LICENSE
-├─ @sasjs/utils@2.10.1
+├─ @sasjs/utils@2.12.1
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/sasjs/utils
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/@sasjs/utils
@@ -171,7 +163,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/@types/pikaday
 │  └─ licenseFile: node_modules/@types/pikaday/LICENSE
-├─ @types/prompts@2.0.10
+├─ @types/prompts@2.0.11
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/DefinitelyTyped/DefinitelyTyped
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/@types/prompts
@@ -337,6 +329,22 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: vaibhavbansal1993@gmail.com
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/angular-prism
 │  └─ licenseFile: node_modules/angular-prism/README.MD
+├─ ansi-regex@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/ansi-regex
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/ansi-regex
+│  └─ licenseFile: node_modules/ansi-regex/license
+├─ ansi-styles@2.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/ansi-styles
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/ansi-styles
+│  └─ licenseFile: node_modules/ansi-styles/license
 ├─ anymatch@3.1.1
 │  ├─ licenses: ISC
 │  ├─ repository: https://github.com/micromatch/anymatch
@@ -518,6 +526,11 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: kzm@sykosomatic.org
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/cacache
 │  └─ licenseFile: node_modules/cacache/LICENSE.md
+├─ chalk@1.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/chalk
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/chalk
+│  └─ licenseFile: node_modules/chalk/license
 ├─ chokidar@3.5.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/paulmillr/chokidar
@@ -554,6 +567,13 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: sindresorhus.com
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/clean-stack
 │  └─ licenseFile: node_modules/clean-stack/license
+├─ cli-table@0.3.6
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/Automattic/cli-table
+│  ├─ publisher: Guillermo Rauch
+│  ├─ email: guillermo@learnboost.com
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/cli-table
+│  └─ licenseFile: node_modules/cli-table/README.md
 ├─ clipboard@2.0.8
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/zenorocha/clipboard.js
@@ -572,6 +592,12 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ publisher: SheetJS
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/codepage
 │  └─ licenseFile: node_modules/codepage/LICENSE
+├─ colors@1.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Marak/colors.js
+│  ├─ publisher: Marak Squires
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/colors
+│  └─ licenseFile: node_modules/colors/LICENSE
 ├─ combined-stream@1.0.8
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/felixge/node-combined-stream
@@ -749,7 +775,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://bost.ocks.org/mike
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/d3-zoom
 │  └─ licenseFile: node_modules/d3-zoom/LICENSE
-├─ datacontroller@3.11.0
+├─ datacontroller@3.12.0
 │  ├─ licenses: UNLICENSED
 │  ├─ private: true
 │  ├─ path: ../dcfrontend
@@ -830,6 +856,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/rvagg/node-errno
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/errno
 │  └─ licenseFile: node_modules/errno/README.md
+├─ escape-string-regexp@1.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/escape-string-regexp
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/escape-string-regexp
+│  └─ licenseFile: node_modules/escape-string-regexp/license
 ├─ eslint-scope@4.0.3
 │  ├─ licenses: BSD-2-Clause
 │  ├─ repository: https://github.com/eslint/eslint-scope
@@ -908,7 +942,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: https://ruben.verborgh.org/
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/follow-redirects
 │  └─ licenseFile: node_modules/follow-redirects/LICENSE
-├─ form-data@3.0.1
+├─ form-data@4.0.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/form-data/form-data
 │  ├─ publisher: Felix Geisendörfer
@@ -990,6 +1024,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ email: hello@handsontable.com
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/handsontable
 │  └─ licenseFile: node_modules/handsontable/LICENSE.txt
+├─ has-ansi@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/has-ansi
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/has-ansi
+│  └─ licenseFile: node_modules/has-ansi/license
 ├─ has@1.0.3
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/tarruda/has
@@ -1656,7 +1698,7 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ url: http://re-becca.org/
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/promise-inflight
 │  └─ licenseFile: node_modules/promise-inflight/LICENSE
-├─ prompts@2.4.0
+├─ prompts@2.4.1
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/terkelg/prompts
 │  ├─ publisher: Terkel Gjervig
@@ -1904,6 +1946,14 @@ Data Controller source licences are extracted automatically from our repo using 
 │  ├─ repository: https://github.com/nodejs/string_decoder
 │  ├─ path: /Users/munja/git/dcfrontend/node_modules/string_decoder
 │  └─ licenseFile: node_modules/string_decoder/LICENSE
+├─ strip-ansi@3.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/strip-ansi
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /Users/munja/git/dcfrontend/node_modules/strip-ansi
+│  └─ licenseFile: node_modules/strip-ansi/license
 ├─ supports-color@2.0.0
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/chalk/supports-color
@@ -2158,3 +2208,4 @@ Data Controller source licences are extracted automatically from our repo using 
    ├─ path: /Users/munja/git/dcfrontend/node_modules/zone
    └─ licenseFile: node_modules/zone/LICENSE.md
 
+```
