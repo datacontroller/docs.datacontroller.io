@@ -12,6 +12,7 @@ nav:
     - Table Viewer: dcu-tableviewer.md
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
+    - Dynamic Cell Selects: dynamic-cell-selects.md
     - Emails: emails.md
     - Excel Formulas: excel.md
     - Groups: dcc-groups.md

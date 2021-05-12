@@ -73,7 +73,7 @@ Leave blank if not required.
 
 ### PRE_EDIT_HOOK
 
-The full path / location (unquoted) of a SAS program to execute prior to an edit being made. This allows a particular view of a table to be presented to a user for editing (eg masking columns, removing rows etc). Leave blank if not required.
+The full path / location (unquoted) of a SAS program (or Viya Job, SAS 9 Stored Process) to execute prior to an edit being made. This allows a particular view of a table to be presented to a user for editing (eg masking columns, removing rows etc). Leave blank if not required.
 
 #### SAS Developer Notes
 The PRE_EDIT_HOOK program will be `%inc`'d after the data has already been extracted.  A table called `work.out` will be available that has all the same columns (in the same order) as that shown on the EDIT screen on the frontend.  The observations will have been sorted on the [BUSKEY](#buskey).  The surrounding code looks like this:
@@ -102,12 +102,12 @@ Leave blank if not required.
 
 ### PRE_APPROVE_HOOK
 
-The full path / location (unquoted) of a SAS program that will be `%inc`'d before an approval diff is generated. This modifies the value that is presented to an approver on the approve screen, and can be helpful in terms of ensuring that information is presented in way that can be easily consumed by approvers.
+The full path / location (unquoted) of a SAS program (or Viya Job, SAS 9 Stored Process) that will be `%inc`'d before an approval diff is generated. This modifies the value that is presented to an approver on the approve screen, and can be helpful in terms of ensuring that information is presented in way that can be easily consumed by approvers.
 Leave blank if not required.
 
 ### POST_APPROVE HOOK
 
-The full path / location (unquoted) of a SAS program that will be `%inc`'d after an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.
+The full path / location (unquoted) of a SAS program (or Viya Job, SAS 9 Stored Process) that will be `%inc`'d after an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.
 Leave blank if not required.
 
 ### SIGNOFF_COLS

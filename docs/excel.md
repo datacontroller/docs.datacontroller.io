@@ -22,5 +22,9 @@ Once this is done, you are ready to upload:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Reg803vI2Ak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+The final table will look like this:
+
+![](img/excel_results.png)
+
 If you would like further integrations / support with excel uploads, we are happy to discuss new features.  Just [get in touch](https://datacontroller.io/contact).
 

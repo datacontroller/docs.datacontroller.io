@@ -27,6 +27,9 @@ license-checker --production --relativeLicensePath --direct --start ../dcfronten
 echo '```' >> docs/licences.md
 
 echo 'building mkdocs'
+pip3 install mkdocs
+pip3 install mkdocs-material
+pip3 install fontawesome_markdown
 python3 -m mkdocs build --clean
 
 #mkdocs serve
