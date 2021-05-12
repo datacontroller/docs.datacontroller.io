@@ -40,7 +40,7 @@ The following should be considered when uploading data in this way:
     - underscore
 
 When loading dates, be aware that Data Controller makes use of the `ANYDTDTE` and `ANYDTDTTME` informats (width 19).
-This means that uploaded date / datetime values should be unambiguous (eg `01FEB1942` vs `01/02/42`) to avoid confusion - as the latter could be interpreted as `02JAN2042` depending on your locale and options `YEARCUTOFF` settings.  Note that UTC dates with offset values (eg `2018-12-26T09:19:25.123+0100`) are not currently supported.  If this is a feature you would like to see, contact us.
+This means that uploaded date / datetime values should be unambiguous (eg `01FEB1942` vs `01/02/42`), to avoid confusion - as the latter could be interpreted as `02JAN2042` depending on your locale and options `YEARCUTOFF` settings.  Note that UTC dates with offset values (eg `2018-12-26T09:19:25.123+0100`) are not currently supported.  If this is a feature you would like to see, contact us.
 
 !!! tip
     To get a copy of a file in the right format for upload, use the [file download](/dc-userguide/#usage) feature in the Viewer tab
