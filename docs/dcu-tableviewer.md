@@ -4,6 +4,12 @@ The viewer screen provides a raw view of the underlying table.
 Choose a library, then a table, and click view to see the first 5000 rows.
 A filter option is provided should you wish to view a different section of rows.
 
+## Full Table Search
+
+A single search box can be used to make a full table search on any character or numeric value, using this [macro](https://core.sasjs.io/mp__searchdata_8sas.html).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i27w-xq85WQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Options
 
 This button shows a range of options.  If the table is editable, you will also see a EDIT option.
