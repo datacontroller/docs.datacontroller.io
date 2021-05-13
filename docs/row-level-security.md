@@ -9,6 +9,8 @@ og_image:  img/rls_table.png
 
 Row level security is implemented through the configuration of filter queries, that are applied at backend.  This provides a very flexible way to restrict rows - you can restrict rows for any table in SAS, be that a dataset or a database.
 
+![](img/rls_table.png)
+
 ## Configuration
 
 The columns in MPE_ROW_LEVEL_SECURITY should be configured as follows:
@@ -40,15 +42,15 @@ This is the name of the variable against which a filter value will be applied
 ### RLS_OPERATOR
 The available operator will depend on whether the column is character or numeric.  Example values:
 
-* =
-* <
-* >
-* <=
-* >=
-* BETWEEN
-* CONTAINS
-* NE (not equal)
-* NOT IN
+* `=`
+* `<`
+* `>`
+* `<=`
+* `>=`
+* `BETWEEN`
+* `CONTAINS`
+* `NE` (not equal)
+* `NOT IN`
 
 ### RLS_RAW_VALUE
 
@@ -68,8 +70,8 @@ If you would like this rule to be applied, be sure this value is set to 1.
 ## Example Config
 Example values as follows:
 
-RLS_SCOPE:$4|RLS_GROUP:$64|RLS_LIBREF:$8| RLS_TABLE:$32|RLS_GROUP_LOGIC:$3.|RLS_SUBGROUP_LOGIC:$3.|RLS_SUBGROUP_ID:8.|RLS_VARIABLE_NM:$32| RLS_OPERATOR_NM:$16| RLS_RAW_VALUE:$4000|RLS_ACTIVE:8.|
-|---|---|---|---|---|---|---|---|
+|RLS_SCOPE:$4|RLS_GROUP:$64|RLS_LIBREF:$8| RLS_TABLE:$32|RLS_GROUP_LOGIC:$3.|RLS_SUBGROUP_LOGIC:$3.|RLS_SUBGROUP_ID:8.|RLS_VARIABLE_NM:$32| RLS_OPERATOR_NM:$16| RLS_RAW_VALUE:$4000|RLS_ACTIVE:8.|
+|---|---|---|---|---|---|---|---|---|---|---|
 |EDIT|Group 1|MYLIB|MYDS|AND|AND|1|VAR_1|=|Some text value|1|
 |ALL|Group 1|MYLIB|MYDS|AND|AND|1|VAR_2|IN|this|1|
 |ALL|Group 1|MYLIB|MYDS|AND|AND|1|VAR_2|IN|or|1|
