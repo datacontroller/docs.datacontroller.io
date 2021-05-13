@@ -1,11 +1,11 @@
 ---
 layout: article
-title: Dynamic Cell Selects
+title: Dynamic Cell Dropdown
 description: Configure SAS programs to determine exactly which values can appear within which cells in your Data Controller table!
 og_image:  img/cell_validation1.png
 ---
 
-# Dynamic Cell Selects
+# Dynamic Cell Dropdown
 
 This is a simple, but incredibly powerful feature!  Configure a SAS process to run when clicking a particular cell.  Data Controller will send the *row* to SAS, and your SAS program can use the values in the row determine a *column* of values to send back - which will be used in the frontend selectbox.
 
@@ -30,7 +30,7 @@ Example code:
 ```sas
 /**
   @file
-  @brief dynamic cell validation for product code
+  @brief dynamic cell dropdown for product code
   @details The input table is simply one row from the
   target table called "work.source_row".
 

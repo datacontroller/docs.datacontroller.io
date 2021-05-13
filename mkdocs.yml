@@ -12,11 +12,12 @@ nav:
     - Table Viewer: dcu-tableviewer.md
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
-    - Dynamic Cell Selects: dynamic-cell-selects.md
+    - Dynamic Cell Dropdown: dynamic-cell-dropdown.md
     - Emails: emails.md
     - Excel Formulas: excel.md
     - Groups: dcc-groups.md
     - Options: dcc-options.md
+    - Row Level Security: row-level-security.md
     - Security: dcc-security.md
     - Selectboxes: dcc-selectbox.md
     - Tables: dcc-tables.md
