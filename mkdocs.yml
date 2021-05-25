@@ -46,9 +46,6 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins:
-  - search:
-      prebuild_index: true
 
 extra:
   manifest: manifest.webmanifest
@@ -70,4 +67,10 @@ theme:
     code: 'Ubuntu Mono'
   favicon: img/favicon.ico
   custom_dir: 'theme'
+  highlightjs: true
+  hljs_languages:
+    - SAS
+    - JavaScript
+    - Bash
+
 copyright: All rights reserved &copy;2021 Macro People Ltd.
