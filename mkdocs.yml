@@ -42,7 +42,6 @@ markdown_extensions:
   - admonition
   - pymdownx.superfences
   - codehilite
-  - fontawesome_markdown
   - meta
   - toc:
       permalink: true
@@ -67,4 +66,4 @@ theme:
     code: 'Ubuntu Mono'
   favicon: img/favicon.ico
   custom_dir: 'theme'
-copyright: All rights reserved &copy;2020 Macro People Ltd.
+copyright: All rights reserved &copy;2021 Macro People Ltd.
