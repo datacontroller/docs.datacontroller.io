@@ -46,6 +46,10 @@ markdown_extensions:
   - toc:
       permalink: true
 
+plugins:
+  - search:
+      prebuild_index: true
+
 extra:
   manifest: manifest.webmanifest
 
