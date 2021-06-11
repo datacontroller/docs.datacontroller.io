@@ -32,7 +32,7 @@ A database that supports concurrent access is recommended.
 ## Deployment Process
 ### 1 - Import SPK
 
-Import `/sas/import.spk` using SAS Management Console or DI Studio.  Make a note of the root metadata folder location in which this was imported - as this will be added to the `appLoc` value in the `index.html` file in the [frontend](#frontend) deployment later.
+Import `/sas/import.spk` using SAS Management Console or DI Studio.  Make a note of the root metadata folder location in which this was imported - as this will be added to the `appLoc` value in the `index.html` file in the [frontend](#3-deploy-the-frontend) deployment later.
 
 When importing the library, provide the physical path in which the Staging Area should be created.  The next step will use this path to create the directory.  Make sure that the SAS Spawned Server account (eg `sassrv`) has WRITE access to this location
 
@@ -45,7 +45,7 @@ You will be provided with a list of groups.  Choose the group that you would lik
 !!! note
     Anyone in this admin group will have unrestricted access to Data Controller!
 
-After you click submit, the stored process will run, configure the staging area and create the library tables (as datasets).
+After you click submit, the Stored Process will run, configure the staging area and create the library tables (as datasets).
 
 At this point you can already open the app (demo version).
 
@@ -54,7 +54,7 @@ The Data Controller frontend comes pre-built, and ready to deploy to the root of
 
 Deploy as follows:
 
-1 - Unzip dcfrontend.zip and upload the entire `datacontroller` directory to the static content server (htdocs folder).
+1 - Unzip `dcfrontend.zip` and upload the entire `datacontroller` directory to the static content server (htdocs folder).
 
 2 - Open the `index.html` file and update the `appLoc` value to the location where the Stored Processes were deployed earlier.
 
@@ -77,13 +77,13 @@ Nothing needs to be deployed or modified on the client device.  We support a wid
 
 ### SAS Mid Tier
 
-The front end is deployed to the SAS Web Server as described [above](/dci-deploysas9/#frontend).  This requires making a dedicated public folder in the htdocs directory.
+The front end is deployed to the SAS Web Server as described [above](/dci-deploysas9/#3-deploy-the-frontend).  This requires making a dedicated public folder in the htdocs directory.
 
 ### SAS Application Server
 
 Given the enhanced permissions needed of the system account, a dedicated / secured STP instance is recommended as described [here](/dci-stpinstance).
 
-All deployments of Data Controller also make use of a staging directory.  This is used to store CSV and Excel files as uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account (eg sassrv) requires access to this directory.
+All deployments of Data Controller also make use of a staging directory.  This is used to store CSV and Excel files as uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account (eg `sassrv`) requires access to this directory.
 
 A typical small deployment will grow by a 10-20 mb each month.  A very large enterprise customer, with 100 or more editors, might generate up to 1 GB or so per month, depending on the size and frequency of the Excel EUCs and CSVs being uploaded.  Web modifications are restricted only to modified rows, so are typically just a few kb in size.
 
