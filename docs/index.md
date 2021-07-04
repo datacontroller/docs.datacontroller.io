@@ -1,3 +1,10 @@
+---
+layout: article
+title: DC Docs
+description: The Data Controller for SAS® enables users to self serve their data changes, and for data owners to retain control over those updates by reviewing and approving them
+og_title: Data Controller Documentation
+og_image: /img/edit_approve_audit.png
+---
 # Data Controller Documentation
 
 ## Overview
@@ -35,5 +42,4 @@ Data Controller is regularly updated with new features.  If you see something th
 * Dynamic [cell dropdown](/dynamic-cell-dropdown)
 
 
-<meta name="title" property="og:title" content="Data Controller Documentation">
-<meta property='og:description' content='The Data Controller for SAS® enables users to self serve their data changes, and for data owners to retain control over those updates by reviewing and approving them.'/>
+
