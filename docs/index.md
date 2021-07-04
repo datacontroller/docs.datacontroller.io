@@ -30,6 +30,9 @@ Data Controller is regularly updated with new features.  If you see something th
 * Role based security - editors, approvers, administrators
 * Data Models supported:  SCD2, Bitemporal, composite keys, retained keys, update and full replace
 * Email Alerts for data changes
+* [Row Level Security](/row-level-security)
+* Excel [formula support](excel)
+* Dynamic [cell dropdown](/dynamic-cell-dropdown)
 
 
 <meta name="title" property="og:title" content="Data Controller Documentation">
