@@ -31,7 +31,7 @@ The target table against which the rule will be applied
 When creating multiple subgroups (identified by SUBGROUP_ID) this determines whether those groups are joined using an AND, or an OR condition.  This value should be the same for the entire query (unique per RLS_SCOPE/RLS_GROUP/RLS_LIBREF/RLS_TABLE combination).
 
 ### RLS_SUBGROUP_LOGIC
-This determines the how individual clauses are joined at subgroup level (identified by SUBGROUP_ID).  The logic and be AND, or OR.
+This determines how individual clauses are joined at subgroup level (identified by SUBGROUP_ID).  Valid values: AND, OR.
 
 ### RLS_SUBGROUP_ID
 This variable is an integer, and used to divide a complex filter into numerous subgroups.
