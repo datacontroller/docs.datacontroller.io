@@ -45,8 +45,9 @@ Data Controller deployment is split between 3 deployment types:
 * Full Version (manual deploy)
 * Full Version (automated deploy)
 
-
+<!--
 ## Full Version - Manual Deploy
+-->
 
 There are three main parts to this proces:
 
@@ -69,6 +70,9 @@ We strongly recommend a dedicated compute context for running Data Controller.  
         * reuseServerProcesses: true
         * runServerAs: {{the account set up [earlier](#system-account)}}
 * Save and exit
+
+!!! note
+    XCMD is NOT required to use Data Controller.
 ### Deploy frontend
 
 Unzip the frontend into your chosen directory (eg `/var/www/html/DataController`) on the SAS Web Server.  Open `index.html` and update the following inside `dcAdapterSettings`:
@@ -83,7 +87,7 @@ Unzip the frontend into your chosen directory (eg `/var/www/html/DataController`
 
 ![Updating index.html](img/viyadeployindexhtml.png)
 
-Now, open YOURSERVER/DataController (using whichever subfolder you deployed to above) using an account that has the SAS privileges to write to the `appLoc` location.
+Now, open https://YOURSERVER/DataController (using whichever subfolder you deployed to above) using an account that has the SAS privileges to write to the `appLoc` location.
 
 You will be presented with a deployment screen like the one below.  Be sure to check the "Recreate Database" option and then click the "Deploy" button.
 
@@ -116,11 +120,8 @@ To explain each of these lines:
 * `DC_STAGING_AREA` should point to the location on the filesystem where the staging files and logs are be stored
 * The final libname statement can also be configured to point at a database instead of a BASE engine directory (contact us for DDL)
 
-!!! note
-    XCMD is NOT required to use Data Controller.
-
 If you have additional libraries that you would like to use in Data Controller, they should also be defined here.
-
+<!--
 ## Full Version - Automated Deploy
 
 The automated deploy makes use of the SASjs CLI to create the dependent context and job execution services.  In addition to the standard prerequisites (a registered viya system account and a prepared database) you will also need:
@@ -170,11 +171,4 @@ The deployment script will run on a build server (or local desktop) and execute 
 # Create the SAS Viya Target
 sasjs context create --source myContext.json --target myTarget
 ```
-
-
-
-
-
-
-
-
+-->
