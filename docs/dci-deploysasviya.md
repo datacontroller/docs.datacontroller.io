@@ -18,7 +18,7 @@ A database that supports concurrent access is highly recommended.
 Data Controller makes use of a system account for performing backend data updates and writing to the staging area.  This needs to be provisioned in advance using the Viya admin-cli.  The process is well described here:  [https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992](https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992)
 
 ### Database
-We strongly recommend that the Data Controller configuration tables are stored in a database for concurrency reasons, however it is also possible to use a BASE engine library.
+Whilst we do recommend that Data Controller configuration tables are stored in a database for concurrency reasons, it is also possible to use a BASE engine library, which is adequate if you only have a few users.
 
 Let us know which database you are using and we will provide the DDL. We have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.
 
@@ -28,14 +28,14 @@ Simply run the provided DDL script to create the tables and initial configuratio
     "Modify schema" privileges are not required.
 
 ### Staging Directory
-All deployments of Data Controller make use of a staging directory.  This is used to store CSV and Excel files as uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account requires access to this directory.
-A typical small deployment will grow by a 10-20 mb each month.  A very large enterprise customer, with 100 or more editors, might generate up to 1 GB or so per month, depending on the size and frequency of the Excel EUCs and CSVs being uploaded.  Web modifications are restricted only to modified rows, so are typically just a few kb in size.
+All deployments of Data Controller make use of a physical staging directory.  This is used to store logs, as well as CSV and Excel files uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account requires access to this directory.
+A typical small deployment will grow by a 5-10 mb each month.  A very large enterprise customer, with 100 or more editors, might generate up to 0.5 GB or so per month, depending on the size and frequency of the Excel EUCs and CSVs being uploaded.  Web modifications are restricted only to modified rows, so are typically just a few kb in size.
 
 ## Deployment Diagram
 
 The below areas of the SAS Viya platform are modified when deploying Data Controller:
 
-<img src="/img/dci_deploymentdiagramviya.svg" height="350" style="border:3px solid black" >
+<img src="img/dci_deploymentdiagramviya.svg" height="350" style="border:3px solid black" >
 
 
 ## Deployment
@@ -47,6 +47,13 @@ Data Controller deployment is split between 3 deployment types:
 
 
 ## Full Version - Manual Deploy
+
+There are three main parts to this proces:
+
+1.  Create the Compute Context
+2.  Deploy Frontend
+2.  Deploy Backend
+3.  Update the Compute Context autoexec
 
 ### Create Compute Context
 
@@ -60,8 +67,40 @@ We strongly recommend a dedicated compute context for running Data Controller.  
     * Launcher Context
     * Attribute pairs:
         * reuseServerProcesses: true
-        * runServerAs: {{the account set up earlier}}
-* Now switch to the Advanced tab and enter the following autoexec statements:
+        * runServerAs: {{the account set up [earlier](#system-account)}}
+* Save and exit
+### Deploy frontend
+
+Unzip the frontend into your chosen directory (eg `/var/www/html/DataController`) on the SAS Web Server.  Open `index.html` and update the following inside `dcAdapterSettings`:
+
+- `appLoc` - this should point to the root folder on SAS Drive where you would like the Job Execution services to be created.  This folder should initially, NOT exist (if it is found, the backend will not be deployed)
+- `contextName` - here you should put the name of the compute context you created in the previous step.
+- `dcPath` - the physical location on the filesystem to be used for staged data.  This is only used at deployment time, it can be configured later in `$(appLoc)/services/settings.sas` or in the autoexec if used.
+- `adminGroup` - the name of an existing group, which should have unrestricted access to Data Controller.  This is only used at deployment time, it can be configured later in `$(appLoc)/services/settings.sas` or in the autoexec if used.
+- `servertype` - should be SASVIYA
+- `debug` - can stay as `false` for performance, but could be switched to `true` for debugging startup issues
+- `useComputeApi` - use `true` for best performance.
+
+![Updating index.html](img/viyadeployindexhtml.png)
+
+Now, open YOURSERVER/DataController (using whichever subfolder you deployed to above) using an account that has the SAS privileges to write to the `appLoc` location.
+
+You will be presented with a deployment screen like the one below.  Be sure to check the "Recreate Database" option and then click the "Deploy" button.
+
+![viya deploy](img/viyadeployauto.png)
+
+Your services are deployed!  And the app is operational, albeit still a little sluggish, as every single request is using the APIs to fetch the content of the `$(appLoc)/services/settings.sas` file.
+
+To improve responsiveness by another 700ms we recommend you take the subsequent step below.
+### Update Compute Context Autoexec
+
+First, open the `$(appLoc)/services/settings.sas` file in SAS Studio, and copy the code.
+
+Then, open SASEnvironment Manager, select Contexts, View Compute Contexts, and open the context we created earlier.
+
+Switch to the Advanced tab and paste in the SAS code copied from SAS Studio above.
+
+It will look similar to:
 
 ```
 %let DC_LIBREF=DCDBVIYA;
@@ -73,30 +112,14 @@ libname &dc_libref {{YOUR DC DATABASE}};
 To explain each of these lines:
 
 * `DC_LIBREF` can be any valid 8 character libref.
-* `DC_ADMIN_GROUP` is the name of a group which will be granted unrestricted access to Data Controller
-* `DC_STAGING_AREA` should point to a location on the filesystem (this is where the staging files and logs will be stored)
-* The final libname statement should be configured to point at the database that was figured in [prerequisites](#prerequisites)
+* `DC_ADMIN_GROUP` is the name of the group which will have unrestricted access to Data Controller
+* `DC_STAGING_AREA` should point to the location on the filesystem where the staging files and logs are be stored
+* The final libname statement can also be configured to point at a database instead of a BASE engine directory (contact us for DDL)
 
 !!! note
     XCMD is NOT required to use Data Controller.
 
-### Deploy frontend
-
-Unzip the frontend into `/var/www/html` directory of the SAS Web Server.  Open `index.html` and update the following:
-
-- `appLoc` attribute - this should point to the root folder on SAS Drive where the Job Execution services will be created.
-- `contextName` attribute - here you should put the compute context that you created in the earlier step.
-- `dcPath` attribute - ensures auto deploy to this physical location on the filesystem.
-
-### Deploy backend
-The services can be deployed using a hidden menu in Data Controller.  Navigate to the app, and add `/deploy` to the url.
-
-You are then presented with some options:
-
-1 - choose your context
-2 - click "deploy" to deploy the backend services
-
-You can now launch the application!
+If you have additional libraries that you would like to use in Data Controller, they should also be defined here.
 
 ## Full Version - Automated Deploy
 
