@@ -35,7 +35,7 @@ A typical small deployment will grow by a 5-10 mb each month.  A very large ente
 
 The below areas of the SAS Viya platform are modified when deploying Data Controller:
 
-<img src="img/dci_deploymentdiagramviya.svg" height="350" style="border:3px solid black" >
+<img src="/img/dci_deploymentdiagramviya.svg" height="350" style="border:3px solid black" >
 
 
 ## Deployment
