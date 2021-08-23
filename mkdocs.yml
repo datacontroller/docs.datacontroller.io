@@ -10,6 +10,7 @@ nav:
     - File Uploads: dcu-fileupload.md
     - Filter Mechanism: filter.md
     - Table Viewer: dcu-tableviewer.md
+    - Admin Services: admin-services.md
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
     - Dynamic Cell Dropdown: dynamic-cell-dropdown.md
@@ -25,10 +26,10 @@ nav:
 - Macros: macros.md
 - Installation:
     - System Requirements: dci-requirements.md
-    - SAS 9 Deploy: dci-deploysas9.md
     - SAS Viya Deploy: dci-deploysasviya.md
+    - SAS 9 Deploy: dci-deploysas9.md
+    - SAS 9 Dedicated STP: dci-stpinstance.md
     - Troubleshooting: dci-troubleshooting.md
-    - Dedicated STP: dci-stpinstance.md
 - Evaluation (Demo) Version:
     - Installation: dci-evaluation.md
 - Legal:
