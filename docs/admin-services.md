@@ -15,7 +15,8 @@ Several web services have been defined to provide additional functionality outsi
 
 To illustrate the above with an example:
 
-https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/dc/services/admin/exportconfig
+[https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQLg](https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL
+)
 
 * `$SERVERURL` = `https://sas.analytium.co.uk`
 * `$EXECUTOR` = `SASJobExecution`
@@ -24,14 +25,14 @@ https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/dc/services/ad
 
 The below sections will only describe the `$SERVICE` component - you may construct this into a URL as follows:
 
-> $SERVERURL/$EXECUTOR?_program=$APPLOC/$SERVICE
+* `$SERVERURL/$EXECUTOR?_program=$APPLOC/$SERVICE`
 
 ## Export Config
 
 This service will provide a zip file containing the current database configuration. This is useful for migrating to a different data controller database instance.
 
 EXAMPLE:
-> services/admin/exportconfig
+* `services/admin/exportconfig`
 
 ## Export Database
 Exports the data controller control library in DB specific DDL.  The following URL parameters may be added:
@@ -40,8 +41,8 @@ Exports the data controller control library in DB specific DDL.  The following U
 * &schema= (optional, if target schema is needed)
 
 EXAMPLES:
-> services/admin/exportdb&flavour=PGSQL&schema=DC
-> services/admin/exportdb&flavour=PGSQL
+* `services/admin/exportdb&flavour=PGSQL&schema=DC`
+* `services/admin/exportdb&flavour=PGSQL`
 
 ## Refresh Catalog
 Refreshes the Data Controller data catalog.  The model is stored in SCD2 so it's a great way to track changes over time!  The process can take a long time if you have a lot of tables - if a library crashes, you can exclude it from the refresh process by adding pipe-separated LIBREFs to the DCXXXX.MPE_CONFIG table (var_scope='DC_CATALOG', var_name='DC_IGNORELIBS').
@@ -51,5 +52,5 @@ The following params can be added:
 * &libref (optional) to run the process for just one library.
 
 EXAMPLES:
-> services/admin/refreshcatalog
-> services/admin/refreshcatalog&libref=MYLIB
+* `services/admin/refreshcatalog`
+* `services/admin/refreshcatalog&libref=MYLIB`
