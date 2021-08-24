@@ -13,15 +13,17 @@ Several web services have been defined to provide additional functionality outsi
 * APPLOC -> The root folder location in which the Data Controller backend services were deployed
 * SERVICE -> The actual Data Controller service being described.  May include additional parameters.
 
-To illustrate the above with an example:
+To illustrate the above, consider the following URL:
 
 [https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQLg](https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL
 )
 
+This is broken down into:
+
 * `$SERVERURL` = `https://sas.analytium.co.uk`
 * `$EXECUTOR` = `SASJobExecution`
 * `$APPLOC` = `/Public/app/dc`
-* `$SERVICE` = `services/admin/exportconfig`
+* `$SERVICE` = `services/admin/exportdb&flavour=PGSQL`
 
 The below sections will only describe the `$SERVICE` component - you may construct this into a URL as follows:
 
