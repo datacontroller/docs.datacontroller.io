@@ -18,6 +18,8 @@ Data Controller Macros
 * POSTGRES
 * NETEZZA
 * ORACLE
+* REDSHIFT
+* OLEDB
 
 Native pass through is also available for optimised data loads in the following engines:
 
