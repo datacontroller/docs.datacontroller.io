@@ -85,8 +85,8 @@ The following columns should be provided:
 
 Example Values:
 
-|DISPLAY_INDEX:best.|EXTRA_COL_NAME:$32.DISPLAY_VALUE:$|DISPLAY_TYPE:$1.|RAW_VALUE_NUMRAW_VALUE_CHAR:$5000|FORCED_VALUE|
-|---|---|---|---|
+|DISPLAY_INDEX:best.|EXTRA_COL_NAME:$32|DISPLAY_VALUE:$|DISPLAY_TYPE:$1.|RAW_VALUE_NUMRAW_VALUE_CHAR:$5000|FORCED_VALUE|
+|---|---|---|---|---|---|---|
 |1|DISCOUNT_RT|"50%"|N|0.5||.|
 |1|DISCOUNT_RT|"40%"|N|0.4||0|
 |1|DISCOUNT_RT|"30%"|N|0.3||1|
