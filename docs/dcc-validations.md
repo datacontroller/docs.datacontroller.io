@@ -58,21 +58,23 @@ The following tables should be created in the WORK library as outputs:
 
 #### DYNAMIC_VALUES
 This table can contain up to three columns:
+
 * `display_index` (optional, mandatory if using `dynamic_extended_values`).  Is a numeric key used to join the two tables.
 * `display_value` - always character
 * `raw_value` - unformatted character or numeric according to source data type
 
 Example values:
 
-  |DISPLAY_INDEX:best.|DISPLAY_VALUE:$|RAW_VALUE|
-  |---|---|---|
-  |1|$77.43|77.43|
-  |2|$88.43|88.43|
+|DISPLAY_INDEX:best.|DISPLAY_VALUE:$|RAW_VALUE|
+|---|---|---|
+|1|$77.43|77.43|
+|2|$88.43|88.43|
 
 #### DYNAMIC_EXTENDED_VALUES
 This table is optional.  If provided, it will map the DISPLAY_INDEX from the DYNAMIC_VALUES table to additional column/value pairs, that will be used to populate dropdowns for _other_ cells in the _same_ row.
 
 The following columns should be provided:
+
 * `display_index` - a numeric key joining each value to the `dynamic_values` table
 * `extra_col_name` - the name of the additional variable(s) to contain the extra dropdown(s)
 * `display_value` - the value to display in the dropdown.  Always character.
@@ -83,14 +85,14 @@ The following columns should be provided:
 
 Example Values:
 
-  |DISPLAY_INDEX:best.|EXTRA_COL_NAME:$32.|DISPLAY_VALUE:$|DISPLAY_TYPE:$1.|RAW_VALUE_NUM|RAW_VALUE_CHAR:$5000|FORCED_VALUE|
-  |---|---|---|---|
-  |1|DISCOUNT_RT|"50%"|N|0.5||.|
-  |1|DISCOUNT_RT|"40%"|N|0.4||0|
-  |1|DISCOUNT_RT|"30%"|N|0.3||1|
-  |1|CURRENCY_SYMBOL|"GBP"|C||"GBP"|.|
-  |1|CURRENCY_SYMBOL|"RSD"|C||"RSD"|.|
-  |2|DISCOUNT_RT|"50%"|N|0.5||.|
-  |2|DISCOUNT_RT|"40%"|N|0.4||1|
-  |2|CURRENCY_SYMBOL|"EUR"|C||"EUR"|.|
-  |2|CURRENCY_SYMBOL|"HKD"|C||"HKD"|1|
+|DISPLAY_INDEX:best.|EXTRA_COL_NAME:$32.DISPLAY_VALUE:$|DISPLAY_TYPE:$1.|RAW_VALUE_NUMRAW_VALUE_CHAR:$5000|FORCED_VALUE|
+|---|---|---|---|
+|1|DISCOUNT_RT|"50%"|N|0.5||.|
+|1|DISCOUNT_RT|"40%"|N|0.4||0|
+|1|DISCOUNT_RT|"30%"|N|0.3||1|
+|1|CURRENCY_SYMBOL|"GBP"|C||"GBP"|.|
+|1|CURRENCY_SYMBOL|"RSD"|C||"RSD"|.|
+|2|DISCOUNT_RT|"50%"|N|0.5||.|
+|2|DISCOUNT_RT|"40%"|N|0.4||1|
+|2|CURRENCY_SYMBOL|"EUR"|C||"EUR"|.|
+|2|CURRENCY_SYMBOL|"HKD"|C||"HKD"|1|
