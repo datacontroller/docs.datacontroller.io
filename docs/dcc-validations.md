@@ -42,6 +42,8 @@ Further details on the above:
 
 These validations enable you to present a dynamic dropdown to the user based on other values in the same **row**.  You can also use the response to populate _other_ dropdowns (also in the same row) in the same request - these are called 'extended validations'.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rmES77aIr90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Your hook script can be either a SAS program on the filesystem (in which case it must end with ".sas") or it can also be a Stored Process or Viya Job in the logical folder tree (metadata or SAS Drive) - in which case it must _not_ end with ".sas".  In both cases you should provide the full path and filename in the MPE_VALIDATIONS table.
 
 For examples of hook scripts you can look at the Data Controller internal validation programs.  In summary, you will receive the following as inputs:
