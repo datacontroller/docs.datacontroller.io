@@ -23,6 +23,7 @@ Native pass through is also available for optimised data loads in the following 
 
 * Microsoft SQL SERVER
 * Amazon REDSHIFT
+* POSTGRES
 
 The macros work dynamically, taking data types / lengths etc from the table metadata at runtime.  Data Controller macros are available for unlimited (internal) use by licenced customers.  They are currently in use, in production, in dozens of SAS environments globally and have been battle tested on large data volumes as well as some more esoteric gotchas such as:
 
