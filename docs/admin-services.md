@@ -8,14 +8,14 @@ description: Data Controller contains a number of admin-only web services, such 
 
 Several web services have been defined to provide additional functionality outside of the user interface.  These somewhat-hidden services must be called directly, using a web browser.  The URL is made up of several components:
 
-* SERVERURL -> the domain (and port) on which your SAS server resides
-* EXECUTOR -> Either `SASStoredProcess` for SAS 9, else `SASJobExecution` for Viya
-* APPLOC -> The root folder location in which the Data Controller backend services were deployed
-* SERVICE -> The actual Data Controller service being described.  May include additional parameters.
+* `SERVERURL` -> the domain (and port) on which your SAS server resides
+* `EXECUTOR` -> Either `SASStoredProcess` for SAS 9, else `SASJobExecution` for Viya
+* `APPLOC` -> The root folder location in which the Data Controller backend services were deployed
+* `SERVICE` -> The actual Data Controller service being described.  May include additional parameters.
 
 To illustrate the above, consider the following URL:
 
-[https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQLg](https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL
+[https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL](https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL
 )
 
 This is broken down into:
@@ -34,15 +34,17 @@ The below sections will only describe the `$SERVICE` component - you may constru
 This service will provide a zip file containing the current database configuration. This is useful for migrating to a different data controller database instance.
 
 EXAMPLE:
+
 * `services/admin/exportconfig`
 
 ## Export Database
 Exports the data controller control library in DB specific DDL.  The following URL parameters may be added:
 
-* &flavour= (only PGSQL supported at this time)
-* &schema= (optional, if target schema is needed)
+* `&flavour=` (only PGSQL supported at this time)
+* `&schema=` (optional, if target schema is needed)
 
 EXAMPLES:
+
 * `services/admin/exportdb&flavour=PGSQL&schema=DC`
 * `services/admin/exportdb&flavour=PGSQL`
 
@@ -51,8 +53,9 @@ Refreshes the Data Controller data catalog.  The model is stored in SCD2 so it's
 
 The following params can be added:
 
-* &libref (optional) to run the process for just one library.
+* `&libref` (optional) to run the process for just one library.
 
 EXAMPLES:
+
 * `services/admin/refreshcatalog`
 * `services/admin/refreshcatalog&libref=MYLIB`

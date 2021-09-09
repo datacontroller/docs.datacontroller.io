@@ -20,9 +20,9 @@ Data Controller makes use of a system account for performing backend data update
 ### Database
 Whilst we do recommend that Data Controller configuration tables are stored in a database for concurrency reasons, it is also possible to use a BASE engine library, which is adequate if you only have a few users.
 
-Let us know which database you are using and we will provide the DDL. We have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.
+To migrate the control library to a database, first perform a regular deployment, and afterwards you can generate the DDL and update the settings file..
 
-Simply run the provided DDL script to create the tables and initial configuration data in your chosen database.  Make sure the system account (see prerequisites) has full read / write access.
+Make sure the system account (see above) has full read / write access.
 
 !!! note
     "Modify schema" privileges are not required.
@@ -49,12 +49,13 @@ Data Controller deployment is split between 3 deployment types:
 ## Full Version - Manual Deploy
 -->
 
-There are three main parts to this proces:
+There are several parts to this proces:
 
 1.  Create the Compute Context
 2.  Deploy Frontend
-2.  Deploy Backend
-3.  Update the Compute Context autoexec
+4.  Prepare the database and update settings (optional)
+5.  Update the Compute Context autoexec
+
 
 ### Create Compute Context
 
@@ -95,7 +96,17 @@ You will be presented with a deployment screen like the one below.  Be sure to c
 
 Your services are deployed!  And the app is operational, albeit still a little sluggish, as every single request is using the APIs to fetch the content of the `$(appLoc)/services/settings.sas` file.
 
-To improve responsiveness by another 700ms we recommend you take the subsequent step below.
+To improve responsiveness by another 700ms we recommend you follow the steps in [Update Compute Context Autoexec](/dci-deploysasviya/#update-compute-context-autoexec) below.
+
+### Deploy Database
+If you have a lot of users, such that concurrency (locked datasets) becomes an issue, you might consider migrating the control library to a database.
+
+The first part to this is generating the DDL (and inserts).  For this, use the DDL exporter as described [here](/admin-services/#export-database).  If you need a flavour of DDL that is not yet supported, [contact us](https://datacontroller.io/contact/).
+
+Step 2 is simply to run this DDL in your preferred database.
+
+Step 3 is to update the library definition in the `$(appLoc)/services/settings.sas` file using SAS Studio.
+
 ### Update Compute Context Autoexec
 
 First, open the `$(appLoc)/services/settings.sas` file in SAS Studio, and copy the code.
