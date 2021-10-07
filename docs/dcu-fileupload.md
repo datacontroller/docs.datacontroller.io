@@ -21,6 +21,9 @@ This is incredibly flexible, and means:
 
 A copy of the original Excel file is also uploaded to the staging area.  This means that a complete audit trail can be captured, right back to the original source data.
 
+!!! note
+    If the excel contains more than one range with the target columns, only the FIRST will be extracted.
+
 ## CSV Uploads
 
 The following should be considered when uploading data in this way:
