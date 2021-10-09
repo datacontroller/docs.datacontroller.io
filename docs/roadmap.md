@@ -44,8 +44,8 @@ To drive the behaviour, a new configuration table must be added to the control l
     * `/FIRST` - the first tab in the workbook
 * **XLMAP_START** - the rule used to find the top left of the range. Use "R1C1" notation to move the target.  Example values:
     * `ABSOLUTE F4` - an absolute reference
-    * `MATCH P R0 C2 | My Test` - search column P for the string "My Test" then move 2 columns right
-    * `MATCH 7 R-2 C-1 | Top Banana` - search row 7 for the string "Top Banana" then move 2 rows up and 1 column left
+    * `MATCH P R0 C2 |My Test` - search column P for the string "My Test" then move 2 columns right
+    * `MATCH 7 R-2 C-1 |Top Banana` - search row 7 for the string "Top Banana" then move 2 rows up and 1 column left
 * **XLMAP_FINISH** - The rule used to find the end of the range.  Leave blank for individual cells. Example values:
     * `BLANKROW` - search down until a blank row is found, then choose the row above it
     * `LASTDOWN` - The last non blank cell below the start cell
@@ -60,7 +60,6 @@ The data will be imported into two SAS tables - the cells on the left will go in
 
 The EXCEL MAP configuration entries would be as follows:
 
-|---|---|---|---|---|----|---|
 |XLMAP_ID|XLMAP_LIB|XLMAP_DS|XLMAP_COL|XLMAP_SHEET|XLMAP_START|XLMAP_FINISH|
 |---|---|---|---|---|----|---|
 |MAP01|MYLIB|DS1|MI_ITEM|Current Month|`MATCH B R1 C0 | ITEM`|`LASTDOWN`|
