@@ -58,7 +58,7 @@ To illustrate with an example - consider the following excel.  The yellow cells 
 
 The data will be imported into two SAS tables - the cells on the left will go into a table with multiple rows, and the cells on the right will be entered as a single row.  The XLMAP_ID will also be added to both tables, and the tables will need to have had their keys and quality rules defined in Data Controller in the usual way.
 
-The EXCEL MAP configuration entries would be as follows:
+The MPE_EXCEL_MAP configuration entries would be as follows:
 
 |XLMAP_ID|XLMAP_LIB|XLMAP_DS|XLMAP_COL|XLMAP_SHEET|XLMAP_START|XLMAP_FINISH|
 |---|---|---|---|---|----|---|
