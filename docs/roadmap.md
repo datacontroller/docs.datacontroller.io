@@ -35,18 +35,18 @@ The backend SAS tables must still exist, but the column names do not need to app
 
 To drive the behaviour, a new configuration table must be added to the control library - MPE_EXCEL_MAP.  The columns are defined as follows:
 
-* XLMAP_ID - a unique reference for the excel map
-* XLMAP_LIB - the library of the target table for the data item or range
-* XLMAP_DS - the target table for the data item or range
-* XLMAP_COL - the target column for the data item or range
-* XLMAP_SHEET - the sheet name in which to capture the data.  Rules start with a forward slash (/).  Example values:
-    * Sheet2 - an absolute reference
-    * /FIRST - the first tab in the workbook
-* XLMAP_START - the rule used to find the top left of the range. Use "R1C1" notation to move the target.  Example values:
+* **XLMAP_ID** - a unique reference for the excel map
+* **XLMAP_LIB** - the library of the target table for the data item or range
+* **XLMAP_DS** - the target table for the data item or range
+* **XLMAP_COL** - the target column for the data item or range
+* **XLMAP_SHEET** - the sheet name in which to capture the data.  Rules start with a forward slash (/).  Example values:
+    * `Sheet2` - an absolute reference
+    * `/FIRST` - the first tab in the workbook
+* **XLMAP_START** - the rule used to find the top left of the range. Use "R1C1" notation to move the target.  Example values:
     * `ABSOLUTE F4` - an absolute reference
     * `MATCH P R0 C2 | My Test` - search column P for the string "My Test" then move 2 columns right
     * `MATCH 7 R-2 C-1 | Top Banana` - search row 7 for the string "Top Banana" then move 2 rows up and 1 column left
-* XLMAP_FINISH - The rule used to find the end of the range.  Leave blank for individual cells. Example values:
+* **XLMAP_FINISH** - The rule used to find the end of the range.  Leave blank for individual cells. Example values:
     * `BLANKROW` - search down until a blank row is found, then choose the row above it
     * `LASTDOWN` - The last non blank cell below the start cell
     * `RIGHT 3` - select 3 more cells to the right (4 selected in total)
