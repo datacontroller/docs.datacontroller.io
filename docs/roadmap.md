@@ -20,9 +20,58 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.
 
-There is currently one feature requested:
+There are currently two features requested:
 
 * Ability to restore previous versions (estimate - 6 to 9 days).  Sponsor needed.
+* Ability to import complex excel data
+
+### Complex Excel Uploads
+
+When Excel data arrives in multiple ranges, or individual cells, and the cells vary in terms of their column or row identifier, made more "interesting" with the use of merged cells - a rules engine becomes necessary!
+
+This feature enables the use of "EXCEL MAPS".  It will enable multiple tables to be loaded in a single import, and that data can be scattered across multiple sheets / cells / ranges, accessed via the rules described further below.
+
+The backend SAS tables must still exist, but the column names do not need to appear in the excel file.
+
+To drive the behaviour, a new configuration table must be added to the control library - MPE_EXCEL_MAP.  The columns are defined as follows:
+
+* XLMAP_ID - a unique reference for the excel map
+* XLMAP_LIB - the library of the target table for the data item or range
+* XLMAP_DS - the target table for the data item or range
+* XLMAP_COL - the target column for the data item or range
+* XLMAP_SHEET - the sheet name in which to capture the data.  Rules start with a forward slash (/).  Example values:
+  * Sheet2 - an absolute reference
+  * /FIRST - the first tab in the workbook
+* XLMAP_START - the rule used to find the top left of the range. Use "R1C1" notation to move the target.  Example values:
+  * `ABSOLUTE F4` - an absolute reference
+  * `MATCH P R0 C2 | My Test` - search column P for the string "My Test" then move 2 columns right
+  * `MATCH 7 R-2 C-1 | Top Banana` - search row 7 for the string "Top Banana" then move 2 rows up and 1 column left
+* XLMAP_FINISH - The rule used to find the end of the range.  Leave blank for individual cells. Example values:
+  * `BLANKROW` - search down until a blank row is found, then choose the row above it
+  * `LASTDOWN` - The last non blank cell below the start cell
+  * `RIGHT 3` - select 3 more cells to the right (4 selected in total)
+
+
+To illustrate with an example - consider the following excel.  The yellow cells need to be imported.
+
+![Complex Excel for SAS Import](/img/excel_map.png)
+
+The data will be imported into two SAS tables - the cells on the left will go into a table with multiple rows, and the cells on the right will be entered as a single row.  The XLMAP_ID will also be added to both tables, and the tables will need to have had their keys and quality rules defined in Data Controller in the usual way.
+
+The EXCEL MAP configuration entries would be as follows:
+
+|---|---|---|---|---|----|---|
+|XLMAP_ID|XLMAP_LIB|XLMAP_DS|XLMAP_COL|XLMAP_SHEET|XLMAP_START|XLMAP_FINISH|
+|---|---|---|---|---|----|---|
+|MAP01|MYLIB|DS1|MI_ITEM|Current Month|`MATCH B R1 C0 | ITEM`|`LASTDOWN`|
+|MAP01|MYLIB|DS1|MI_AMT|Current Month|`MATCH C R1 C0 | AMOUNT`|`LASTDOWN`|
+|MAP01|MYLIB|DS2|TMI|Current Month|`ABSOLUTE F6`||
+|MAP01|MYLIB|DS2|CB|Current Month|`MATCH F R2 C0 |CASH BALANCE`||
+|MAP01|MYLIB|DS2|RENT|Current Month|`MATCH E R0 C2 |Rent/mortgage`||
+|MAP01|MYLIB|DS2|CELL|Current Month|`MATCH E R0 C2 |Cell phone`||
+
+To import the excel, the end user simply needs to navigate to the UPLOAD tab, select the appropriate map (eg MAP01), and upload.  This will stage two tables (MYLIB.DS1 and MYLIB.DS2) which will go through the usual approval process and quality checks.  A copy of the source excel file will be attached to each upload.
+
 
 ## Delivered Features
 
