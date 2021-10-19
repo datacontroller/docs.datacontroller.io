@@ -71,6 +71,27 @@ The MPE_EXCEL_MAP configuration entries would be as follows:
 
 To import the excel, the end user simply needs to navigate to the UPLOAD tab, select the appropriate map (eg MAP01), and upload.  This will stage two tables (MYLIB.DS1 and MYLIB.DS2) which will go through the usual approval process and quality checks.  A copy of the source excel file will be attached to each upload.
 
+**Estimates**
+
+|Component|Estimate (days)|Description|
+|---|---|---|
+|Frontend|xx|Build ExcelMap page with dropdown|
+|Frontend|xx|Build drag & drop / modal for excel capture|
+|Frontend|xx|Create standalone framework utility for rules engine|
+|Frontend|xx|Implement Absolute rule|
+|Frontend|xx|Create staged (unsubmitted) page with support for multiple tables|
+|Frontend|xx|Implement MATCH rule (without FINISH)|
+|Frontend|xx|Implement BLANKROW finish rule|
+|Frontend|xx|Implement LASTDOWN finish rule|
+|Frontend|xx|Implement {DIRECTION + INTEGER} finish rule|
+|Frontend|xx|Implement /FIRST sheet rule|
+|Frontend|xx|Developer documentation|
+|Frontend|xx|Cypress tests|
+|Backend|0.5|Prep table and add to CI build|
+|Backend|0.5|Create service to fetch Excel Maps (only those the user has permissions for), corresponding SASjs test, and update developer docs|
+|Backend|0.5|Publish online documentation for the overall Excel Maps feature|
+
+
 
 ## Delivered Features
 
@@ -82,7 +103,7 @@ Previously, if a user filtered on, say, "region", and then filtered on "store", 
 
 ![](https://i.imgur.com/KDEVvDi.png)
 
-#### Solution
+**Solution**
 
 We added a checkbox to the top left of the filter dialog (default ON) for "Dynamic Where Clause".  Whilst enabled, whenever a list of values is requested, it is filtered using every filter clause EXCEPT the one currently being modified.
 
@@ -95,7 +116,7 @@ When editing a value in a grid, the values presented to the user should be filte
 
 ![](https://i.imgur.com/J1q4lqo.png)
 
-#### Solution
+**Solution**
 
 We provided two new config item in the MPE_VALIDATIONS table - to links an editable column to a HOOK script via a web service.
 
@@ -123,7 +144,7 @@ It is also the case that some customers need row level security but the data acc
 
 Therefore, there was a need to configure such a feature within the Data Controller product.
 
-#### Solution
+**Solution**
 
 A new table (MPE_ROW_LEVEL_SECURITY) was added to the data controller library to allow complex rules to be applied based on the SAS group and the target table. Documentation is [here](/row-level-security/)
 
@@ -139,7 +160,7 @@ Formats used to be ignored and only the cell _values_ would be extracted when fo
 
 Now, it is possible to extract and retain the actual formula itself, so it can be re-used when downloading the data again later.
 
-#### Solution
+**Solution**
 
 A new table (MPE_EXCEL_CONFIG) was be added to the data controller library to allow the column with the formula to be specified.  See [documentation](/excel/)
 
@@ -149,7 +170,7 @@ Available from [v.3.12.](https://datacontroller.io/3-12-four-new-data-management
 
 When importing spreadsheets with ambiguous dates (eg 01/02 or 02/01) the ANYDTDTM. informat was using the locale of the browser (en_us) instead of that of the client's actual country, resulting in incorrect dates being loaded.  This is due to the [default behaviour](https://rawsas.com/look-out-locale-gotcha/) of the SAS Stored Process server.
 
-#### Solution
+**Solution**
 
 We added a [new config item](/dcc-options/#dc_locale) so that the locale can be explicitly set for all Data Controller users.
 
@@ -161,6 +182,6 @@ We had a customer who was using Data Controller to provide data access to a comp
 
 It was necessary to find a way to restrict the tables which certain groups could see, without having to tweak permissions in SAS Management Console.
 
-#### Solution
+**Solution**
 
 We added a [new access level](/dcc-security/#view) in the MPE_SECURITY table so that access could be restricted at both TABLE and LIBRARY level.
