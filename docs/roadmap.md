@@ -20,10 +20,11 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.
 
-There are currently two features requested:
+There are currently three features requested:
 
 * Ability to restore previous versions (estimate - 6 to 9 days).  Sponsor needed.
 * Ability to import complex excel data
+* Ability to make automated submissions
 
 ### Complex Excel Uploads
 
@@ -91,6 +92,26 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 |Backend|0.5|Create service to fetch Excel Maps (only those the user has permissions for), corresponding SASjs test, and update developer docs|
 |Backend|0.5|Publish online documentation for the overall Excel Maps feature|
 
+### Automated Submissions
+
+Data Controller was designed to capture manual user inputs.  However, the validation routines, as well as the power and consistency of the extraction logic, are well suited to automated extraction also.
+
+To cater for "machine provided" inputs, it will be necessary to surface an API interface. In the first instance, this will cater for Excel Maps.
+
+The API will be delivered in a container, and will leverage existing data controller services (eg SAS 9 Stored Processes / SAS Viya jobs / SASjs Stored Programs) at the backend.
+
+**Estimates**
+
+|Component|Estimate (days)|Description|
+|---|---|---|
+|Frontend Auth|xxx|Enable REST access from the client|
+|Backend Auth|xxx|Enable REST access from API server to Viya|
+|Frontend|xxx|Provision Excel Maps service stub|
+|Frontend|xxx|Enable full excel maps service using standalone framework utility|
+|Frontend|xxx|Developer docs|
+|Frontend|xxx|Create tests|
+|Docs|0.5|Generate Swagger API docs|
+|Docs|0.5|Update public documentation site along with install instructions|
 
 
 ## Delivered Features
