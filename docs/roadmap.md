@@ -87,7 +87,7 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 |Frontend|xx|Implement /FIRST sheet rule|
 |Frontend|xx|Developer documentation|
 |Frontend|xx|Cypress tests|
-|Backend|0.5|Prep table and add to CI build|
+|Backend|0.5|Prep MPE_EXCEL_MAP table, including validations, integrate with DCLIB and add to CI build|
 |Backend|0.5|Create service to fetch Excel Maps (only those the user has permissions for), corresponding SASjs test, and update developer docs|
 |Backend|0.5|Publish online documentation for the overall Excel Maps feature|
 
