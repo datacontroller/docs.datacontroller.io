@@ -72,7 +72,7 @@ The MPE_EXCEL_MAP configuration entries would be as follows:
 
 To import the excel, the end user simply needs to navigate to the UPLOAD tab, select the appropriate map (eg MAP01), and upload.  This will stage two tables (MYLIB.DS1 and MYLIB.DS2) which will go through the usual approval process and quality checks.  A copy of the source excel file will be attached to each upload.
 
-**Estimates**
+#### Estimates
 
 |Component|Estimate (days)|Description|
 |---|---|---|
@@ -88,7 +88,7 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 
 Total: **10 days**
 
-### Automated Submissions
+### API Submissions
 
 Data Controller was designed to capture manual user inputs.  However, the validation routines, as well as the power and consistency of the extraction logic, are well suited to automated extraction also.
 
@@ -96,7 +96,7 @@ To cater for "machine provided" inputs, it will be necessary to surface an API i
 
 The API will be delivered in a container, and will leverage existing data controller services (eg SAS 9 Stored Processes / SAS Viya jobs / SASjs Stored Programs) at the backend.
 
-**Estimates**
+#### Estimates
 
 |Component|Estimate (days)|Description|
 |---|---|---|
