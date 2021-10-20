@@ -76,18 +76,18 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 
 |Component|Estimate (days)|Description|
 |---|---|---|
-|Frontend|xx|Build ExcelMap page with dropdown (and fetching rules)|
-|Frontend|xx|Build drag & drop / modal for excel capture|
-|Frontend|xx|Create staged (unsubmitted) page with support for multiple tables|
-|Frontend|xx|Create standalone framework utility for rules engine (utils folder)|
-|Frontend|xx|Implement Absolute rule|
-|Frontend|xx|Implement MATCH rule (without FINISH, single cell)|
-|Frontend|xx|Implement BLANKROW finish rule|
-|Frontend|xx|Implement LASTDOWN finish rule|
-|Frontend|xx|Implement {DIRECTION + INTEGER} finish rule|
-|Frontend|xx|Implement /FIRST sheet rule|
-|Frontend|xx|Developer documentation|
-|Frontend|xx|Cypress tests|
+|Frontend|0.5|Build ExcelMap page with dropdown (and fetching rules)|
+|Frontend|0.5|Build drag & drop / modal for excel capture|
+|Frontend|0.5|Create staged (unsubmitted) page with support for multiple tables|
+|Frontend|0.5|Create standalone framework utility for rules engine (utils folder)|
+|Frontend|0.5|Implement Absolute rule|
+|Frontend|0.5|Implement MATCH rule (without FINISH, single cell)|
+|Frontend|0.5|Implement BLANKROW finish rule|
+|Frontend|0.5|Implement LASTDOWN finish rule|
+|Frontend|0.5|Implement {DIRECTION + INTEGER} finish rule|
+|Frontend|0.5|Implement /FIRST sheet rule|
+|Frontend|0.5|Developer documentation|
+|Frontend|1.5|Cypress tests|
 |Backend|0.5|Prep MPE_EXCEL_MAP table, including validations, integrate with DCLIB and add to CI build|
 |Backend|1|Create services to fetch Excel Maps and rules (only those the user has permissions for), corresponding SASjs tests, and update developer docs|
 |Backend|0.5|Publish online documentation for the overall Excel Maps feature|
@@ -104,12 +104,12 @@ The API will be delivered in a container, and will leverage existing data contro
 
 |Component|Estimate (days)|Description|
 |---|---|---|
-|Frontend Auth|xxx|Enable REST access from the client|
-|Backend Auth|xxx|Enable REST access from API server to Viya|
-|Frontend|xxx|Provision Excel Maps service stub|
-|Frontend|xxx|Enable full excel maps service using standalone framework utility|
-|Frontend|xxx|Developer docs|
-|Frontend|xxx|Create tests|
+|Frontend Auth|0.5|Enable REST access from the client|
+|Backend Auth|0.5|Enable REST access from API server to Viya|
+|Frontend|0.5|Provision Excel Maps service stub|
+|Frontend|1|Enable full excel maps service using standalone framework utility|
+|Frontend|1|Developer docs|
+|Frontend|1.5|Create tests|
 |Docs|0.5|Generate Swagger API docs|
 |Docs|0.5|Update public documentation site along with install instructions|
 
