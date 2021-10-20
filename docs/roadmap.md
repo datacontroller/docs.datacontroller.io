@@ -76,21 +76,17 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 
 |Component|Estimate (days)|Description|
 |---|---|---|
-|Frontend|0.5|Build ExcelMap page with dropdown (and fetching rules)|
-|Frontend|0.5|Build drag & drop / modal for excel capture|
-|Frontend|0.5|Create staged (unsubmitted) page with support for multiple tables|
-|Frontend|0.5|Create standalone framework utility for rules engine (utils folder)|
-|Frontend|0.5|Implement Absolute rule|
-|Frontend|0.5|Implement MATCH rule (without FINISH, single cell)|
-|Frontend|0.5|Implement BLANKROW finish rule|
-|Frontend|0.5|Implement LASTDOWN finish rule|
-|Frontend|0.5|Implement {DIRECTION + INTEGER} finish rule|
-|Frontend|0.5|Implement /FIRST sheet rule|
+|Frontend|1|Build ExcelMap page with dropdown (and fetching rules), plus drag & drop modal for excel capture|
+|Frontend|1|Create staged (unsubmitted) page with support for multiple tables|
+|Frontend|2|Create standalone framework utility for rules engine (utils folder), /FIRST sheet rule and Absolute rule|
+|Frontend|2|Implement MATCH rule (with BLANKROW, LASTDOWN and {DIRECTION + INTEGER} finish rules)|
 |Frontend|0.5|Developer documentation|
 |Frontend|1.5|Cypress tests|
 |Backend|0.5|Prep MPE_EXCEL_MAP table, including validations, integrate with DCLIB and add to CI build|
 |Backend|1|Create services to fetch Excel Maps and rules (only those the user has permissions for), corresponding SASjs tests, and update developer docs|
 |Backend|0.5|Publish online documentation for the overall Excel Maps feature|
+
+Total: **10 days**
 
 ### Automated Submissions
 
@@ -104,14 +100,15 @@ The API will be delivered in a container, and will leverage existing data contro
 
 |Component|Estimate (days)|Description|
 |---|---|---|
-|Frontend Auth|0.5|Enable REST access from the client|
-|Backend Auth|0.5|Enable REST access from API server to Viya|
-|Frontend|0.5|Provision Excel Maps service stub|
-|Frontend|1|Enable full excel maps service using standalone framework utility|
-|Frontend|1|Developer docs|
-|Frontend|1.5|Create tests|
-|Docs|0.5|Generate Swagger API docs|
-|Docs|0.5|Update public documentation site along with install instructions|
+|Setup|1|Architecture / design|
+|Authorisation|1|Enable REST access from client, and further onwards to Viya|
+|Service|1.5|Enable full excel maps API service using standalone framework utility, returning approval link|
+|Tests|1.5|Create tests and automated deployments|
+|Docs|0.5|Developer docs|
+|Docs|0.5|Swagger API docs|
+|Docs|0.5|Public documentation site along with install instructions|
+
+Total: **6.5 days**
 
 
 ## Delivered Features
