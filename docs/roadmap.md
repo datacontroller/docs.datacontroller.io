@@ -76,12 +76,12 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 
 |Component|Estimate (days)|Description|
 |---|---|---|
-|Frontend|xx|Build ExcelMap page with dropdown|
+|Frontend|xx|Build ExcelMap page with dropdown (and fetching rules)|
 |Frontend|xx|Build drag & drop / modal for excel capture|
-|Frontend|xx|Create standalone framework utility for rules engine|
-|Frontend|xx|Implement Absolute rule|
 |Frontend|xx|Create staged (unsubmitted) page with support for multiple tables|
-|Frontend|xx|Implement MATCH rule (without FINISH)|
+|Frontend|xx|Create standalone framework utility for rules engine (utils folder)|
+|Frontend|xx|Implement Absolute rule|
+|Frontend|xx|Implement MATCH rule (without FINISH, single cell)|
 |Frontend|xx|Implement BLANKROW finish rule|
 |Frontend|xx|Implement LASTDOWN finish rule|
 |Frontend|xx|Implement {DIRECTION + INTEGER} finish rule|
@@ -89,7 +89,7 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 |Frontend|xx|Developer documentation|
 |Frontend|xx|Cypress tests|
 |Backend|0.5|Prep MPE_EXCEL_MAP table, including validations, integrate with DCLIB and add to CI build|
-|Backend|0.5|Create service to fetch Excel Maps (only those the user has permissions for), corresponding SASjs test, and update developer docs|
+|Backend|1|Create services to fetch Excel Maps and rules (only those the user has permissions for), corresponding SASjs tests, and update developer docs|
 |Backend|0.5|Publish online documentation for the overall Excel Maps feature|
 
 ### Automated Submissions
