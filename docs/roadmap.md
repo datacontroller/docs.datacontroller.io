@@ -81,12 +81,12 @@ To import the excel, the end user simply needs to navigate to the UPLOAD tab, se
 |Frontend|2|Create standalone framework utility for rules engine (utils folder), /FIRST sheet rule and Absolute rule|
 |Frontend|2|Implement MATCH rule (with BLANKROW, LASTDOWN and {DIRECTION + INTEGER} finish rules)|
 |Frontend|0.5|Developer documentation|
-|Frontend|1.5|Cypress tests|
+|Frontend|2|Cypress tests|
 |Backend|0.5|Prep MPE_EXCEL_MAP table, including validations, integrate with DCLIB and add to CI build|
 |Backend|1|Create services to fetch Excel Maps and rules (only those the user has permissions for), corresponding SASjs tests, and update developer docs|
 |Backend|0.5|Publish online documentation for the overall Excel Maps feature|
 
-Total: **10 days**
+Total: **10.5 days**
 
 ### API Submissions
 
@@ -102,13 +102,11 @@ The API will be delivered in a container, and will leverage existing data contro
 |---|---|---|
 |Setup|1|Architecture / design|
 |Authorisation|1|Enable REST access from client, and further onwards to Viya|
-|Service|1.5|Enable full excel maps API service using standalone framework utility, returning approval link|
+|Service|2|Enable full excel maps API service using standalone framework utility, returning approval link|
 |Tests|1.5|Create tests and automated deployments|
-|Docs|0.5|Developer docs|
-|Docs|0.5|Swagger API docs|
-|Docs|0.5|Public documentation site along with install instructions|
+|Docs|1|Developer docs,Swagger API docs,Public documentation site along with install instructions|
 
-Total: **6.5 days**
+Total: **6 days**
 
 
 ## Delivered Features
