@@ -23,8 +23,8 @@ Where features are requested, whether there is budget or not, we will describe t
 There are currently three features requested:
 
 * Ability to restore previous versions (estimate - 6 to 9 days).  Sponsor needed.
-* Ability to import complex excel data
-* Ability to make automated submissions
+* Ability to import complex excel data using Excel Maps (10.5 days)
+* Ability to make automated submissions using an API (6 days)
 
 ### Complex Excel Uploads
 
