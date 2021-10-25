@@ -45,8 +45,8 @@ To drive the behaviour, a new configuration table must be added to the control l
     * `/FIRST` - the first tab in the workbook
 * **XLMAP_START** - the rule used to find the top left of the range. Use "R1C1" notation to move the target.  Example values:
     * `ABSOLUTE F4` - an absolute reference
-    * `MATCH P R0 C2 |My Test` - search column P for the string "My Test" then move 2 columns right
-    * `MATCH 7 R-2 C-1 |Top Banana` - search row 7 for the string "Top Banana" then move 2 rows up and 1 column left
+    * `MATCH P R[0]C[2] |My Test` - search column P for the string "My Test" then move 2 columns right
+    * `MATCH 7 R[-2]C[-1] |Top Banana` - search row 7 for the string "Top Banana" then move 2 rows up and 1 column left
 * **XLMAP_FINISH** - The rule used to find the end of the range.  Leave blank for individual cells. Example values:
     * `BLANKROW` - search down until a blank row is found, then choose the row above it
     * `LASTDOWN` - The last non blank cell below the start cell
@@ -63,12 +63,12 @@ The MPE_EXCEL_MAP configuration entries would be as follows:
 
 |XLMAP_ID|XLMAP_LIB|XLMAP_DS|XLMAP_COL|XLMAP_SHEET|XLMAP_START|XLMAP_FINISH|
 |---|---|---|---|---|----|---|
-|MAP01|MYLIB|DS1|MI_ITEM|Current Month|`MATCH B R1 C0 | ITEM`|`LASTDOWN`|
-|MAP01|MYLIB|DS1|MI_AMT|Current Month|`MATCH C R1 C0 | AMOUNT`|`LASTDOWN`|
+|MAP01|MYLIB|DS1|MI_ITEM|Current Month|`MATCH B R[1]C[0] |ITEM`|`LASTDOWN`|
+|MAP01|MYLIB|DS1|MI_AMT|Current Month|`MATCH C R[1]C[0] |AMOUNT`|`LASTDOWN`|
 |MAP01|MYLIB|DS2|TMI|Current Month|`ABSOLUTE F6`||
-|MAP01|MYLIB|DS2|CB|Current Month|`MATCH F R2 C0 |CASH BALANCE`||
-|MAP01|MYLIB|DS2|RENT|Current Month|`MATCH E R0 C2 |Rent/mortgage`||
-|MAP01|MYLIB|DS2|CELL|Current Month|`MATCH E R0 C2 |Cell phone`||
+|MAP01|MYLIB|DS2|CB|Current Month|`MATCH F R[2]C[0] |CASH BALANCE`||
+|MAP01|MYLIB|DS2|RENT|Current Month|`MATCH E R[0]C[2] |Rent/mortgage`||
+|MAP01|MYLIB|DS2|CELL|Current Month|`MATCH E R[0]C[2] |Cell phone`||
 
 To import the excel, the end user simply needs to navigate to the UPLOAD tab, select the appropriate map (eg MAP01), and upload.  This will stage two tables (MYLIB.DS1 and MYLIB.DS2) which will go through the usual approval process and quality checks.  A copy of the source excel file will be attached to each upload.
 
