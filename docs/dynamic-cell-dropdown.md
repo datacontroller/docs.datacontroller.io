@@ -2,7 +2,7 @@
 layout: article
 title: Dynamic Cell Dropdown
 description: Configure SAS programs to determine exactly which values can appear within which cells in your Data Controller table!
-og_image:  img/cell_validation1.png
+og_image:  https://docs.datacontroller.io/img/cell_validation1.png
 ---
 
 # Dynamic Cell Dropdown

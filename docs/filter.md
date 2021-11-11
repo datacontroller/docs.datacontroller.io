@@ -2,7 +2,7 @@
 layout: article
 title: Filter
 description: Data Controller for SAS&reg; enable complex filters to be created on any variable. The "dynamic" where claue setting enables new values to be filtered by remaining filter clauses.  Filtered views are shareable!
-og_image:  img/filter_dynamic_on.png
+og_image:  https://docs.datacontroller.io/img/filter_dynamic_on.png
 ---
 
 # Filtering

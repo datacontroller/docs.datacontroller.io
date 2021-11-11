@@ -3,7 +3,7 @@ layout: article
 title: DC Docs
 description: The Data Controller for SAS® enables users to self serve their data changes, and for data owners to retain control over those updates by reviewing and approving them
 og_title: Data Controller Documentation
-og_image: /img/edit_approve_audit.png
+og_image: https://docs.datacontroller.io/img/edit_approve_audit.png
 ---
 # Data Controller Documentation
 

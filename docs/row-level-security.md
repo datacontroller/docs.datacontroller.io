@@ -2,7 +2,7 @@
 layout: article
 title: Row Level Security
 description: Restrict tables in SAS such that users can only view or edit specific rows according to filter rules you provide.
-og_image:  img/rls_table.png
+og_image:  https://docs.datacontroller.io/img/rls_table.png
 ---
 
 # Row Level Security

@@ -2,7 +2,7 @@
 layout: article
 title: Excel
 description: Load Excel to SAS whilst retaining your favourite formulas! Data can be on any sheet, on any cell, even surrounded by other data.  All versions of Excel supported.
-og_image:  img/excel_results.png
+og_image:  https://docs.datacontroller.io/img/excel_results.png
 ---
 
 # Excel Uploads

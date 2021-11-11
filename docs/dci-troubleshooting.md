@@ -2,7 +2,7 @@
 layout: article
 title: Troubleshooting
 description: Descriptions of common issues when working with Data Controller, and steps for resolution.
-og_image:  /img/cannotimport.png
+og_image:  https://docs.datacontroller.io/img/cannotimport.png
 ---
 
 # Data Controller for SAS® - Troubleshooting
