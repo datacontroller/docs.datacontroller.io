@@ -1,3 +1,10 @@
+---
+layout: article
+title: Troubleshooting
+description: Descriptions of common issues when working with Data Controller, and steps for resolution.
+og_image:  img/cannotimport.png
+---
+
 # Data Controller for SAS® - Troubleshooting
 
 ## Overview
@@ -74,3 +81,13 @@ After a successful install, your business user may see the following message:
 The reason is that the context chosen when importing the SPK (perhaps, SASApp) is not available to your business user.  It's likely you have multiple contexts.
 
 The SPK must be re-imported with the correct context chosen.  This may require regenerating the tables, or adjusting the permissions, if the new context uses a different system account.
+
+## Stored Processes Cannot Be Imported Into A Project Repository
+
+During the SPK import on a SAS 9 instance you may see the following dialog:
+
+![Stored processes cannot be imported into a project repository](img/cannotimport.png)
+
+> Stored processes cannot be imported into a project repository
+
+This can happen when importing with Data Integration Studio and your user profile is making use of a personal project repository. Try re-connecting with the Foundation repository, or import with SAS Management Console (which does not support project repositories).
