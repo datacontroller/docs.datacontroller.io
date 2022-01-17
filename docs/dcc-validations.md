@@ -15,7 +15,7 @@ Quality in, Quality out!  Data Controller lets you enforce quality checks at the
 By default, the following frontend rules are always applied:
 
 * Length checking per target table variable lengths
-* Type checking per target table datatypes
+* Type checking per target table datatypes (Character, Numeric, Date, Time, Datetime)
 * Not Null check per target table constraints
 * Primary Key checking per business key defined in MPE_TABLES
 
