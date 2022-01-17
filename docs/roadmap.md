@@ -109,7 +109,7 @@ The API will be delivered in a container, and will leverage existing data contro
 
 Total: **6 days**
 
-#### Change Tracking
+### Change Tracking
 Currently, transactional changes made to tables in Data Controller are tracked by means of individual CSV files.  A user can navigate to the HISTORY tab, find their change, and download a zip file containing all relevant information such as the original excel that was uploaded, SAS logs, the change records (CSV) and the staging dataset.
 
 Whilst helpful for investigating individual changes, the mechanism does not curently exist for (easily) tracking changes to particular variables / records across time, nor for (easily) re-instating versions.
@@ -152,7 +152,7 @@ create table dc.mpe_audit_history(
 - [ ] tidy up & define bitemporal outputs to include "base" records
 - [ ] update postdata service to include new outputs
 - [ ] create macro to populate new audit tables if flag is set
-- [ ] call new macro from
+
 
 ## Delivered Features
 

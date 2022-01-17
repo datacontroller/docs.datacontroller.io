@@ -37,7 +37,9 @@ nav:
     - Evaluation Licence: evaluation-agreement.md
     - Other Licences: licences.md
 - Videos: videos.md
-- Roadmap: roadmap.md
+- Roadmap:
+    - Overview: roadmap.md
+    - DC API: api.md
 
 markdown_extensions:
   - admonition
@@ -54,8 +56,8 @@ extra:
 extra_css: ['font-awesome.css']
 
 # Repository
-repo_name: 'macropeople/dcdocs.github.io'
-repo_url: 'https://github.com/macropeople/dcdocs.github.io'
+repo_name: 'datacontroller/dcdocs.github.io'
+repo_url: 'https://github.com/datacontroller/dcdocs.github.io'
 
 theme:
   name: material
@@ -74,4 +76,4 @@ theme:
     - JavaScript
     - Bash
 
-copyright: All rights reserved &copy;2021 Macro People Ltd.
+copyright: All rights reserved &copy;2022 Macro People Ltd.
