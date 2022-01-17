@@ -91,23 +91,7 @@ Total: **10.5 days**
 
 ### API Submissions
 
-Data Controller was designed to capture manual user inputs.  However, the validation routines, as well as the power and consistency of the extraction logic, are well suited to automated extraction also.
-
-To cater for "machine provided" inputs, it will be necessary to surface an API interface. In the first instance, this will cater for Excel Maps.
-
-The API will be delivered in a container, and will leverage existing data controller services (eg SAS 9 Stored Processes / SAS Viya jobs / SASjs Stored Programs) at the backend.
-
-#### Estimates
-
-|Component|Estimate (days)|Description|
-|---|---|---|
-|Setup|1|Architecture / design|
-|Authorisation|1|Enable REST access from client, and further onwards to Viya|
-|Service|2|Enable full excel maps API service using standalone framework utility, returning approval link|
-|Tests|1.5|Create tests and automated deployments|
-|Docs|1|Developer docs,Swagger API docs,Public documentation site along with install instructions|
-
-Total: **6 days**
+Described [here](https://docs.datacontroller.io/api/).
 
 ### Change Tracking
 Currently, transactional changes made to tables in Data Controller are tracked by means of individual CSV files.  A user can navigate to the HISTORY tab, find their change, and download a zip file containing all relevant information such as the original excel that was uploaded, SAS logs, the change records (CSV) and the staging dataset.
