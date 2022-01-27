@@ -20,12 +20,17 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.
 
-There are currently four features requested:
+There are currently three new features in development:
 
-* Ability to restore previous versions (estimate - 6 to 9 days).  Sponsor needed.
-* Ability to import complex excel data using Excel Maps (10.5 days)
-* Ability to make automated submissions using an API (6 days)
 * Include change tracking information in a transaction table
+* Ability to [view & edit formats](/formats.md)
+* Ability to restore previous versions
+
+A further two are requested:
+
+* Ability to import complex excel data using Excel Maps (10.5 days)
+* Ability to make automated submissions using an API
+
 
 ### Complex Excel Uploads
 
@@ -133,8 +138,8 @@ create table dc.mpe_audit_history(
 ```
 
 
-- [ ] tidy up & define bitemporal outputs to include "base" records
-- [ ] update postdata service to include new outputs
+- [x] tidy up & define bitemporal outputs to include "base" records
+- [x] update postdata service to include new outputs
 - [ ] create macro to populate new audit tables if flag is set
 
 

@@ -40,6 +40,7 @@ nav:
 - Roadmap:
     - Overview: roadmap.md
     - DC API: api.md
+    - View & Edit Formats: formats.md
 
 markdown_extensions:
   - admonition
