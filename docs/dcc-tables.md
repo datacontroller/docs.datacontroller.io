@@ -90,7 +90,7 @@ The path / location (unquoted) of a SAS Program that is `%include`'d after an ed
 * A .sas program on the server directory
 * A SAS 9 Stored Process or Viya Job
 
-This program code can modify the dataset (`work.staging_ds`) that is created in the staging area, which is useful for augmenting data / applying complex DQ rules. If your DQ check means that the program should not be submitted, then simply exit with `syscc > 4` . If you'd like to show a specific message to the user, you can use the following macro:
+This program code can modify the dataset (`work.staging_ds`) that is created in the staging area, which is useful for augmenting data / applying complex DQ rules. If your DQ check means that the program should not be submitted, then simply exit with `syscc > 4`. You can even set a message to go back to the user.
 
 ```
 %mp_abort(iftrue= (&syscc ne 0) /* if this condition is true, the process will exit */
