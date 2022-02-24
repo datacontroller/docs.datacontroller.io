@@ -4,6 +4,8 @@ Files can be uploaded via the Editor interface - first choose the library and ta
 
 <img src="/img/dcu-files1.png" height="350" style="border:3px solid black" >
 
+Uploaded data may *optionally* contain a column named `_____DELETE__THIS__RECORD_____` - where this contains the value "Yes" the row is marked for deletion.
+
 ## Excel Uploads
 
 Thanks to our pro license of [sheetJS](https://sheetjs.com/), we can support all versions of excel, large workbooks, and extract data extremely fast.
@@ -11,7 +13,7 @@ Thanks to our pro license of [sheetJS](https://sheetjs.com/), we can support all
 The rules for data extraction are:
 
 * Scan the spreadsheet until a row is found with all the target columns (not case sensitive)
-* Extract data below that until the *first row containing a blank primary key value*
+* Extract data below until the *first row containing a blank primary key value*
 
 This is incredibly flexible, and means:
 
@@ -22,7 +24,7 @@ This is incredibly flexible, and means:
 A copy of the original Excel file is also uploaded to the staging area.  This means that a complete audit trail can be captured, right back to the original source data.
 
 !!! note
-    If the excel contains more than one range with the target columns, only the FIRST will be extracted.
+    If the excel contains more than one range with the target columns (eg, on different sheets), only the FIRST will be extracted.
 
 ## CSV Uploads
 
