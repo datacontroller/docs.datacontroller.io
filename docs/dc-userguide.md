@@ -51,6 +51,10 @@ New rows can be added using the right click context menu, or the 'Add Row' butto
 When ready to submit, hit the SUBMIT button and enter a reason for the change.  The owners of the data are now alerted (so long as their email addresses are in metadata) with a link to the approve screen.
 If you are also an approver you can approve this change yourself.
 
+#### Special Missings
+
+Data Controller supports special missing numerics, ie - a single letter or underscore.  These should be submitted _without_ the leading period.  The letters are not case sensitive.
+
 #### BiTemporal Tables
 
 The Data Controller only permits BiTemporal data uploads at a single point in time - so for convenience, when viewing data in the edit screen, only the most recent records are displayed.  To edit earlier records, either use file upload, or apply a filter.

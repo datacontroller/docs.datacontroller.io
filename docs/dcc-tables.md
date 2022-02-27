@@ -26,7 +26,7 @@ The libref of the table. If not pre-assigned, DC will assign it at runtime using
 
 ### DSN
 
-The dataset (table) name as visible when assigning a direct libref connection to `LIBREF`.
+The dataset (table) name as visible when assigning a direct libref connection to `LIBREF`.  If the target is a format catalog, it should have a "-FC" suffice (eg `FORMATS-FC`).  More info on formats [here](/formats.md).
 
 ### NUM_OF_APPROVALS_REQUIRED
 
