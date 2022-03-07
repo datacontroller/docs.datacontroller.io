@@ -98,50 +98,6 @@ Total: **10.5 days**
 
 Described [here](https://docs.datacontroller.io/api/).
 
-### Change Tracking
-Currently, transactional changes made to tables in Data Controller are tracked by means of individual CSV files.  A user can navigate to the HISTORY tab, find their change, and download a zip file containing all relevant information such as the original excel that was uploaded, SAS logs, the change records (CSV) and the staging dataset.
-
-Whilst helpful for investigating individual changes, the mechanism does not curently exist for (easily) tracking changes to particular variables / records across time, nor for (easily) re-instating versions.
-
-A transaction table would fix this.  However, given that the number of changes could be quite large, this should be an optional (configurable) feature.
-
-The proposal is as follows:
-
-* Create a switch (new variable) in MPE_TABLES to enable tracking on a table-by-table basis
-* Create an MPE_AUDIT_HISTORY table to contain records of all changes to tracked tables
-
-Model Changes:
-
-```sas
-/* MPE_TABLES updates */
-proc sql;
-alter table dc.mpe_tables
-  add track_changes char(1);
-
-/* no PK defined as it is a transaction table */
-create table dc.mpe_audit_history(
-  load_id char(32),
-  processed_dttm num format=E8601DT26.6,
-  libref char(8),
-  dsn char(32),
-  key_hash char(32),
-  move_type char(1),
-  is_pk char(1),
-  is_diff char(1),
-  tgtvar_type char(1),
-  tgtvar_nm char(32),
-  oldval_num num,
-  newval_num num,
-  oldval_char char(32767),
-  newval_char char(32767)
-);
-```
-
-
-- [x] tidy up & define bitemporal outputs to include "base" records
-- [x] update postdata service to include new outputs
-- [ ] create macro to populate new audit tables if flag is set
-
 
 ## Delivered Features
 
