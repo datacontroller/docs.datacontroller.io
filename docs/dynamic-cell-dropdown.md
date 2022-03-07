@@ -178,3 +178,9 @@ data work.dynamic_extended_values(keep=display_index extra_col_name display_type
   end;
 run;
 ```
+
+## Technical Notes
+
+When first clicking on a 'dynamic dropdown' cell, the frontend will first hash the entire row, and store the subsequent response from SAS against this hash in an internal lookup table.  In this way, the lookup table can be subsequently referenced to vastly improve performance (by avoiding unnecessary server requests).
+
+The lookup event will occur immediately upon clicking on the (dynamic dropdown) cell.  If the row has not changed since the previous click, the response will be instant. If any value in the row HAS changed, and that particular combination of values has not previously been requested (in the same browser session), then a request to SAS will need to take place before the dropdown values are shown.
