@@ -11,6 +11,8 @@ nav:
     - Filter Mechanism: filter.md
     - Table Viewer: dcu-tableviewer.md
     - Admin Services: admin-services.md
+- Table Guide:
+    - MPE_AUDIT: mpe_audit.md
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
     - Dynamic Cell Dropdown: dynamic-cell-dropdown.md
