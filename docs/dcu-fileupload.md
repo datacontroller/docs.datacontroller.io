@@ -8,7 +8,7 @@ Uploaded data may *optionally* contain a column named `_____DELETE__THIS__RECORD
 
 ## Excel Uploads
 
-Thanks to our pro license of [sheetJS](https://sheetjs.com/), we can support all versions of excel, large workbooks, and extract data extremely fast.
+Thanks to our pro license of [sheetJS](https://sheetjs.com/), we can support all versions of excel, large workbooks, and extract data extremely fast.  We also support the ingest of password-protected workbooks.
 
 The rules for data extraction are:
 
