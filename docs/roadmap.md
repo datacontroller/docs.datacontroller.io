@@ -20,17 +20,25 @@ If you would like to see a new Feature added to Data Controller, then let's have
 
 Where features are requested, whether there is budget or not, we will describe the work below and provide estimates.
 
-There are currently three new features in development:
+The following features are currently requested, and awaiting budget:
 
-* Include change tracking information in a transaction table
-* Ability to [view & edit formats](/formats.md)
+* Ability to set 'number of approvals' to zero, enabling instant updates (4 days)
 * Ability to restore previous versions
-
-A further two are requested:
-
 * Ability to import complex excel data using Excel Maps (10.5 days)
 * Ability to make automated submissions using an API
 
+
+### Set Approvals to Zero
+
+The following changes are necessary to implement this feature:
+
+* Adjust restriction on MPE_TABLES allowing 0 in NUM_APPROVALS_REQD
+* Refactor `editors/postdata` enabling execution from `editors/stagedata`
+* Additions to the test suite
+* Pre-flight checks to ensure the SUBMITTER has APPROVAL rights prior to submit
+* Log handling
+* Updates to documentation 
+* Release Notes
 
 ### Complex Excel Uploads
 
@@ -102,6 +110,14 @@ Described [here](https://docs.datacontroller.io/api/).
 ## Delivered Features
 
 Below are some examples of Features that have been requested (and delivered) into Data Controller.
+
+### Ability to View & Edit Formats
+
+Format Catalogs can now be viewed, filtered, exported and edited.  See [docs](/formats.md)
+
+### Change Tracking Information in a Single Transaction Table
+
+Now available in [mpe_audit](/mpe_audit.md)
 
 ### Dynamic Filtering
 
