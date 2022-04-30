@@ -15,7 +15,7 @@ Several web services have been defined to provide additional functionality outsi
 
 To illustrate the above, consider the following URL:
 
-[https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL](https://sas.analytium.co.uk/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL
+[https://viya.4gl.io/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL](https://viya.4gl.io/SASJobExecution/?_program=/Public/app/viya/services/admin/exportdb&flavour=PGSQL
 )
 
 This is broken down into:
