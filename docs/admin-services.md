@@ -54,7 +54,7 @@ In any SAS estate, it's unlikely the size & shape of data will remain static.  B
 
  - Library Properties (size, schema, path, number of tables)
  - Table Properties (size, number of columns, primary keys)
- - Variable Properties (attributes)
+ - Variable Properties (presence in a primary key, constraints, position in the dataset)
 
 The data is stored with SCD2 so you can actually **track changes to your model over time**! Curious when that new column appeared?  Just check the history in [MPE_DATACATALOG_TABS](/mpe_datacatalog_tabs).
 
@@ -75,7 +75,9 @@ When doing a full scan, the following LIBREFS are ignored:
 * 'TEMP'
 * `WORK'
 
-Be aware that the scan process can take a long time if you have a lot of tables!  Also, note that individual LIBREFs can be excluded from the refresh process by adding them to the `DCXXXX.MPE_CONFIG` table (where `var_scope='DC_CATALOG' and var_name='DC_IGNORELIBS'`).
+Additional LIBREFs can be excluded by adding them to the `DCXXXX.MPE_CONFIG` table (where `var_scope='DC_CATALOG' and var_name='DC_IGNORELIBS'`). Use a pipe (`|`) symbol to seperate them.  This can be useful where there are connection issues for a particular library.
+
+Be aware that the scan process can take a long time if you have a lot of tables!  
 
 Output tables (all SCD2):
 
