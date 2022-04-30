@@ -13,6 +13,11 @@ nav:
     - Admin Services: admin-services.md
 - Table Guide:
     - MPE_AUDIT: mpe_audit.md
+    - MPE_DATACATALOG_LIBS: mpe_datacatalog_libs.md
+    - MPE_DATACATALOG_TABS: mpe_datacatalog_tabs.md
+    - MPE_DATACATALOG_VARS: mpe_datacatalog_vars.md
+    - MPE_DATASTATUS_LIBS: mpe_datastatus_libs.md
+    - MPE_DATASTATUS_TABS: mpe_datastatus_tabs.md
 - Configuration:
     - Dates / Datetimes: dcc-dates.md
     - Dynamic Cell Dropdown: dynamic-cell-dropdown.md
