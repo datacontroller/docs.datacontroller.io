@@ -4,7 +4,7 @@ title: MPE_DATACATALOG_VARS
 description: The MPE_DATACATALOG_VARS table catalogs variable attributes such as primary key status, not null constraints and index usage.
 ---
 
-# MPE_DATACATALOG_TABS
+# MPE_DATACATALOG_VARS
 
 The `MPE_DATACATALOG_VARS` table catalogs variable attributes such as primary key status, not null constraints and index usage.
 
