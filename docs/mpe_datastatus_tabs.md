@@ -8,7 +8,7 @@ description: The MPE_DATASTATUS_TABS table captures frequently changing SAS tabl
 
 The `MPE_DATASTATUS_TABS` table captures frequently changing SAS table attributes such as size (if filesystem based), modification date, and the number of observations.
 
-To trigger a scan, see the instructions [here](https://docs.datacontroller.io/admin-services/#refresh-data-catalog)
+To trigger a scan, see the Refresh Data Catalog [instructions](https://docs.datacontroller.io/admin-services/#refresh-data-catalog).
 
 ## Columns
 

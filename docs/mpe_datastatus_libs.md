@@ -8,7 +8,7 @@ description: The MPE_DATASTATUS_LIBS table captures frequently changing SAS libr
 
 The `MPE_DATASTATUS_LIBS` table captures frequently changing SAS library attributes such as size (if filesystem based) and the number of tables.
 
-To trigger a scan, see the instructions [here](https://docs.datacontroller.io/admin-services/#refresh-data-catalog)
+To trigger a scan, see the Refresh Data Catalog [instructions](https://docs.datacontroller.io/admin-services/#refresh-data-catalog).
 
 ## Columns
 

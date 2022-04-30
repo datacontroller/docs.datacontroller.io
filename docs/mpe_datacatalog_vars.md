@@ -8,7 +8,7 @@ description: The MPE_DATACATALOG_VARS table catalogs variable attributes such as
 
 The `MPE_DATACATALOG_VARS` table catalogs variable attributes such as primary key status, not null constraints and index usage.
 
-To trigger a scan, see the instructions [here](https://docs.datacontroller.io/admin-services/#refresh-data-catalog)
+To trigger a scan, see the Refresh Data Catalog [instructions](https://docs.datacontroller.io/admin-services/#refresh-data-catalog).
 
 ## Columns
 
