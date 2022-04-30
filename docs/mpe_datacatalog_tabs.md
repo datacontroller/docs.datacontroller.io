@@ -8,7 +8,7 @@ description: The MPE_DATACATALOG_TABS table catalogs attributes such as number o
 
 The `MPE_DATACATALOG_TABS` table catalogs attributes such as number of variables, compression status, and primary key fields.
 
-More frequently changing attributes (such as size modification date and number of observations) are stored in [MPE_DATASTATUS_TABS](/mpe_datastatus_tabs.md).
+More frequently changing attributes (such as size modification date and number of observations) are stored in [MPE_DATASTATUS_TABS](/mpe_datastatus_tabs).
 
 To trigger a scan, see the instructions [here](https://docs.datacontroller.io/admin-services/#refresh-data-catalog)
 

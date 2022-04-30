@@ -8,7 +8,7 @@ description: The MPE_DATACATALOG_LIBS table catalogs library attributes such as 
 
 The `MPE_DATACATALOG_LIBS` table catalogs library attributes such as engine, paths, permissions, owners & schemas.
 
-More frequently changing attributes (such as size and number of tables) are stored in [MPE_DATASTATUS_LIBS](/mpe_datastatus_libs.md).
+More frequently changing attributes (such as size and number of tables) are stored in [MPE_DATASTATUS_LIBS](/mpe_datastatus_libs).
 
 To ignore additional librefs, or to trigger a scan, see the instructions [here](https://docs.datacontroller.io/admin-services/#refresh-data-catalog)
 
