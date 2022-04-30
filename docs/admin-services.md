@@ -75,7 +75,7 @@ When doing a full scan, the following LIBREFS are ignored:
 * 'TEMP'
 * `WORK'
 
-Be aware that the scan process can take a long time if you have a lot of tables!  Also, note that if a library refresh crashes (due to invalid connection properties), you can exclude it from the subsequent refresh process by adding the `LIBREF` (pipe-separated) to the `DCXXXX.MPE_CONFIG` table (where `var_scope='DC_CATALOG' and var_name='DC_IGNORELIBS'`).
+Be aware that the scan process can take a long time if you have a lot of tables!  Also, note that individual LIBREFs can be excluded from the refresh process by adding them to the `DCXXXX.MPE_CONFIG` table (where `var_scope='DC_CATALOG' and var_name='DC_IGNORELIBS'`).
 
 Output tables (all SCD2):
 
