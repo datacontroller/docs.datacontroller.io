@@ -95,3 +95,9 @@ In unix environments, when attempting to edit a locked table, users are notified
 
 <iframe src="https://player.vimeo.com/video/293557084" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
+## Uploading a Password Protected Excel File
+
+With Data Controller you can upload password protected excel files into SAS.  These are opened in the browser (thanks to our OEM licence of SheetJS) and the underlying data is extracted automatically.
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=b2lfBCkdvBI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

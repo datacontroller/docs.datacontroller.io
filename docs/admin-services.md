@@ -48,14 +48,40 @@ EXAMPLES:
 * `services/admin/exportdb&flavour=PGSQL&schema=DC`
 * `services/admin/exportdb&flavour=PGSQL`
 
-## Refresh Catalog
-Refreshes the Data Controller data catalog.  The model is stored in SCD2 so it's a great way to track changes over time!  The process can take a long time if you have a lot of tables - if a library crashes, you can exclude it from the refresh process by adding pipe-separated LIBREFs to the DCXXXX.MPE_CONFIG table (var_scope='DC_CATALOG', var_name='DC_IGNORELIBS').
+## Refresh Data Catalog
 
-The following params can be added:
+In any SAS estate, it's unlikely the size & shape of data will remain static.  By running a regular Catalog Scan, you can track changes such as:
+ - Library Properties (size, schema, path, number of tables)
+ - Table Properties (size, number of columns, primary keys)
+ - Variable Properties (attributes)
 
-* `&libref` (optional) to run the process for just one library.
+The data is stored with SCD2 so you can actually **track changes to your model over time**! Curious when that new column appeared?  Just check the history in [MPE_DATACATALOG_TABS](/mpe_datacatalog_tabs.md).
 
-EXAMPLES:
+To run the refresh process, just trigger the stored process, eg below:
 
 * `services/admin/refreshcatalog`
 * `services/admin/refreshcatalog&libref=MYLIB`
+
+The `&libref=` parameter is optional - if you want to run the process just for a single library.
+
+When doing a full scan, the following LIBREFS are ignored:
+
+* 'CASUSER'
+* 'MAPSGFK'
+* 'SASUSER'
+* 'SASWORK
+* 'STPSAMP'
+* 'TEMP'
+* `WORK'
+
+Be aware that the scan process can take a long time if you have a lot of tables.  Also, note that if a library refresh crashes (due to invalid connection properties), you can exclude it from the subsequent refresh process by adding the `LIBREF` (pipe-separated) to the `DCXXXX.MPE_CONFIG` table (where `var_scope='DC_CATALOG' and var_name='DC_IGNORELIBS'`).
+
+Output tables (all SCD2):
+
+* [MPE_DATACATALOG_LIBS](/mpe_datacatalog_libs.md) - Library attributes
+* [MPE_DATACATALOG_TABS](/mpe_datacatalog_tabs.md) - Table attributes
+* [MPE_DATACATALOG_VARS](/mpe_datacatalog_vars.md) - Column attributes
+* [MPE_DATASTATUS_LIBS](/mpe_datastatus_libs.md) - Frequently changing library attributes (such as size & number of tables)
+* [MPE_DATASTATUS_TABS](/mpe_datastatus_tabs.md) - Frequently changing table attributes (such as size & number of rows)
+
+
