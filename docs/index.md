@@ -27,7 +27,7 @@ The following resources contain additional information on the Data Controller:
 
 Data Controller is regularly updated with new features.  If you see something that is not listed, and we agree it would be useful, you can engage us with Developer Days to build the feature in.
 
-* Excel uploads - drag n drop directly into SAS
+* [Excel uploads](/dcu-fileupload/#excel-uploads) - drag & drop directly into SAS. All versions of excel supported. 
 * Data Lineage - at both table and column level, export as image or CSV
 * Data Validation Rules - both automatic and user defined
 * Data Dictionary - map data definitions and ownership
@@ -40,6 +40,7 @@ Data Controller is regularly updated with new features.  If you see something th
 * [Row Level Security](/row-level-security)
 * Excel [formula support](excel)
 * Dynamic [cell dropdown](/dynamic-cell-dropdown)
+* Works on ALL flavours of SAS (Foundation, EBI, Viya)
 
 
 
