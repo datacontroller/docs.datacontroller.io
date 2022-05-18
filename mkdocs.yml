@@ -19,6 +19,7 @@ nav:
     - MPE_DATASTATUS_LIBS: mpe_datastatus_libs.md
     - MPE_DATASTATUS_TABS: mpe_datastatus_tabs.md
 - Configuration:
+    - Column Level Security: column-level-security.md
     - Dates / Datetimes: dcc-dates.md
     - Dynamic Cell Dropdown: dynamic-cell-dropdown.md
     - Emails: emails.md
