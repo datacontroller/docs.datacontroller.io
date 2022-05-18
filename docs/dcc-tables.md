@@ -12,7 +12,7 @@ og_image:  https://i.imgur.com/DtVU62u.png
 Adding tables to the Data Controller is a matter of configuration, specifically the addition of a new record to the `DATACTRL.MPE_TABLES` table, and corresponding entries in the `DATACTRL.MPE_SECURITY` table.
 
 !!! note
-In order to surface the table to users, appropriate groups should be configured as per [security](dcc-security.md) settings.
+    In order to surface the table to (non admin) users, appropriate groups should be configured as per [security](dcc-security.md) settings.
 
 ![screenshot](img/configtable.png)
 
@@ -43,7 +43,7 @@ The loadtype determines the nature of the update to be applied. Valid values are
 
 This is a required field.
 !!! Note
-The support for BITEMPORAL loads is restricted, in the sense it is only possible to load data at a single point in time (no support for loading multiple business date ranges for a single business key). The workaround is simply to load each date range separately.
+    The support for BITEMPORAL loads is restricted, in the sense it is only possible to load data at a single point in time (no support for loading multiple business date ranges for a single business key). The workaround is simply to load each date range separately.
 
 ### BUSKEY
 
@@ -134,3 +134,20 @@ Leave blank unless using retained / surrogate keys.
 
 If more information is available to describe the table being updated (eg on sharepoint), provide a url here and it will be made available to approvers.
 Leave blank if not required.
+
+
+## HOOK Scripts
+
+Data Controller allows SAS programs to be executed at certain points in the ingestion lifecycle, such as:
+
+* Before an edit (control the edit screen)
+* After an edit (perform complex data quality)
+* Before an approval (control the approve screen)
+* After an approval (trigger downstream jobs with new data)
+
+This program is simply `%include`'d after an edit has been made. The program may be:
+
+* Physical, ie a `.sas` program on the physical server directory
+* Logical, ie a Viya Job (SAS Drive), SAS 9 Stored Process (Metadata Folder) or SASJS Stored Program (SASjs Drive).
+
+If the entry ends in ".sas" it is assumed to be a physical, filesystem file.  Otherwise, the source code is extracted from the Job/STP.  The Job/STP path can be relative (beneath the /DataController root) or full (to another item in Drive / Metadata).

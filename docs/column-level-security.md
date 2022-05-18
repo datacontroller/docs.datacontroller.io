@@ -1,17 +1,17 @@
 ---
 layout: article
 title: Column Level Security
-description: Restrict tables in SAS such that users can only view or edit specific columns according to their group membership.
+description: Column Level Security prevents end users from viewing or editing specific columns in SAS according to their group membership.
 og_image:  https://docs.datacontroller.io/img/rls_table.png
 ---
 
 # Column Level Security
 
-Column level security is implemented by mapping _allowed_ columns to a list of groups. 
+Column level security is implemented by mapping _allowed_ columns to a list of SAS groups. In VIEW mode, only allowed columns are visible.  In EDIT mode, allowed columns are _editable_ - the remaining columns are read-only.
 
 ## Configuration
 
-The columns in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
+The variables in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
 
 ### CLS_SCOPE
 Determines whether the rule applies to the VIEW page, the EDIT page, or ALL pages.  
@@ -43,7 +43,7 @@ If you would like this rule to be applied, be sure this value is set to 1.
 Example values as follows:
 
 |CLS_SCOPE:$4|CLS_GROUP:$64|CLS_LIBREF:$8| CLS_TABLE:$32|CLS_VARIABLE_NM:$32|CLS_ACTIVE:8.|
-|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 |EDIT|Group 1|MYLIB|MYDS|VAR_1|1|
 |ALL|Group 1|MYLIB|MYDS|VAR_2|1|
 |ALL|Group 2|MYLIB|MYDS|VAR_3|1|
