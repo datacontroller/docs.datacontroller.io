@@ -18,6 +18,7 @@ nav:
     - MPE_DATACATALOG_VARS: mpe_datacatalog_vars.md
     - MPE_DATASTATUS_LIBS: mpe_datastatus_libs.md
     - MPE_DATASTATUS_TABS: mpe_datastatus_tabs.md
+    - MPE_TABLES: mpe_tables.md
 - Configuration:
     - Column Level Security: column-level-security.md
     - Dates / Datetimes: dcc-dates.md

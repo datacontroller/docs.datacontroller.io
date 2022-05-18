@@ -73,10 +73,10 @@ Leave blank if not required.
 
 ### PRE_EDIT_HOOK
 
-The full path / location (unquoted) of a SAS program (or Viya Job, SAS 9 Stored Process) to execute prior to an edit being made. This allows a particular view of a table to be presented to a user for editing (eg masking columns, removing rows etc). Leave blank if not required.
+The location of code to execute prior to an edit being made. This allows for modification of the data before it is presented for editing. Leave blank if not required.  Configuration details are [here](#hook-scripts).
 
 #### SAS Developer Notes
-The PRE_EDIT_HOOK program will be `%inc`'d after the data has already been extracted.  A table called `work.out` will be available that has all the same columns (in the same order) as that shown on the EDIT screen on the frontend.  The observations will have been sorted on the [BUSKEY](#buskey).  The surrounding code looks like this:
+The PRE_EDIT_HOOK program will be `%inc`'d _after_ the data has been extracted.  A table called `work.out` will be available, containing all the same columns (in the same order) as normally shown on the EDIT screen on the frontend.  The observations will have been sorted on the [BUSKEY](#buskey).  The surrounding code looks like this:
 
 ![pre edit hook SAS code](https://i.imgur.com/ezQWU4W.png)
 
@@ -85,12 +85,13 @@ You can make any changes you wish, just be sure that the final table is also cal
 
 ### POST_EDIT_HOOK
 
-The path / location (unquoted) of a SAS Program that is `%include`'d after an edit has been made. The program may be:
+This [hook script](#hook-scripts) is `%include`'d _after_ an edit has been made. This is useful when there is a need to augment data, or perform advanced data quality checks prior to approval.
 
-* A .sas program on the server directory
-* A SAS 9 Stored Process or Viya Job
+Leave blank if not required.
 
-This program code can modify the dataset (`work.staging_ds`) that is created in the staging area, which is useful for augmenting data / applying complex DQ rules. If your DQ check means that the program should not be submitted, then simply exit with `syscc > 4`. You can even set a message to go back to the user.
+#### SAS Developer Notes 
+
+The submitted table can be referenced as (`work.staging_ds`).  If your DQ check means that the program should not be submitted, then simply exit with `&syscc > 4`. You can even set a message to go back to the user by using the [mp_abort](https://core.sasjs.io/mp__abort_8sas.html) macro:
 
 ```
 %mp_abort(iftrue= (&syscc ne 0) /* if this condition is true, the process will exit */
@@ -98,17 +99,23 @@ This program code can modify the dataset (`work.staging_ds`) that is created in 
 )
 ```
 
-Leave blank if not required.
 
 ### PRE_APPROVE_HOOK
 
-The full path / location (unquoted) of a SAS program (or Viya Job, SAS 9 Stored Process) that will be `%inc`'d before an approval diff is generated. This modifies the value that is presented to an approver on the approve screen, and can be helpful in terms of ensuring that information is presented in way that can be easily consumed by approvers.
+This [hook script](#hook-scripts) is `%inc`'d before the approval diff is generated. It can be used to modify the values presented to an approver on the approve screen.  This can be helpful in order to present the data in way that can be easily consumed by approvers.
+
 Leave blank if not required.
 
 ### POST_APPROVE HOOK
 
-The full path / location (unquoted) of a SAS program (or Viya Job, SAS 9 Stored Process) that will be `%inc`'d after an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.
+This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.  
+
 Leave blank if not required.
+
+#### SAS Developer Notes 
+
+The `&orig_libds` macro variable contains a reference to the library.table (or format catalog) that has just been loaded.  The staged table is called `work.STAGING_DS`. 
+
 
 ### SIGNOFF_COLS
 
@@ -117,7 +124,8 @@ Leave blank if not required.
 
 ### SIGNOFF_HOOK
 
-The full path / location (unquoted) of a SAS program that will be `%inc`'d after a 'final version' has been signed off.
+This [hook script](#hook-scripts) is `%inc`'d after a 'final version' has been signed off.
+
 Leave blank if not required.
 
 ### NOTES
@@ -140,14 +148,14 @@ Leave blank if not required.
 
 Data Controller allows SAS programs to be executed at certain points in the ingestion lifecycle, such as:
 
-* Before an edit (control the edit screen)
+* Before an edit (to control the edit screen)
 * After an edit (perform complex data quality)
 * Before an approval (control the approve screen)
 * After an approval (trigger downstream jobs with new data)
 
-This program is simply `%include`'d after an edit has been made. The program may be:
+The code is simply `%include`'d at the relevant point during backend execution. The program may be:
 
-* Physical, ie a `.sas` program on the physical server directory
+* Physical, ie the full path to a `.sas` program on the physical server directory
 * Logical, ie a Viya Job (SAS Drive), SAS 9 Stored Process (Metadata Folder) or SASJS Stored Program (SASjs Drive).
 
 If the entry ends in ".sas" it is assumed to be a physical, filesystem file.  Otherwise, the source code is extracted from the Job/STP.  The Job/STP path can be relative (beneath the /DataController root) or full (to another item in Drive / Metadata).
