@@ -22,7 +22,7 @@ Each table to be edited in the Data Controller is represented by one record in `
 
 ### LIBREF
 
-The libref of the table. If not pre-assigned, DC will assign it at runtime using the first definition found in metadata, using this [macro](https://core.sasjs.io/mm__assigndirectlib_8sas.html).
+The libref of the table. If not pre-assigned, and the serverType is SAS 9 (EBI), DC will assign it at runtime using the first definition found in metadata, using this [macro](https://core.sasjs.io/mm__assigndirectlib_8sas.html).
 
 ### DSN
 
