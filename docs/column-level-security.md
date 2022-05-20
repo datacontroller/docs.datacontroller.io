@@ -5,6 +5,9 @@ description: Column Level Security prevents end users from viewing or editing sp
 og_image:  https://docs.datacontroller.io/img/rls_table.png
 ---
 
+!!! warning
+    In development - coming soon!
+
 # Column Level Security
 
 Column level security is implemented by mapping _allowed_ columns to a list of SAS groups. In VIEW mode, only allowed columns are visible.  In EDIT mode, allowed columns are _editable_ - the remaining columns are read-only.
@@ -16,8 +19,8 @@ The variables in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
 ### CLS_SCOPE
 Determines whether the rule applies to the VIEW page, the EDIT page, or ALL pages.  
 
-- When applied to VIEW, then only the allowed columns are visible.
-- When applied to EDIT, then only the allowed columns are _editable_ (the remaining columns are read-only, and visible)
+- When applied to VIEW, then only allowed columns are _visible_
+- When applied to EDIT, then only allowed columns are _editable_ (the remaining columns are read-only, and visible).  Also, when CLS is applied in EDIT mode, the user will not be able to ADD or DELETE records.
 
 ### CLS_GROUP
 The SAS Group to which the rule applies.  The user could also be a member of a [DC group](/dcc-groups). 
@@ -50,12 +53,14 @@ Example values as follows:
 |VIEW|Group 1|MYLIB|MYDS|VAR_4|1|
 
 
-If a user is in Group 1, and viewing `MYLIB.MYDS` in EDIT mode, all columns will be visible but only the following columns will be editable:
+If a user is in Group 1, and viewing `MYLIB.MYDS` in EDIT mode, **all** columns will be visible but only the following columns will be editable:
 
 * VAR_1
 * VAR_2
 
-If the user is in both Group 1 AND Group 2, viewing `MYLIB.MYDS` in VIEW mode, only the following columns will be visible:
+The user will be unable to add or delete rows.
+
+If the user is in both Group 1 AND Group 2, viewing `MYLIB.MYDS` in VIEW mode, **only** the following columns will be visible:
 
 * VAR_2
 * VAR_3
