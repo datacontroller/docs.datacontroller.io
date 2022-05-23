@@ -91,7 +91,7 @@ Leave blank if not required.
 
 #### SAS Developer Notes 
 
-The `&orig_libds` macro variable contains a reference to the base library.table or format catalog that will be loaded (on approval).  The staged table is called `work.STAGING_DS`. 
+The staged data is in a WORK table called `work.STAGING_DS`.  The `&orig_libds` macro variable contains a reference to the base library.table or format catalog.  
 
 If your DQ check means that the program should not be submitted, then simply exit with `&syscc > 4`. You can even set a message to go back to the user by using the [mp_abort](https://core.sasjs.io/mp__abort_8sas.html) macro:
 
