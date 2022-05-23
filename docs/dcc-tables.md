@@ -91,7 +91,9 @@ Leave blank if not required.
 
 #### SAS Developer Notes 
 
-The submitted table can be referenced as (`work.staging_ds`).  If your DQ check means that the program should not be submitted, then simply exit with `&syscc > 4`. You can even set a message to go back to the user by using the [mp_abort](https://core.sasjs.io/mp__abort_8sas.html) macro:
+The `&orig_libds` macro variable contains a reference to the base library.table or format catalog that will be loaded (on approval).  The staged table is called `work.STAGING_DS`. 
+
+If your DQ check means that the program should not be submitted, then simply exit with `&syscc > 4`. You can even set a message to go back to the user by using the [mp_abort](https://core.sasjs.io/mp__abort_8sas.html) macro:
 
 ```
 %mp_abort(iftrue= (&syscc ne 0) /* if this condition is true, the process will exit */
