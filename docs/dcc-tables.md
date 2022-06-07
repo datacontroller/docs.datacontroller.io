@@ -160,4 +160,10 @@ The code is simply `%include`'d at the relevant point during backend execution. 
 * Physical, ie the full path to a `.sas` program on the physical server directory
 * Logical, ie a Viya Job (SAS Drive), SAS 9 Stored Process (Metadata Folder) or SASJS Stored Program (SASjs Drive).
 
-If the entry ends in ".sas" it is assumed to be a physical, filesystem file.  Otherwise, the source code is extracted from the Job/STP.  The Job/STP path can be relative (beneath the /DataController root) or full (to another item in Drive / Metadata).
+
+If the entry ends in `".sas"` it is assumed to be a physical, filesystem file.  Otherwise, the source code is extracted from SAS Drive or Metadata.
+
+To illustrate:
+
+* Physical filesystem (ends in .sas):  `/opt/sas/code/myprogram.sas`
+* Logical filesystem:  `/Shared Data/stored_processes/mydatavalidator`
