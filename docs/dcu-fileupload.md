@@ -35,7 +35,7 @@ The following should be considered when uploading data in this way:
  - Duplicate variable names are not permitted
  - Missing columns are not permitted
  - Additional columns are ignored
- - The order of variables does not matter
+ - The order of variables does not matter EXCEPT for the (optional) `_____DELETE__THIS__RECORD_____` variable.  When using this variable, it must be the **first**.
  - The delimiter is extracted from the header row - so for `var1;var2;var3` the delimeter would be assumed to be a semicolon
  - The above assumes the delimiter is the first special character! So `var,1;var2;var3` would fail
  - The following characters should **not** be used as delimiters
