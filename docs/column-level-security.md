@@ -20,7 +20,7 @@ The variables in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
 Determines whether the rule applies to the VIEW page, the EDIT page, or ALL pages.  
 
 - When applied to VIEW, then only allowed columns are _visible_
-- When applied to EDIT, then only allowed columns are _editable_ (the remaining columns are read-only, and visible).  Also, when CLS is applied in EDIT mode, the user will not be able to ADD or DELETE records.
+- When applied to EDIT, then only allowed columns are _editable_ (the remaining columns are read-only, and visible).  When CLS is applied in EDIT mode, the user will not be able to ADD or DELETE records.
 
 ### CLS_GROUP
 The SAS Group to which the rule applies.  The user could also be a member of a [DC group](/dcc-groups). 
@@ -41,16 +41,24 @@ This is the name of the variable against which the security rule will be applied
 ### CLS_ACTIVE
 If you would like this rule to be applied, be sure this value is set to 1.
 
+### CLS_HIDE
+This variable can be set to `1` to _hide_ specific variables, which allows greater control over the EDIT screen in particular.  CLS_SCOPE behaviour is impacted as follows:
+
+* `ALL` - the variable will not be visible in either VIEW or EDIT.
+* `EDIT` - the variable will not be visible.  Cannot be applied to a primary key column.
+* `VIEW` - the variable will not be visible.  Can be applied to a primary key column.  Simply omitting the row, or setting CLS_ACTIVE to 0, would result in the same behaviour.
+
 
 ## Example Config
 Example values as follows:
 
-|CLS_SCOPE:$4|CLS_GROUP:$64|CLS_LIBREF:$8| CLS_TABLE:$32|CLS_VARIABLE_NM:$32|CLS_ACTIVE:8.|
-|---|---|---|---|---|---|
-|EDIT|Group 1|MYLIB|MYDS|VAR_1|1|
-|ALL|Group 1|MYLIB|MYDS|VAR_2|1|
-|ALL|Group 2|MYLIB|MYDS|VAR_3|1|
-|VIEW|Group 1|MYLIB|MYDS|VAR_4|1|
+|CLS_SCOPE:$4|CLS_GROUP:$64|CLS_LIBREF:$8| CLS_TABLE:$32|CLS_VARIABLE_NM:$32|CLS_ACTIVE:8.|CLS_HIDE:8.|
+|---|---|---|---|---|---|---|
+|EDIT|Group 1|MYLIB|MYDS|VAR_1|1||
+|ALL|Group 1|MYLIB|MYDS|VAR_2|1||
+|ALL|Group 2|MYLIB|MYDS|VAR_3|1||
+|VIEW|Group 1|MYLIB|MYDS|VAR_4|1||
+|EDIT|Group 1|MYLIB|MYDS|VAR_5|1|1|
 
 
 If a user is in Group 1, and viewing `MYLIB.MYDS` in EDIT mode, **all** columns will be visible but only the following columns will be editable:
