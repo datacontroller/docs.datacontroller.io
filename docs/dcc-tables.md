@@ -73,25 +73,27 @@ Leave blank if not required.
 
 ### PRE_EDIT_HOOK
 
-The location of code to execute prior to an edit being made. This allows for modification of the data before it is presented for editing. Leave blank if not required.  Configuration details are [here](#hook-scripts).
+[Hook script](#hook-scripts) to execute _prior_ to an edit being made. This allows data to be modified before being presented for editing. 
 
-#### SAS Developer Notes
-The PRE_EDIT_HOOK program will be `%inc`'d _after_ the data has been extracted.  A table called `work.out` will be available, containing all the same columns (in the same order) as normally shown on the EDIT screen on the frontend.  The observations will have been sorted on the [BUSKEY](#buskey).  The surrounding code looks like this:
+Leave blank if not required.  
 
-![pre edit hook SAS code](https://i.imgur.com/ezQWU4W.png)
+SAS Developer Notes:
 
-You can make any changes you wish, just be sure that the final table is also called `work.out`.
+* Target dataset: `work.OUT`
+* Filters will have been applied, and table sorted on [BUSKEY](#buskey)
+* Base libref.table or catalog variable:   `&orig_libds`
 
 
 ### POST_EDIT_HOOK
 
-This [hook script](#hook-scripts) is `%include`'d _after_ an edit has been made. This is useful when there is a need to augment data, or perform advanced data quality checks prior to approval.
+[Hook script](#hook-scripts) to execute _after_ an edit has been made. Useful when there is a need to augment data, or perform advanced data quality checks prior to approval.
 
 Leave blank if not required.
 
-#### SAS Developer Notes 
+SAS Developer Notes:
 
-The staged data is in a WORK table called `work.STAGING_DS`.  The `&orig_libds` macro variable contains a reference to the base library.table or format catalog.  
+* Target dataset: `work.STAGING_DS`
+* Base libref.table or catalog variable:  `&orig_libds`
 
 If your DQ check means that the program should not be submitted, then simply exit with `&syscc > 4`. You can even set a message to go back to the user by using the [mp_abort](https://core.sasjs.io/mp__abort_8sas.html) macro:
 
@@ -104,9 +106,14 @@ If your DQ check means that the program should not be submitted, then simply exi
 
 ### PRE_APPROVE_HOOK
 
-This [hook script](#hook-scripts) is `%inc`'d before the approval diff is generated. It can be used to modify the values presented to an approver on the approve screen.  This can be helpful in order to present the data in way that can be easily consumed by approvers.
+[Hook script](#hook-scripts) to execute before the approval diff is generated. It can be used to modify the values presented to an approver on the approve screen.  This can be helpful in order to present the data in way that can be easily consumed by approvers.
 
 Leave blank if not required.
+
+SAS Developer Notes:
+
+* Target dataset: `work.STAGING_DS`
+* Base libref.table or catalog variable:  `&orig_libds`
 
 ### POST_APPROVE HOOK
 
@@ -114,9 +121,10 @@ This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This 
 
 Leave blank if not required.
 
-#### SAS Developer Notes 
+SAS Developer Notes:
 
-The `&orig_libds` macro variable contains a reference to the library.table (or format catalog) that has just been loaded.  The staged table is called `work.STAGING_DS`. 
+* Target dataset: `work.STAGING_DS`
+* Base libref.table or catalog variable:   `&orig_libds`
 
 
 ### SIGNOFF_COLS
