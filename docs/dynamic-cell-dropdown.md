@@ -35,7 +35,7 @@ If creating a Stored Process, be sure to deselect the 'automatic SAS macros' - t
 
 You can write any SAS code you wish. For examples of hook scripts you can look at the Data Controller internal validation programs (listed in the MPE_VALIDATIONS table). You will receive the following as inputs:
 
-* `work.source_row` -> A dataset containing the entire row from the source table being modified
+* `work.source_row` -> A dataset containing the **current row** being modified in Data Controller.  All variables are available.  Use this to filter the initial values in `work.dynamic_values`.
 * `&DC_LIBREF` -> The DC control library
 * `&LIBDS` - The library.dataset being filtered
 * `&VARIABLE_NM` - The column for which to supply the validation
