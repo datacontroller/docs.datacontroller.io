@@ -12,13 +12,14 @@ nav:
     - Table Viewer: dcu-tableviewer.md
     - Admin Services: admin-services.md
 - Table Guide:
-    - MPE_AUDIT: mpe_audit.md
-    - MPE_DATACATALOG_LIBS: mpe_datacatalog_libs.md
-    - MPE_DATACATALOG_TABS: mpe_datacatalog_tabs.md
-    - MPE_DATACATALOG_VARS: mpe_datacatalog_vars.md
-    - MPE_DATASTATUS_LIBS: mpe_datastatus_libs.md
-    - MPE_DATASTATUS_TABS: mpe_datastatus_tabs.md
-    - MPE_TABLES: mpe_tables.md
+    - MPE_AUDIT: tables/mpe_audit.md
+    - MPE_DATACATALOG_LIBS: tables/mpe_datacatalog_libs.md
+    - MPE_DATACATALOG_TABS: tables/mpe_datacatalog_tabs.md
+    - MPE_DATACATALOG_VARS: tables/mpe_datacatalog_vars.md
+    - MPE_DATASTATUS_LIBS: tables/mpe_datastatus_libs.md
+    - MPE_DATASTATUS_TABS: tables/mpe_datastatus_tabs.md
+    - MPE_SUBMIT: tables/mpe_submit.md
+    - MPE_TABLES: tables/mpe_tables.md
 - Configuration:
     - Column Level Security: column-level-security.md
     - Dates / Datetimes: dcc-dates.md
