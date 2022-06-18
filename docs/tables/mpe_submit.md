@@ -8,9 +8,9 @@ og_image: /img/mpe_submit.png
 
 # MPE_SUBMIT
 
-The MPE_SUBMIT table tracks the status of submitted modifications - ie SUBMITTED, APPROVED, or REJECTED.  It is unique on TABLE_ID.  
+The MPE_SUBMIT table tracks the status of submitted modifications - ie SUBMITTED, APPROVED, or REJECTED.  It is unique on TABLE_ID.  A record is created whenever a submit is submitted.  
 
-![submits](img/mpe_submit.png)
+![submits](/img/mpe_submit.png)
 
 
 ## Columns
