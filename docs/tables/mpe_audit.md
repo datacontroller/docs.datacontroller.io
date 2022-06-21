@@ -12,6 +12,8 @@ The MPE_AUDIT table contains all deletions, modifications and additions to data 
 
 The underlying utility is open source and documented [here](https://core.sasjs.io/mp__storediffs_8sas.html).
 
+![audit](/img/mpe_audit.png)
+
 ## Columns
 
  - LOAD_REF (PK).  This is supplied to the `bitemporal_dataloader()` macro at backend, and corresponds to the unique folder in which the staged data resides.
