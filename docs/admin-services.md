@@ -6,7 +6,11 @@ description: Data Controller contains a number of admin-only web services, such 
 
 # Admin Services
 
-Several web services have been defined to provide additional functionality outside of the user interface.  These somewhat-hidden services must be called directly, using a web browser.  The URL is made up of several components:
+Several web services have been defined to provide additional functionality outside of the user interface.  These somewhat-hidden services must be called directly, using a web browser.  
+
+In a future version, these features will be made available from an Admin screen (so, no need to manually modify URLs).
+
+The URL is made up of several components:
 
 * `SERVERURL` -> the domain (and port) on which your SAS server resides
 * `EXECUTOR` -> Either `SASStoredProcess` for SAS 9, else `SASJobExecution` for Viya
@@ -87,4 +91,8 @@ Output tables (all SCD2):
 * [MPE_DATASTATUS_LIBS](/tables/mpe_datastatus_libs) - Frequently changing library attributes (such as size & number of tables)
 * [MPE_DATASTATUS_TABS](/tables/mpe_datastatus_tabs) - Frequently changing table attributes (such as size & number of rows)
 
+## Update Licence Key
 
+Whenever navigating Data Controller, there is always a hash (`#`) in the URL.  To access the licence key screen, remove all content to the RIGHT of the hash and add the following string: `/licensing/update`.
+
+If you are using https protocol, you will have 2 keys (licence key / activation key).  In http mode, there is just one key (licence key) for both boxes.
