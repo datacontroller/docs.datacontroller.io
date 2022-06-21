@@ -56,7 +56,7 @@ In any SAS estate, it's unlikely the size & shape of data will remain static.  B
  - Table Properties (size, number of columns, primary keys)
  - Variable Properties (presence in a primary key, constraints, position in the dataset)
 
-The data is stored with SCD2 so you can actually **track changes to your model over time**! Curious when that new column appeared?  Just check the history in [MPE_DATACATALOG_TABS](/mpe_datacatalog_tabs).
+The data is stored with SCD2 so you can actually **track changes to your model over time**! Curious when that new column appeared?  Just check the history in [MPE_DATACATALOG_TABS](/tables/mpe_datacatalog_tabs).
 
 To run the refresh process, just trigger the stored process, eg below:
 
@@ -81,10 +81,10 @@ Be aware that the scan process can take a long time if you have a lot of tables!
 
 Output tables (all SCD2):
 
-* [MPE_DATACATALOG_LIBS](/mpe_datacatalog_libs) - Library attributes
-* [MPE_DATACATALOG_TABS](/mpe_datacatalog_tabs) - Table attributes
-* [MPE_DATACATALOG_VARS](/mpe_datacatalog_vars) - Column attributes
-* [MPE_DATASTATUS_LIBS](/mpe_datastatus_libs) - Frequently changing library attributes (such as size & number of tables)
-* [MPE_DATASTATUS_TABS](/mpe_datastatus_tabs) - Frequently changing table attributes (such as size & number of rows)
+* [MPE_DATACATALOG_LIBS](/tables/mpe_datacatalog_libs) - Library attributes
+* [MPE_DATACATALOG_TABS](/tables/mpe_datacatalog_tabs) - Table attributes
+* [MPE_DATACATALOG_VARS](/tables/mpe_datacatalog_vars) - Column attributes
+* [MPE_DATASTATUS_LIBS](/tables/mpe_datastatus_libs) - Frequently changing library attributes (such as size & number of tables)
+* [MPE_DATASTATUS_TABS](/tables/mpe_datastatus_tabs) - Frequently changing table attributes (such as size & number of rows)
 
 
