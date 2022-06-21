@@ -2,6 +2,8 @@
 layout: article
 title: MPE_AUDIT
 description: The MPE_AUDIT table enables full change capture of data in SAS.  It contains all deletes, modifications and additions by all users.
+og_title: MPE_AUDIT Table Documentation
+og_image: /img/mpe_audit.png
 ---
 
 # MPE_AUDIT
