@@ -13,6 +13,7 @@ nav:
     - Admin Services: admin-services.md
 - Table Guide:
     - MPE_AUDIT: tables/mpe_audit.md
+    - MPE_CONFIG: tables/mpe_config.md
     - MPE_DATACATALOG_LIBS: tables/mpe_datacatalog_libs.md
     - MPE_DATACATALOG_TABS: tables/mpe_datacatalog_tabs.md
     - MPE_DATACATALOG_VARS: tables/mpe_datacatalog_vars.md
