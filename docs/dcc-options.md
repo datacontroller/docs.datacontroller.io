@@ -1,7 +1,13 @@
+---
+layout: article
+title: DC Options
+description: Options in Data Controller are set in the MPE_CONFIG table and apply to all users.
+og_title: Data Controller for SAS® Options
+og_image: /img/mpe_config.png
+---
 # Data Controller for SAS® - Options
 
-## Overview
-The MPE_CONFIG table provides a number of options, to apply to all users:
+The MPE_CONFIG table provides a number of options, which apply to all users:
 
 ## DC_EMAIL_ALERTS
 Set to YES or NO to enable email alerts. This requires email options to be preconfigured (mail server etc).
@@ -13,6 +19,13 @@ By default, a maximum of 100 observations can be edited in the browser at one ti
 * Browser type and version (works best in Chrome)
 * Number (and size) of columns
 * Speed of client machine (laptop/desktop)
+
+## DC_RESTRICT_EDITRECORD
+Setting YES will prevent the EDIT RECORD dialog appearing in the EDIT screen by removing the "Edit Row" option in the right click menu, and the "ADD RECORD" button in the bottom left.  
+
+Anything other than YES will mean that the modal _is_ available.
+
+Default=NO 
 
 ## DC_RESTRICT_VIEWER
 Set to YES to restrict the list of libraries and tables in VIEWER to only those explicitly set to VIEW in the MPE_SECURITY table.  The default is NO (users can see all tables they already have permission to see).
