@@ -58,6 +58,8 @@ This variable can be set to `1` to _hide_ specific variables, which allows great
 * `EDIT` - the variable will not be visible.  **Cannot be applied to a primary key column**.
 * `VIEW` - the variable will not be visible.  Can be applied to a primary key column.  Simply omitting the row, or setting CLS_ACTIVE to 0, would result in the same behaviour.
 
+It is possible that a variable can have multiple values for CLS_HIDE, eg if a user is in multiple groups, or if different rules apply for different scopes.  In this case, if the user is any group where this variable is NOT hidden, then it will be displayed.
+
 
 ## Example Config
 Example values as follows:
