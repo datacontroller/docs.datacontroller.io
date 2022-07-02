@@ -17,10 +17,20 @@ Column level security is implemented by mapping _allowed_ columns to a list of S
 The variables in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
 
 ### CLS_SCOPE
-Determines whether the rule applies to the VIEW page, the EDIT page, or ALL pages.  
+Determines whether the rule applies to the VIEW page, the EDIT page, or ALL pages.  The impact of the rule varies as follows:
 
-- When applied to VIEW, then only allowed columns are _visible_
-- When applied to EDIT, then only allowed columns are _editable_ (the remaining columns are read-only, and visible).  When CLS is applied in EDIT mode, the user will not be able to ADD or DELETE records.
+#### VIEW Scope
+
+When `CLS_SCOPE in ('VIEW','ALL')` then only the listed columns are _visible_ (unless `CLS_HIDE=1`)
+
+#### EDIT Scope
+
+When `CLS_SCOPE in ('EDIT','ALL')` then only the listed columns are _editable_ (the remaining columns are read-only, and visible).  Furthermore:
+
+* The user will be unable to ADD or DELETE records.
+* Primary Key values are always read only 
+* Primary Key values cannot be hidden (`CLS_HIDE=1` will have no effect)
+
 
 ### CLS_GROUP
 The SAS Group to which the rule applies.  The user could also be a member of a [DC group](/dcc-groups). 
@@ -36,7 +46,7 @@ The library of the target table against which the security rule will be applied
 The target table against which the security rule will be applied
 
 ### CLS_VARIABLE_NM
-This is the name of the variable against which the security rule will be applied
+This is the name of the variable against which the security rule will be applied.  Note that 
 
 ### CLS_ACTIVE
 If you would like this rule to be applied, be sure this value is set to 1.
@@ -45,7 +55,7 @@ If you would like this rule to be applied, be sure this value is set to 1.
 This variable can be set to `1` to _hide_ specific variables, which allows greater control over the EDIT screen in particular.  CLS_SCOPE behaviour is impacted as follows:
 
 * `ALL` - the variable will not be visible in either VIEW or EDIT.
-* `EDIT` - the variable will not be visible.  Cannot be applied to a primary key column.
+* `EDIT` - the variable will not be visible.  **Cannot be applied to a primary key column**.
 * `VIEW` - the variable will not be visible.  Can be applied to a primary key column.  Simply omitting the row, or setting CLS_ACTIVE to 0, would result in the same behaviour.
 
 
