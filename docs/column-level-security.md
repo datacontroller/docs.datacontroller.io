@@ -9,6 +9,10 @@ og_image:  https://docs.datacontroller.io/img/cls_table.png
 
 Column level security is implemented by mapping _allowed_ columns to a list of SAS groups. In VIEW mode, only allowed columns are visible.  In EDIT mode, allowed columns are _editable_ - the remaining columns are read-only.
 
+Below is an example of an EDIT table with only one column enabled for editing:
+
+![lockanytable example](/img/cls_example.png)
+
 ## Configuration
 
 The variables in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
@@ -35,6 +39,7 @@ The SAS Group to which the rule applies.  The user could also be a member of a [
  - If a user is in ANY of the groups, the columns will be restricted.
  - If a user is in NONE of the groups, no restrictions apply (all columns available).
  - If a user is in MULTIPLE groups, they will see all allowed columns across all groups.
+ - If a user is in the [Data Controller Admin Group](/dcc-groups/#data-controller-admin-group), CLS rules DO NOT APPLY.
 
 ### CLS_LIBREF
 The library of the target table against which the security rule will be applied
