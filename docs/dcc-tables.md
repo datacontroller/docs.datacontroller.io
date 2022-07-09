@@ -73,9 +73,9 @@ Leave blank if not required.
 
 ### PRE_EDIT_HOOK
 
-[Hook script](#hook-scripts) to execute _prior_ to an edit being made. This allows data to be modified before being presented for editing. 
+[Hook script](#hook-scripts) to execute _prior_ to an edit being made. This allows data to be modified before being presented for editing.
 
-Leave blank if not required.  
+Leave blank if not required.
 
 SAS Developer Notes:
 
@@ -117,7 +117,7 @@ SAS Developer Notes:
 
 ### POST_APPROVE HOOK
 
-This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.  
+This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.
 
 Leave blank if not required.
 
@@ -148,10 +148,16 @@ Not required, but recommended.
 For retained / surrogate keys, an auto-incrementing field is used to represent each unique record. In this case, the RK (integer) field itself should be added in the [BUSKEY](#buskey) column, and the natural / underlying key should be added here.
 Leave blank unless using retained / surrogate keys.
 
-### HELPFUL_LINK
+### AUDIT_LIBDS
 
-If more information is available to describe the table being updated (eg on sharepoint), provide a url here and it will be made available to approvers.
-Leave blank if not required.
+If this field is blank (ie empty, missing), **every** change is captured in the [MPE_AUDIT](/tables/mpe_audit.md).  This can result in large data volumes for frequently changing tables.
+
+Alternative options are:
+
+1.  Enter a zero (`0`) to switch off audit logging completely
+2.  Enter a library.dataset reference of an alternative audit table in which to capture the change history.
+
+For option 2, the base table structure can be generated using this macro:  [https://core.sasjs.io/mddl__dc__difftable_8sas_source.html](https://core.sasjs.io/mddl__dc__difftable_8sas_source.html).
 
 
 ## HOOK Scripts

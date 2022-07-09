@@ -12,7 +12,7 @@ A more detailed breakdown of the columns / features is available in the [configu
 
 ## Columns
 
- - `TX_FROM num`: SCD2 open datetime 
+ - `TX_FROM num`: SCD2 open datetime
  - 🔑 `TX_TO num`: SCD2 close datetime
  - 🔑 `LIBREF char(8)`: SAS Libref (8 chars)
  - 🔑 `DSN char(64)`: The library member name
@@ -33,4 +33,4 @@ A more detailed breakdown of the columns / features is available in the [configu
  - `SIGNOFF_HOOK char(200)`: Run SAS code after signoff.  See [config](/dcc-tables/#signoff_hook)
  - `NOTES char(1000)`: Additional notes. See [config](/dcc-tables/#notes)
  - `RK_UNDERLYING char(1000)`: The key on which the retained key is generated. See [config](/dcc-tables/#rk_underlying)
- - `HELPFUL_LINK char(300)`: URL to additional notes about the table. See [config](/dcc-tables/#helpful_link)
+ - `AUDIT_LIBDS char(41)`: Configure alternative audit history tracking tables (or switch off audit history). See [config](/dcc-tables/#audit-libds)

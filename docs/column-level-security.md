@@ -2,11 +2,8 @@
 layout: article
 title: Column Level Security
 description: Column Level Security prevents end users from viewing or editing specific columns in SAS according to their group membership.
-og_image:  https://docs.datacontroller.io/img/rls_table.png
+og_image:  https://docs.datacontroller.io/img/cls_table.png
 ---
-
-!!! warning
-    In development - coming soon!
 
 # Column Level Security
 
@@ -28,14 +25,14 @@ When `CLS_SCOPE in ('VIEW','ALL')` then only the listed columns are _visible_ (u
 When `CLS_SCOPE in ('EDIT','ALL')` then only the listed columns are _editable_ (the remaining columns are read-only, and visible).  Furthermore:
 
 * The user will be unable to ADD or DELETE records.
-* Primary Key values are always read only 
+* Primary Key values are always read only
 * Primary Key values cannot be hidden (`CLS_HIDE=1` will have no effect)
 
 
 ### CLS_GROUP
-The SAS Group to which the rule applies.  The user could also be a member of a [DC group](/dcc-groups). 
+The SAS Group to which the rule applies.  The user could also be a member of a [DC group](/dcc-groups).
 
- - If a user is in ANY of the groups, the columns will be restricted.  
+ - If a user is in ANY of the groups, the columns will be restricted.
  - If a user is in NONE of the groups, no restrictions apply (all columns available).
  - If a user is in MULTIPLE groups, they will see all allowed columns across all groups.
 
@@ -46,7 +43,7 @@ The library of the target table against which the security rule will be applied
 The target table against which the security rule will be applied
 
 ### CLS_VARIABLE_NM
-This is the name of the variable against which the security rule will be applied.  Note that 
+This is the name of the variable against which the security rule will be applied.  Note that
 
 ### CLS_ACTIVE
 If you would like this rule to be applied, be sure this value is set to 1.
