@@ -4,7 +4,7 @@
 
 The Data Controller has 5 tabs, as follows:
 
-* *[Viewer](#viewer)*.  This tab lets users view any table to which they have been granted access in metadata.  They can also download the data as csv, excel, or as a SAS program (datalines).
+* *[Viewer](#viewer)*.  This tab lets users view any table to which they have been granted access in metadata.  They can also download the data as csv, excel, or as a SAS program (datalines).  Primary key fields are coloured green.
 * *[Editor](#editor)*.  This tab enables users to add, modify or delete data. This can be done directly in the browser, or by uploading a CSV file. Values can also be copy-pasted from a spreadsheet. Once changes are ready, they can be submitted, with a corresponding reason.
 * *[Submitted](#submitted)*.  This shows and editor the outstanding changes that have been submitted for approval (but have not yet been approved or rejected).
 * *[Approvals](#approvals)*.  This shows an approver all their outstanding approval requests.
