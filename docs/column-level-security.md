@@ -13,6 +13,8 @@ Below is an example of an EDIT table with only one column enabled for editing:
 
 ![lockanytable example](/img/cls_example.png)
 
+See also: [Row Level Security](/row-level-security/).
+
 ## Configuration
 
 The variables in MPE_COLUMN_LEVEL_SECURITY should be configured as follows:
