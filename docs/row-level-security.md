@@ -11,7 +11,7 @@ Row level security is implemented through the configuration of filter queries, t
 
 ![](img/rls_table.png)
 
-See also: [column level security](/column-level-security/)
+See also: [Column Level Security](/column-level-security/)
 
 ## Configuration
 
