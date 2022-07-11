@@ -11,6 +11,8 @@ Row level security is implemented through the configuration of filter queries, t
 
 ![](img/rls_table.png)
 
+See also: [column level security](/column-level-security/)
+
 ## Configuration
 
 The columns in MPE_ROW_LEVEL_SECURITY should be configured as follows:
