@@ -34,6 +34,10 @@ A full length explainer video for the [SAS User Group UK & Ireland](https://sugu
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Dhy1pAbCaEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Column Level Security
+Restrict which columns are visible in VIEW, or editable in EDIT
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jAVt-omtjVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Full Table Search
 Data Controller for SAS®  enables full text search on Global CASLIB tables (and SAS 9 tables too)
