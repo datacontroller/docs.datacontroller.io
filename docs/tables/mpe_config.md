@@ -6,7 +6,7 @@ og_title: MPE_CONFIG Table Documentation
 og_image: /img/mpe_config.png
 ---
 
-# MPE_MPE_CONFIGREVIEW
+# MPE_CONFIG
 
 The MPE_CONFIG table enables global system options.  Further detail on each option can be found in the description of the option itself, or on the [options](/dcc-options) page.
 
@@ -16,7 +16,7 @@ The table is SCD2 controlled for ease of rollback and version management.
 
 ## Columns
 
- - 🔑 `TX_FROM num`: SCD2 open datetime 
+ - 🔑 `TX_FROM num`: SCD2 open datetime
  - 🔑 `VAR_SCOPE char(10)`:  A short code for grouping sets of options
  - 🔑 `VAR_NAME char(32)`: The name of the option
  - `VAR_VALUE char(5000)`: The value of the option

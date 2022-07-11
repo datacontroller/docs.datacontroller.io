@@ -87,3 +87,11 @@ If the user is in both Group 1 AND Group 2, viewing `MYLIB.MYDS` in VIEW mode, *
 * VAR_2
 * VAR_3
 * VAR_4
+
+## Video Example
+
+This short video does a walkthrough of applying Column Level Security from end to end.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jAVt-omtjVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
