@@ -8,26 +8,26 @@
 
 {% set title = config.site_name %}
 {% if page and page.meta and page.meta.title %}
-  {% set title = title ~ " - " ~ page.meta.title %}
+{% set title = title ~ " - " ~ page.meta.title %}
 {% elif page and page.title and not page.is_homepage %}
-  {% set title = title ~ " - " ~ page.title | striptags %}
+{% set title = title ~ " - " ~ page.title | striptags %}
 {% endif %}
 <meta property="og:type" content="website" />
 
 {% if page and page.meta and page.meta.og_title %}
-  {% set og_title = page.meta.og_title %}
+{% set og_title = page.meta.og_title %}
 {% elif page %}
-  {% set og_title = 'Data Controller Documentation' %}
+{% set og_title = 'Data Controller Documentation' %}
 {% endif %}
 <meta property="og:title" content="{{og_title}}">
 
 <meta property="og:url" content="{{ page.canonical_url }}" />
 {% if page and page.meta and page.meta.og_image %}
-  {% set og_image = page.meta.og_image %}
+{% set og_image = page.meta.og_image %}
 {% elif page %}
-  {% set og_image = 'https://www.rawsas.com/wp-content/uploads/2018/07/dc_social.png' %}
+{% set og_image = 'https://www.rawsas.com/wp-content/uploads/2018/07/dc_social.png' %}
 {% endif %}
-<meta property='og:image' content="{{og_image}}"/>
+<meta property='og:image' content="{{og_image}}" />
 <meta property="og:image:type" content="image/png" />
 
 
@@ -36,5 +36,21 @@
 {% elif config.site_description %}
 <meta property="og:description" content="{{ config.site_description }}" />
 {% endif %}
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function () {
+    var u = "https://analytics.4gl.io/";
+    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+    _paq.push(['setSiteId', '4']);
+    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+    g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+  })();
+</script>
+<!-- End Matomo Code -->
 
 {% endblock %}
