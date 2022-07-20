@@ -22,6 +22,8 @@ The following resources contain additional information on the Data Controller:
 - Data Controller [website](https://datacontroller.io)
 - Data Controller flyer ([front](/marketing/flyer-front.pdf) / [back](/marketing/flyer-back.pdf))
 - Data Controller [videos](/videos)
+- Data Controller [SAS Code](https://code.datacontroller.io)
+- Data Controller [Download](https://4gl.uk/dcdeploy)
 
 ## Product Features
 
