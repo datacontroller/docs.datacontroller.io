@@ -22,7 +22,9 @@ Flavour specific guidance is below.
 
 ## Viya Libraries
 
-Library definitions should be added in the `autoexec.sas` of the designated Compute Context using Environment Manager.  If this is not feasible, it is possible to insert code in the `[DC Drive Path]/services/settings.sas` file however this will have a performance impact due to the additional API calls that read the file.
+Library definitions should be added in the `autoexec.sas` of the designated Compute Context using Environment Manager.  
+
+If the above is not feasible, it is possible to insert code in the `[DC Drive Path]/services/settings.sas` file however this will have a performance impact due to the additional API calls.
 
 ## SAS 9 EBI Libraries
 
