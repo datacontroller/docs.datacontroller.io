@@ -22,16 +22,19 @@ Flavour specific guidance is below.
 
 ## Viya Libraries
 
-Library definitions should be added in the `autoexec.sas` of the configured Compute Context using Environment Manager.
+Library definitions should be added in the `autoexec.sas` of the designated Compute Context using Environment Manager.  If this is not feasible, it is possible to insert code in the `[DC Drive Path]/services/settings.sas` file however this will have a performance impact due to the additional API calls that read the file.
 
 ## SAS 9 EBI Libraries
 
-Library definitions can be added in the `[DC Meta Path]/services/public/Data_Controller_Settings` stored process, IF required.  In most cases, libname statements are NOT required because they are taken from metadata.
+In most cases, libname statements are NOT required, so long as they are accessible in metadata.
 
 For the VIEW menu, the libname statement is made using the [mm_assignlib](https://core.sasjs.io/mm__assignlib_8sas.html) macro (META engine).  It is important that each library has a unique (up to 8 char) LIBREF.
 
 For the EDIT menu, direct libname statements are derived using the [mm_assigndirectlib](https://core.sasjs.io/mm__assigndirectlib_8sas.html) macro.
 
+If metadata extraction is not possible, libname statements may be added to the `[DC Meta Path]/services/public/Data_Controller_Settings` Stored Process.
+
+
 ## SASjs Server Libraries
 
-New library definitions can be added in the `[DC Drive Path]/services/public/settings.sas` stored program.
+New library definitions can be added in the `[DC Drive Path]/services/public/settings.sas` Stored Program.
