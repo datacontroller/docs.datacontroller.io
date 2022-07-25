@@ -31,6 +31,7 @@ nav:
     - Excel Formulas: excel.md
     - Formats: formats.md
     - Groups: dcc-groups.md
+    - Libraries: libraries.md
     - Options: dcc-options.md
     - Row Level Security: row-level-security.md
     - Security: dcc-security.md
