@@ -113,7 +113,7 @@ Below are some examples of Features that have been requested (and delivered) int
 
 ### Column Level Security
 
-The columns that can be VIEWed or EDITed are now configurable.  See [docs](/column-level-security.md)
+The columns that can be VIEWed or EDITed are now configurable.  See [docs](/column-level-security)
 
 ### Support for Special SAS Missing Numerics
 
@@ -121,7 +121,7 @@ It is now possible to VIEW and EDIT special SAS missings, eg `.a` through to `.z
 
 ### Ability to View & Edit Formats
 
-Format Catalogs can now be viewed, filtered, exported and edited.  See [docs](/formats.md)
+Format Catalogs can now be viewed, filtered, exported and edited.  See [docs](/formats)
 
 ### Change Tracking Information in a Single Transaction Table
 
