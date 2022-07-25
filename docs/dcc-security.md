@@ -3,11 +3,11 @@
 ## Summary
 DC security is applied at the level of Table and Group.  Permissions can only be set at group level. There are two parts to adding a user:
 
-1 - Adding the user to the relevant group in SAS metadata
+1 - Adding the user to the relevant [group](/dcc-groups)
 
-2 - Ensuring that group has the appropriate access level in the configuration table
+2 - Ensuring that group has the appropriate access level in the MPE_SECURITY table
 
-For guidance with adding SAS users, see [SAS Documentation](http://support.sas.com/documentation/cdl/en/mcsecug/69854/HTML/default/viewer.htm#n05epzfefjyh3dn1xdw2lkaxwyrz.htm).
+For guidance with adding SAS users in SAS 9, see [SAS Documentation](http://support.sas.com/documentation/cdl/en/mcsecug/69854/HTML/default/viewer.htm#n05epzfefjyh3dn1xdw2lkaxwyrz.htm).
 
 ## Details
 
