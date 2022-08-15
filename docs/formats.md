@@ -18,4 +18,10 @@ The usual export mechanisms can also be applied - you can downlad the DDL, or ex
 
 When adding a format to MPE_TABLES, the `DSN` should contain the format catalog name plus a `-FC` extension.  The LOADTYPE should be `FORMAT_CAT` and the BUSKEY should be `FMTNAME START`.  HOOK scripts can also be applied (ie, run some DQ after an edit, or re-run a batch job after an approval).
 
+Example:
+
+|LIBREF:$8.|DSN:$32.|LOADTYPE:$12.|BUSKEY:$1000.|
+|---|---|---|---|
+|`MYLIB `|`FORMATS-FC `|`FORMAT_CAT `|`FMTNAME START `|
+
 Just like regular table edits, all changes to formats may also be logged in the `MPE_AUDIT` table.
