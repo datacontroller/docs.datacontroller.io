@@ -14,7 +14,7 @@ Formats are displayed with a special icon (`bolt`), in the same library as other
 
 Viewing or editing a format catalog will always mean that the entire catalog is exported, before being filtered (if filters applied) and displayed.  For this reason, it is recommended to split a large format catalog over several catalogs, if performance is a consideration.
 
-The usual export mechanisms can also be applied - you can downlad the DDL, or export the catalog in CSV / Excel / Datalines formats.
+The usual export mechanisms can also be applied - you can downlad the DDL, or export the catalog in CSV / Excel / Datalines / Markdown / DDL formats.
 
 When adding a format to MPE_TABLES, the `DSN` should contain the format catalog name plus a `-FC` extension.  The LOADTYPE should be `FORMAT_CAT` and the BUSKEY should be `FMTNAME START`.  HOOK scripts can also be applied (ie, run some DQ after an edit, or re-run a batch job after an approval).
 
