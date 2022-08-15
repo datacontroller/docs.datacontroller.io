@@ -24,4 +24,4 @@ Example:
 |---|---|---|---|
 |`MYLIB `|`FORMATS-FC `|`FORMAT_CAT `|`FMTNAME START `|
 
-Just like regular table edits, all changes to formats may also be logged in the `MPE_AUDIT` table.
+Just like regular table edits, all changes to formats are logged in the `MPE_AUDIT` table.
