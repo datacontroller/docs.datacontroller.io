@@ -6,7 +6,7 @@ theme: default
 
 <!--
 npx @marp-team/marp-cli slides/if.md -o slides/if/index.html --html=true
-npx @marp-team/marp-cli slides/if.md -o slides/if/if.pdf
+npx @marp-team/marp-cli slides/if.md -o slides/if/if.pdf --html=true
 -->
 
 ---
