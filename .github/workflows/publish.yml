@@ -13,6 +13,11 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v2
 
+      - name: IF PDF
+        run: npx @marp-team/marp-cli slides/if.md -o slides/if/if.pdf--allow-local-files
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Setup Python
         uses: actions/setup-python@v1
 
