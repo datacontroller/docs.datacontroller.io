@@ -41,7 +41,7 @@ Check back frequently as we plan to keep growing this list of checks.
 
 There are now actually FIVE places where you can configure dropdowns!
 
-1.  The MPE_SELECTBOX table
+1.  The [MPE_SELECTBOX](/dcc-selectbox/) table
 2.  The HARDSELECT validation (library.member.column reference)
 3.  The SOFTSELECT validation (library.member.column reference)
 4.  The HARDSELECT_HOOK validation (SAS Program)
