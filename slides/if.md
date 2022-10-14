@@ -30,7 +30,7 @@ h1 {
   margin:0;
 }
 p {
-  margin-left: 50px;
+  margin-left: 25px;
   font-family: open-sans;
   font-family: ui-serif;
   font-size: 36px;
@@ -76,7 +76,7 @@ h2{
 <i>&nbsp;&nbsp;&nbsp;&nbsp;And ensure the end results are just the same:</i>
 <b>If you can't bear two versions of truth spoken</b>
 <i>&nbsp;&nbsp;&nbsp;&nbsp;Produced by silos to make a trap for fools,</i>
-<b>Or watch the systems you gave your life to, broken,</b>
+<b>Or watch systems you gave your life to, broken,</b>
 <i>&nbsp;&nbsp;&nbsp;&nbsp;And stoop and build ’em up with off-the-shelf tools;</i>
 
 ---
