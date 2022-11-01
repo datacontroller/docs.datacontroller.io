@@ -1,6 +1,6 @@
 Data Controller for SAS® Evaluation Agreement
 ====================
-The terms and conditions contained below constitute a legal agreement. This agreement ("Agreement") contains herein the entire agreement between the licensee ("Licensee") and Bowe IO Ltd (formerly "Bowe IO Ltd"). Read this agreement carefully. By downloading, installing, and/or examining the product, you acknowledge:
+The terms and conditions contained below constitute a legal agreement. This agreement ("Agreement") contains herein the entire agreement between the licensee ("Licensee") and Bowe IO Ltd. Read this agreement carefully. By downloading, installing, and/or examining the product, you acknowledge:
 
 1 - You are authorized to enter this agreement for and on behalf of your company, and are doing so, and 2 - You have read, understand and agree that you and the company shall be bound by these terms and conditions and every modification and addition provided for.
 
