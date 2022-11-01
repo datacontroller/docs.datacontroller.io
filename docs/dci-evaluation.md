@@ -54,4 +54,4 @@ The demo version has been optimised for a rapid install, and should not be consi
 
 5) The embedded HandsOnTable library is not licenced for commercial use without a licence key
 
-Contact 4GL support for a full-featured, fully licenced, scalable and supported deployment of Data Controller at your earliest convenience!
+[Contact us](https://datacontroller.io/contact) for a full-featured, fully licenced, scalable and supported deployment of Data Controller at your earliest convenience!
