@@ -91,3 +91,7 @@ During the SPK import on a SAS 9 instance you may see the following dialog:
 > Stored processes cannot be imported into a project repository
 
 This can happen when importing with Data Integration Studio and your user profile is making use of a personal project repository. Try re-connecting with the Foundation repository, or import with SAS Management Console (which does not support project repositories).
+
+## There is no LogicalServer of the type requested associated with the ServerContext in metadata.
+
+This can happen if you enter the wrong `serverName` when deploying the SAS program on an EBI platform.  Make sure it matches an existing Stored Process Server Context.
