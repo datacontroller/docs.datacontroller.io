@@ -21,7 +21,7 @@ Before proceeding with an unlock, the first step should be to understand why the
 
 ![](/img/mpe_lockanytable.png)
 
-If an unlock is deemed necessary, simply open this table in the EDIT menu, and change the value from UNLOCKED to LOCKED.
+If an unlock is deemed necessary, simply open this table in the EDIT menu, and change the value of `LOCK_STATUS_CD` from `UNLOCKED` to `LOCKED`.
 
 ## Scalability
 
