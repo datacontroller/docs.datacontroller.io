@@ -21,6 +21,7 @@ nav:
     - MPE_DATACATALOG_VARS: tables/mpe_datacatalog_vars.md
     - MPE_DATASTATUS_LIBS: tables/mpe_datastatus_libs.md
     - MPE_DATASTATUS_TABS: tables/mpe_datastatus_tabs.md
+    - MPE_LOCKANYTABLE: tables/mpe_lockanytable.md
     - MPE_REVIEW: tables/mpe_review.md
     - MPE_SUBMIT: tables/mpe_submit.md
     - MPE_TABLES: tables/mpe_tables.md

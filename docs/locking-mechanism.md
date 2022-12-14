@@ -17,7 +17,7 @@ Notice above the red box - this situation can occur in unusual circumstances (su
 
 ## Unlock Process
 
-Before proceeding with an unlock, the first step should be to understand why the process is locked.  By opening the [mpe_lockanytable](locking-mechanism) it will be possible to see which user performed the lock, and when.  Simply filter the table where `LOCK_STATUS_CD='LOCKED'`.
+Before proceeding with an unlock, the first step should be to understand why the process is locked.  By opening the [MPE_LOCKANYTABLE](/locking-mechanism) table it will be possible to see which user performed the lock, and when.  Simply filter the table where `LOCK_STATUS_CD='LOCKED'`.
 
 ![](/img/mpe_lockanytable.png)
 
