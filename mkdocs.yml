@@ -9,6 +9,7 @@ nav:
     - Data Lineage: dcu-lineage.md
     - File Uploads: dcu-fileupload.md
     - Filter Mechanism: filter.md
+    - Locking Mechanism: locking-mechanism.md
     - Table Viewer: dcu-tableviewer.md
     - Admin Services: admin-services.md
 - Table Guide:
