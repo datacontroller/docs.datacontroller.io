@@ -2,6 +2,7 @@
 layout: article
 title: ViewBoxes
 description: Position up to 6 additional tables alongside your main EDIT or VIEW grid in Data Controller for SAS®
+og_image:  https://docs.datacontroller.io/img/viewboxes.png
 ---
 
 > COMING SOON
@@ -26,3 +27,4 @@ Each individual viewbox has the following features:
 
 All of the above information (except search and frontend sort) is stored in the URL - so you can share a link to a complex ViewBox setup with a colleague, who can then open the same view of the data.
 
+![Data Controller for SAS€ Viewboxes](https://docs.datacontroller.io/img/viewboxes.png)
