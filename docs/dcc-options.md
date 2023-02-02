@@ -53,7 +53,7 @@ Default=SYSTEM.
     
 ## DC_CATALOG Scope
 
-### DC_IGNORELIBS
+### DC_IGNORELIBS
 
 When running the [Refresh Data Catalog](/admin-services/#refresh-data-catalog) service, it is often that case the the process will fail due to being unable to assign a library.  To avoid the need to resolve the connection issue elsewhere in SAS, you can simply exclude it from the Data Catalog, by including the LIBREF in this field (pipe-separated)
 
