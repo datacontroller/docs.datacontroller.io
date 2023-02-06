@@ -98,7 +98,8 @@ A Full Deployment of Data Controller for SAS 9 consists of:
 
 The below areas of the SAS platform are modified when deploying Data Controller:
 
-<img src="img/dci_deploymentdiagram.svg" height="350" style="border:3px solid black" >
+![](img/dci_deploymentdiagram.svg)
+<!--img src="/img/dci_deploymentdiagram.svg" height="350" style="border:3px solid black" -->
 
 ### Client Device
 
