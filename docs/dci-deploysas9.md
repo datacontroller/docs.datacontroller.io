@@ -34,12 +34,12 @@ You can also change the `serverName` here, which is necessary if you are using a
 
 #### 2 - Deploy the Frontend
 
-The Data Controller frontend comes pre-built, and ready to deploy to the root of the SAS Web Server (mid-tier), typically `!SASCONFIG/LevX/Web/WebServer/htdocs` in SAS 9.
+The Data Controller frontend comes pre-built, and ready to deploy to the root of the SAS Web Server (mid-tier).
 
 Deploy as follows:
 
 1.  Download the zip file from: [https://git.4gl.io/dc/deploy/-/raw/main/frontend.zip](https://git.4gl.io/dc/deploy/-/raw/main/frontend.zip)
-2. Unzip and place in the [htdocs folder of your SAS Web Server](https://sasjs.io/frontend-deployment/#sas9-deploy)
+2. Unzip and place in the [htdocs folder of your SAS Web Server](https://sasjs.io/frontend-deployment/#sas9-deploy) - typically `!SASCONFIG/LevX/Web/WebServer/htdocs`.
 3. Open the `index.html` file and update the values for `appLoc` (per SAS code above) and `serverType` (to `SAS9`).
 
 You can now open the app at `https://YOURWEBSERVER/unzippedfoldername` and follow the configuration steps (DC Physical Location and Admin Group) to complete deployment.
