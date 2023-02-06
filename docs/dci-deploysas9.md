@@ -18,7 +18,7 @@ There are two ways to deploy Data Controller on SAS 9:
 
 #### 1 - Deploy Stored Processes
 
-The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE permissions to the necessary root folder (`appLoc`) in metadta.
+The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE METADATA (WM) permissions to the necessary root folder (`appLoc`) in metadta.
 
 ```sas
 %let appLoc=/Shared Data/apps/DataController;  /* CHANGE THIS!! */
@@ -46,11 +46,20 @@ You can now open the app at `https://YOURWEBSERVER/unzippedfoldername` and follo
 
 #### 3 - Run the Configurator
 
-When opening Data Controller for the first time, a configuration screen is presented.  There are two things to configure:
+When opening Data Controller for the first time, a configuration screen is presented.  Be sure to log in with an account that has WRITE METADATA (WM) on the following metadata folders:
+
+* `services/admin` - so the configurator STP can be deleted after being run
+* `services/common` - so the `Data_Controller_Settings` STP can be updated
+* `Data` - so the library and tables can be registered (using proc metalib)
+
+
+There are two things to configure:
 
 1. Path to the designated physical staging area. Make sure that the SAS Spawned Server account (eg `sassrv`) has WRITE access to this location.
-2. Admin Group. ⚠️ Note that anyone in this group will have unrestricted access to Data Controller! ⚠️
+2. Admin Group. ⚠️ Note that anyone in this group will have unrestricted access to Data Controller! ⚠️ "Unrestricted access" is provided by code logic. Post installation, Data Controller will never update nor modify metadata.
 
+!!! note
+    If you do not see any groups, then it is possible your Stored Process is running from a different metadata repository to the location of your SAS users (eg Foundation). To fix this, update the `services/admin/configurator` STP with this code: `%let dc_repo_users=YOUUSERRMETAREPO;`
 
 After you click submit, the Stored Process will run, configure the staging area and create the library tables (as datasets).
 
@@ -59,8 +68,6 @@ You will then be presented with three further links:
 1. Refresh Data Catalog.  Run this to scan all available datasets and update the catalog.
 2. Refresh Table Metadata.  Run this to update the table-level data lineage.
 3. Launch.  Currently this feature only works for streaming apps - just refresh the page for a full deployment.
-
-
 
 ### Streaming
 

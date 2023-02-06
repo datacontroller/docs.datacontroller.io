@@ -74,6 +74,13 @@ extra:
 
 extra_css: ['font-awesome.css']
 
+plugins:
+  - search:
+      prebuild_index: true
+  - redirects:
+      redirect_maps:
+          'dci-evaluation.md': 'dci-deploysas9.md'
+
 # Repository
 repo_name: 'datacontroller/dcdocs.github.io'
 repo_url: 'https://github.com/datacontroller/dcdocs.github.io'
