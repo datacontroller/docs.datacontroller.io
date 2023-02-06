@@ -9,67 +9,105 @@ og_image: https://docs.datacontroller.io/img/dci_deploymentdiagram.png
 
 ## Artefacts
 
-Data Controller for SAS 9 consists of:
+A Full Deployment of Data Controller for SAS 9 consists of:
 
 * Frontend on the web server
-* Stored Processes in metadata
-* Staging Area on the filesystem
-* Database / SAS library
+* Stored Processes (+ Library & Table definitions) in metadata
+* Staging Area on the physical filesystem
+* Database _or_ SAS Base library
 
 ### Frontend
-A full deployment involves copying a directory with static web content onto the web server.  The demo deployment allows that content to be served from Stored Processes, in which case no web server access is needed.  This approach is not recommended for enterprise use however, as it places unnecessary load on the STP server (the web server is much faster for serving static content).
+A single `index.html` file plus several CSS / JS / image files are served from the SAS Web Server.
+
+This is all static content, served up by the _existing_ SAS Web Server, no additional server (running) process is required.
 
 ### Stored Processes
-In SAS 9, all backend logic is performed with SAS code in Stored Processes.  The code is embedded within the Stored Processes (no need to deploy programs to the file system).  There is no use of X commands, and no requirement for internet access.
+All backend processing is performed using SAS code embedded in Stored Processes (no need to deploy programs to the file system, no SASAUTOs).  There is no use of X commands, no use of external internet access, full LOCKDOWN is supported.
 
 ### Staging Area
-This is a backend directory, on the Application Server, in which the staged data, logs, and copies of any uploaded Excel files, are securely stored.
+This is a physical directory, accessible to the SAS Application Server, in which the staged data, logs, and copies of any uploaded Excel files, are securely stored.
 
 ### Database
-The library can be a SAS Base engine if desired (using datasets), however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
+The library can be a SAS Base engine if desired (using datasets), however this can cause contention (eg table locks) if end users have the ability to connect directly, eg via Enterprise Guide or Base SAS.
 A database that supports concurrent access is recommended.
 
 ## Deployment Process
-### 1 - Import SPK
 
-Import `/sas/import.spk` using SAS Management Console or DI Studio.  Make a note of the root metadata folder location in which this was imported - as this will be added to the `appLoc` value in the `index.html` file in the [frontend](#3-deploy-the-frontend) deployment later.
+There are two ways to deploy Data Controller on SAS 9:
 
-When importing the library, provide the physical path in which the Staging Area should be created.  The next step will use this path to create the directory.  Make sure that the SAS Spawned Server account (eg `sassrv`) has WRITE access to this location
+* Full Deployment
+* Streaming
 
-### 2 - Run the Configurator
+## Full Deployment
+### 1 - Deploy Stored Processes
 
-Open the browser and navigate to YOURSASSERVER/SASStoredProcess.  From here, find the Data Controller folder, and open services/admin/configurator.
+The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE permissions to the necessary root folder (`appLoc`) in metadta.
 
-You will be provided with a list of groups.  Choose the group that you would like to be the admin group.
+```sas
+%let appLoc=/Shared Data/apps/DataController;  /* CHANGE THIS!! */
+filename dc url "https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas";
+%inc dc;
+```
 
-!!! note
-    Anyone in this admin group will have unrestricted access to Data Controller!
+If you don't have internet access from SAS, download the file and change the appLoc on line 2:  https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas
 
-After you click submit, the Stored Process will run, configure the staging area and create the library tables (as datasets).
+![](img/sas9_apploc.png)
 
-At this point you can already open the app (demo version).
+You can also change the `serverName` here, which is necessary if you are using any other logical server than `SASApp`.
 
-### 3 - Deploy the Frontend
+### 2 - Deploy the Frontend
+
 The Data Controller frontend comes pre-built, and ready to deploy to the root of the SAS Web Server (mid-tier), typically `!SASCONFIG/LevX/Web/WebServer/htdocs` in SAS 9.
 
 Deploy as follows:
 
-1 - Unzip `dcfrontend.zip` and upload the entire `datacontroller` directory to the static content server (htdocs folder).
+1.  Download the zip file from: https://git.4gl.io/dc/deploy/-/raw/main/frontend.zip
+2. Unzip and place in the [htdocs folder of your SAS Web Server](https://sasjs.io/frontend-deployment/#sas9-deploy)
+3. Open the `index.html` file and update the `appLoc` value to the location where the Stored Processes were deployed earlier.  The `serverType` should also be `SAS9`.
 
-2 - Open the `index.html` file and update the `appLoc` value to the location where the Stored Processes were deployed earlier.
+You can now open the app at `https://YOURWEBSERVER/unzippedfoldername` and follow the configuration steps (DC Physical Location and Admin Group) to complete deployment.
 
-It should now be possible to use the application - simply navigate to `YOURSASWEBLOC:port/yourRoot/datacontroller` and sign in!
+### 3 - Run the Configurator
 
-### 4 - Configure the Database
-If you have a database available, then we recommend you use it for storing the data controller configuration tables.  This part involves migrating the data from the BASE library to your database schema, and updating the library definition in metadata.
+When opening Data Controller for the first time, a configuration screen is presented.  There are two things to configure:
 
-Contact us for support with DDL and migration steps for your chosen vendor.
+1. Path to the designated physical staging area. Make sure that the SAS Spawned Server account (eg `sassrv`) has WRITE access to this location.
+2. Admin Group. ⚠️ Note that anyone in this group will have unrestricted access to Data Controller! ⚠️
+
+
+After you click submit, the Stored Process will run, configure the staging area and create the library tables (as datasets).
+
+You will then be presented with three further links:
+
+1. Refresh Data Catalog.  Run this to scan all available datasets and update the catalog.
+2. Refresh Table Metadata.  Run this to update the table-level data lineage.
+3. Launch.  Currently this feature only works for streaming apps - just refresh the page for a full deployment.
+
+
+
+### Streaming
+
+The streaming approach is optimised for rapid deployment, and works by bundling the frontend into metadata. This is a highly inefficient way to serve web content, and thus should only really be used for demos / evaluation purposes.
+
+Deployment is very easy - just run the SAS code below (after changing the `appLoc`):
+
+```sas
+%let appLoc=/Shared Data/apps/DataController;  /* CHANGE THIS!! */
+filename dc url "https://git.4gl.io/dc/deploy/-/raw/main/s9.sas";
+%inc dc;
+```
+
+If you don't have internet access from your SAS environment, you can also [download the file directly](https://git.4gl.io/dc/deploy/-/raw/main/s9.sas) and modify the `appLoc` on line 2, as follows:
+
+![](img/sas9_apploc.png)
+
+After that, continue to the configuration as described above.
 
 ## Deployment Diagram
 
 The below areas of the SAS platform are modified when deploying Data Controller:
 
-<img src="/img/dci_deploymentdiagram.svg" height="350" style="border:3px solid black" >
+<img src="img/dci_deploymentdiagram.svg" height="350" style="border:3px solid black" >
 
 ### Client Device
 
@@ -101,8 +139,9 @@ The items deployed to metadata include:
 
 We strongly recommend that the Data Controller configuration tables are stored in a database for concurrency reasons, however it is also possible to use a BASE engine library.
 
-We provide the DDL for creating the tables, we have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.
+We have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.  Contact us for support with DDL and migration steps for your chosen vendor.
 
 !!! note
-    Data Controller does NOT modify schemas! It will not create or drop tables, or add/modify columns or attributes.  Only rows can be modified using the tool.
+    Data Controller does NOT modify schemas! It will not create or drop tables, or add/modify columns or attributes.  Only data _values_ (not the model) can be modified using this tool.
+
 
