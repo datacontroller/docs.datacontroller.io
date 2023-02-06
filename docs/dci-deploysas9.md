@@ -7,27 +7,6 @@ og_image: https://docs.datacontroller.io/img/dci_deploymentdiagram.png
 
 # SAS 9 Deployment
 
-## Artefacts
-
-A Full Deployment of Data Controller for SAS 9 consists of:
-
-* Frontend on the web server
-* Stored Processes (+ Library & Table definitions) in metadata
-* Staging Area on the physical filesystem
-* Database _or_ SAS Base library
-
-### Frontend
-
-
-### Stored Processes
-
-
-### Staging Area
-
-
-### Database
-
-
 ## Deployment Process
 
 There are two ways to deploy Data Controller on SAS 9:
@@ -101,6 +80,13 @@ If you don't have internet access from your SAS environment, you can also [downl
 After that, continue to the configuration as described above.
 
 ## Deployment Diagram
+
+A Full Deployment of Data Controller for SAS 9 consists of:
+
+* Frontend on the web server
+* Stored Processes (+ Library & Table definitions) in metadata
+* Staging Area on the physical filesystem
+* Database _or_ SAS Base library
 
 The below areas of the SAS platform are modified when deploying Data Controller:
 
