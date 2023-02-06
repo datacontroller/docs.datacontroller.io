@@ -48,8 +48,6 @@ nav:
     - SAS 9 Deploy: dci-deploysas9.md
     - SAS 9 Dedicated STP: dci-stpinstance.md
     - Troubleshooting: dci-troubleshooting.md
-- Evaluation (Demo) Version:
-    - Installation: dci-evaluation.md
 - Legal:
     - Privacy Policy: privacy.md
     - Evaluation Licence: evaluation-agreement.md
