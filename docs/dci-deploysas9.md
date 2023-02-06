@@ -17,19 +17,16 @@ A Full Deployment of Data Controller for SAS 9 consists of:
 * Database _or_ SAS Base library
 
 ### Frontend
-A single `index.html` file plus several CSS / JS / image files are served from the SAS Web Server.
 
-This is all static content, served up by the _existing_ SAS Web Server, no additional server (running) process is required.
 
 ### Stored Processes
-All backend processing is performed using SAS code embedded in Stored Processes (no need to deploy programs to the file system, no SASAUTOs).  There is no use of X commands, no use of external internet access, full LOCKDOWN is supported.
+
 
 ### Staging Area
-This is a physical directory, accessible to the SAS Application Server, in which the staged data, logs, and copies of any uploaded Excel files, are securely stored.
+
 
 ### Database
-The library can be a SAS Base engine if desired (using datasets), however this can cause contention (eg table locks) if end users have the ability to connect directly, eg via Enterprise Guide or Base SAS.
-A database that supports concurrent access is recommended.
+
 
 ## Deployment Process
 
@@ -38,8 +35,8 @@ There are two ways to deploy Data Controller on SAS 9:
 * Full Deployment
 * Streaming
 
-## Full Deployment
-### 1 - Deploy Stored Processes
+### Full Deployment
+#### 1 - Deploy Stored Processes
 
 The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE permissions to the necessary root folder (`appLoc`) in metadta.
 
@@ -55,7 +52,7 @@ If you don't have internet access from SAS, download the file and change the app
 
 You can also change the `serverName` here, which is necessary if you are using any other logical server than `SASApp`.
 
-### 2 - Deploy the Frontend
+#### 2 - Deploy the Frontend
 
 The Data Controller frontend comes pre-built, and ready to deploy to the root of the SAS Web Server (mid-tier), typically `!SASCONFIG/LevX/Web/WebServer/htdocs` in SAS 9.
 
@@ -67,7 +64,7 @@ Deploy as follows:
 
 You can now open the app at `https://YOURWEBSERVER/unzippedfoldername` and follow the configuration steps (DC Physical Location and Admin Group) to complete deployment.
 
-### 3 - Run the Configurator
+#### 3 - Run the Configurator
 
 When opening Data Controller for the first time, a configuration screen is presented.  There are two things to configure:
 
@@ -115,15 +112,21 @@ Nothing needs to be deployed or modified on the client device.  We support a wid
 
 ### SAS Mid Tier
 
-The front end is deployed to the SAS Web Server as described [above](/dci-deploysas9/#3-deploy-the-frontend).  This requires making a dedicated public folder in the htdocs directory.
+A single `index.html` file plus several CSS / JS / image files are served from a subfolder in the static content area SAS Web Server.
+
+This is served up by the _existing_ SAS Web Server, no additional server (running) process is required.
+
+If you are running more than one web server, you will need to deploy to them all.
+
 
 ### SAS Application Server
 
 Given the enhanced permissions needed of the system account, a dedicated / secured STP instance is recommended as described [here](/dci-stpinstance).
 
-All deployments of Data Controller also make use of a staging directory.  This is used to store CSV and Excel files as uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account (eg `sassrv`) requires access to this directory.
+All deployments of Data Controller also make use of a physical staging directory.  This is used to store staged data, logs, plus CSV and Excel files as uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account (eg `sassrv`) requires access to this directory.
 
 A typical small deployment will grow by a 10-20 mb each month.  A very large enterprise customer, with 100 or more editors, might generate up to 1 GB or so per month, depending on the size and frequency of the Excel EUCs and CSVs being uploaded.  Web modifications are restricted only to modified rows, so are typically just a few kb in size.
+
 
 ### SAS Metadata Server
 
@@ -133,15 +136,17 @@ The items deployed to metadata include:
  * Stored Processes
  * Library Object & tables
 
+ All SAS code is embedded in Stored Processes (so there is no need to deploy programs to the file system, no SASAUTOs).  There is no use of X commands, no use of external internet access, full LOCKDOWN is supported.
+
  After the installation process (which updates `public/settings` and removes the `admin/makedata` STP), there are no write actions performed against metadata.
 
 ### Databases
 
-We strongly recommend that the Data Controller configuration tables are stored in a database for concurrency reasons, however it is also possible to use a BASE engine library.
+We strongly recommend that the Data Controller configuration tables are stored in a database for concurrency reasons.
 
 We have customers in production using Oracle, Postgres, Netezza, SQL Server to name a few.  Contact us for support with DDL and migration steps for your chosen vendor.
 
 !!! note
     Data Controller does NOT modify schemas! It will not create or drop tables, or add/modify columns or attributes.  Only data _values_ (not the model) can be modified using this tool.
 
-
+To caveat the above - it is also quite common for customers to use a BASE engine library.  Data Controller ships with mechananisms to handle locking (internally) but it cannot handle external contentions, such as those caused when end users open datasets directly, eg with Enterprise Guide or Base SAS.
