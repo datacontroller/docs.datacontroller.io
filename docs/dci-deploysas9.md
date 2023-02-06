@@ -11,10 +11,11 @@ og_image: https://docs.datacontroller.io/img/dci_deploymentdiagram.png
 
 There are two ways to deploy Data Controller on SAS 9:
 
-* Full Deployment
-* Streaming
+* Full Deployment (preferred)
+* Streaming (for quick demos)
 
 ### Full Deployment
+
 #### 1 - Deploy Stored Processes
 
 The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE permissions to the necessary root folder (`appLoc`) in metadta.
@@ -25,7 +26,7 @@ filename dc url "https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas";
 %inc dc;
 ```
 
-If you don't have internet access from SAS, download the file and change the appLoc on line 2:  https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas
+If you don't have internet access from SAS, download the file and change the appLoc on line 2:  [https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas
 
 ![](img/sas9_apploc.png)
 
@@ -37,9 +38,9 @@ The Data Controller frontend comes pre-built, and ready to deploy to the root of
 
 Deploy as follows:
 
-1.  Download the zip file from: https://git.4gl.io/dc/deploy/-/raw/main/frontend.zip
+1.  Download the zip file from: [https://git.4gl.io/dc/deploy/-/raw/main/frontend.zip](https://git.4gl.io/dc/deploy/-/raw/main/frontend.zip)
 2. Unzip and place in the [htdocs folder of your SAS Web Server](https://sasjs.io/frontend-deployment/#sas9-deploy)
-3. Open the `index.html` file and update the `appLoc` value to the location where the Stored Processes were deployed earlier.  The `serverType` should also be `SAS9`.
+3. Open the `index.html` file and update the values for `appLoc` (per SAS code above) and `serverType` (to `SAS9`).
 
 You can now open the app at `https://YOURWEBSERVER/unzippedfoldername` and follow the configuration steps (DC Physical Location and Admin Group) to complete deployment.
 
