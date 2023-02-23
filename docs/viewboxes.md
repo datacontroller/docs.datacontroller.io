@@ -5,8 +5,6 @@ description: Position up to 6 additional tables alongside your main EDIT or VIEW
 og_image:  https://docs.datacontroller.io/img/viewboxes.png
 ---
 
-> COMING SOON
-
 # ViewBoxes
 
 Often when editing (or examining) raw data, it is helpful to see it alongside related information in other tables.  With ViewBoxes you can align up to 6 other tables in front of your main grid, in both the VIEW and EDIT menu.
