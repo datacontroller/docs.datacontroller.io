@@ -26,7 +26,7 @@ filename dc url "https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas";
 %inc dc;
 ```
 
-If you don't have internet access from SAS, download the file and change the appLoc on line 2:  https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas
+If you don't have internet access from SAS, download [this file](https://git.4gl.io/dc/deploy/-/raw/main/s9_noweb.sas) and change the `compiled_appLoc` on line 2:  
 
 ![](img/sas9_apploc.png)
 
