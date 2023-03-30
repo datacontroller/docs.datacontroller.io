@@ -18,7 +18,7 @@ There are two ways to deploy Data Controller on SAS 9:
 
 #### 1 - Deploy Stored Processes
 
-The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE METADATA (WM) permissions to the necessary root folder (`appLoc`) in metadta.
+The Stored Processes are deployed using a SAS Program.  This should be executed using an account that has WRITE METADATA (WM) permissions to the necessary root folder (`appLoc`) in metadata.
 
 ```sas
 %let appLoc=/Shared Data/apps/DataController;  /* CHANGE THIS!! */
