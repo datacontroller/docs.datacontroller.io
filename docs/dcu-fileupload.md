@@ -1,6 +1,6 @@
 # Data Controller for SAS: File Uploads
 
-Files can be uploaded via the Editor interface - first choose the library and table, then click "Upload".  All versions of excel are supported.  If loading very large files (eg over 10mb) it is more efficient to use CSV format, as this bypasses the local rendering engine, but also the local DQ checks - so be careful!  For CSV, alternative delimiters can be used (eg semicolons).
+Files can be uploaded via the Editor interface - first choose the library and table, then click "Upload".  All versions of excel are supported.  If loading very large files (eg over 10mb) it is more efficient to use CSV format, as this bypasses the local rendering engine, but also the local DQ checks - so be careful!  
 
 <img src="/img/dcu-files1.png" height="350" style="border:3px solid black" >
 
@@ -31,7 +31,7 @@ A copy of the original Excel file is also uploaded to the staging area.  This me
 The following should be considered when uploading data in this way:
 
  - A header row (with variable names) is required
- - Variable names must match the target (not case sensitive).  An easy way to ensure this is to download the data from Viewer and use this as a template.
+ - Variable names must match those in the target table (not case sensitive).  An easy way to ensure this is to download the data from Viewer and use this as a template.
  - Duplicate variable names are not permitted
  - Missing columns are not permitted
  - Additional columns are ignored
@@ -49,5 +49,8 @@ This means that uploaded date / datetime values should be unambiguous (eg `01FEB
 
 !!! tip
     To get a copy of a file in the right format for upload, use the [file download](/dc-userguide/#usage) feature in the Viewer tab
+    
+!!! warning
+    Lengths are taken from the target table.  If a CSV contains long strings (eg `"ABCDE"` for a $3 variable) then the rest will be silently truncated (only `"ABC"` staged and loaded). This issue does not apply to excel uploads, which are first validated in the browser.
 
 
