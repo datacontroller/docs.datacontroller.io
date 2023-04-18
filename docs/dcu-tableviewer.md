@@ -4,6 +4,14 @@ The viewer screen provides a raw view of the underlying table.
 Choose a library, then a table, and click view to see the first 5000 rows.
 A filter option is provided should you wish to view a different section of rows.
 
+The following libraries will be visible:
+
+* All libraries available on startup (session autoexec)
+* Any libraries configured in the `services/public/[Data_Controller_Settings/settings]` Stored Process / Viya Job
+* All libraries available to the logged in user in metadata (SAS 9 only)
+
+Row and Column level security can also be applied in VIEW mode, as can additional table-level permissions (MPE_SECURITY table).
+
 ## Full Table Search
 
 A single search box can be used to make a full table search on any character or numeric value, using this [macro](https://core.sasjs.io/mp__searchdata_8sas.html).
