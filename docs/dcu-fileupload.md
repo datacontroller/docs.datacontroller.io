@@ -1,10 +1,22 @@
 # Data Controller for SAS: File Uploads
 
-Files can be uploaded via the Editor interface - first choose the library and table, then click "Upload".  All versions of excel are supported.  If loading very large files (eg over 10mb) it is more efficient to use CSV format, as this bypasses the local rendering engine, but also the local DQ checks - so be careful!  
-
-<img src="/img/dcu-files1.png" height="350" style="border:3px solid black" >
+Files can be uploaded via the Editor interface - first choose the library and table, then click "Upload".  All versions of excel are supported.  
 
 Uploaded data may *optionally* contain a column named `_____DELETE__THIS__RECORD_____` - where this contains the value "Yes" the row is marked for deletion.
+
+If loading very large files (eg over 10mb) it is more efficient to use CSV format, as this bypasses the local rendering engine, but also the local DQ checks - so be careful!  Examples of local (excel) but not remote (CSV) file checks include:
+
+* Length of character variables - CSV files are truncated at the max target column length
+* Length of numeric variables - if the target numeric variable is below 8 bytes then the staged CSV value may be rounded if it is too large to fit
+* NOTNULL - this rule is only applied at backend when the constraint is physical (rather than a DC setting)
+* MINVAL 
+* MAXVAL
+* CASE
+
+Note that the HARDSELECT_*** hooks are not applied to the rendered Excel values (they are currently only applied when editing a cell).
+
+![image](https://user-images.githubusercontent.com/4420615/233036372-87b8dd02-a4cd-4f19-ac1b-bb9fdc850607.png)
+
 
 ## Excel Uploads
 
