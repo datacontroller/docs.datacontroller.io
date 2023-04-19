@@ -63,6 +63,6 @@ This means that uploaded date / datetime values should be unambiguous (eg `01FEB
     To get a copy of a file in the right format for upload, use the [file download](/dc-userguide/#usage) feature in the Viewer tab
     
 !!! warning
-    Lengths are taken from the target table.  If a CSV contains long strings (eg `"ABCDE"` for a $3 variable) then the rest will be silently truncated (only `"ABC"` staged and loaded). This issue does not apply to excel uploads, which are first validated in the browser.
+    Lengths are taken from the target table.  If a CSV contains long strings (eg `"ABCDE"` for a $3 variable) then the rest will be silently truncated (only `"ABC"` staged and loaded). If the target variable is a short numeric (eg 4., or 4 bytes) then floats or large integers may be rounded.  This issue does not apply to excel uploads, which are first validated in the browser.
 
 
