@@ -123,17 +123,17 @@ Leave blank if not required.
 
 SAS Developer Notes:
 
-At the point of running this script, the data has already been loaded (successfully) to the target table. Therefore the target dataset is the base libref.table (or format catalog) and can be referenced directly, or using either of the following macro variable(s): 
+At the point of running this script, the data has already been loaded (successfully) to the target table. Therefore the target is typically the base libref.table (or format catalog) itself and can be referenced directly (YOURLIB.YOURDATASET), or using either of the following macro variable: 
 
 * `&orig_libds`
 * `&libref..&ds`
 
 The staged table is also available, as `work.STAGING_DS`.
 
-If you are making changes to the target table as part of the hook, you are advised to "LOCK" and "UNLOCK" it using the [mp_lockanytable](https://core.sasjs.io/mp__lockanytable_8sas.html) macro (to prevent contention from other users making concurrent edits):
+If you are making changes to the target table as part of the hook, then in order to prevent contention from other users making concurrent edits, you are advised to "LOCK" and "UNLOCK" it using the [mp_lockanytable](https://core.sasjs.io/mp__lockanytable_8sas.html) macro:
 
 ```
-  /* perform lock on SOMELIB.SOMETABLE
+  /* lock SOMELIB.SOMETABLE */
   %mp_lockanytable(LOCK,
     lib=SOMELIB,
     ds=SOMETABLE,
