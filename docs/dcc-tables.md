@@ -115,7 +115,7 @@ SAS Developer Notes:
 * Target dataset: `work.STAGING_DS`
 * Base libref.table or catalog variable:  `&orig_libds`
 
-### POST_APPROVE HOOK
+### POST_APPROVE_HOOK
 
 This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.  
 
