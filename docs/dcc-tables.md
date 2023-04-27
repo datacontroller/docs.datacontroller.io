@@ -117,14 +117,42 @@ SAS Developer Notes:
 
 ### POST_APPROVE HOOK
 
-This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.
+This [hook script](#hook-scripts) is `%inc`'d _after_ an approval is made. This is the most common type of hook script, and is useful for, say, running a SAS job after a mapping table is updated, or running a model after changing a parameter.  
 
 Leave blank if not required.
 
 SAS Developer Notes:
 
-* Target dataset: `work.STAGING_DS`
-* Base libref.table or catalog variable:   `&orig_libds`
+At the point of running this script, the data has already been loaded (successfully) to the target table. Therefore the target dataset is the base libref.table (or format catalog) and can be referenced directly, or using either of the following macro variable(s): 
+
+* `&orig_libds`
+* `&libref..&ds`
+
+The staged table is also available, as `work.STAGING_DS`.
+
+If you are making changes to the target table as part of the hook, you are advised to "LOCK" and "UNLOCK" it using the [mp_lockanytable](https://core.sasjs.io/mp__lockanytable_8sas.html) macro (to prevent contention from other users making concurrent edits):
+
+```
+  /* perform lock on SOMELIB.SOMETABLE
+  %mp_lockanytable(LOCK,
+    lib=SOMELIB,
+    ds=SOMETABLE,
+    ref=Locking table to peform a post approve hook action
+    ctl_ds=&mpelib..mpe_lockanytable
+  )
+  
+  /* do stuff */
+  proc sort data=somelib.sometable;
+  run;
+  
+  /* unlock */
+  %mp_lockanytable(UNLOCK,
+    lib=SOMELIB,
+    ds=SOMETABLE,
+    ctl_ds=&mpelib..mpe_lockanytable
+  )
+```
+The SAS session will already contain the mp_lockanytable macro definition.
 
 
 ### SIGNOFF_COLS
