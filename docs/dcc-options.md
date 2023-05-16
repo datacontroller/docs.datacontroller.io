@@ -57,3 +57,10 @@ Default=SYSTEM.
 
 When running the [Refresh Data Catalog](/admin-services/#refresh-data-catalog) service, it is often that case the the process will fail due to being unable to assign a library.  To avoid the need to resolve the connection issue elsewhere in SAS, you can simply exclude it from the Data Catalog, by including the LIBREF in this field (pipe-separated)
 
+## DC_REVIEW Scope
+
+### HISTORY_ROWS
+
+Number of rows to return for each HISTORY page.  Default - 100.  Increasing this will increase for all users.  Using very large numbers here can result in a sluggish page load time.  If you need large amounts of HISTORY data, it is generally better to extract it directly from the [MPE_REVIEW](/tables/mpe_review/) table.
+
+
