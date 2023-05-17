@@ -1,0 +1,1469 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to deploy Data Controller in a production SAS Viya environment">
+      
+      
+        <link rel="canonical" href="https://docs.datacontroller.io/dci-deploysasviya/">
+      
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>DC SAS Viya Deployment - Data Controller for SAS® Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Open Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../font-awesome.css">
+    
+    
+      
+    
+    
+
+
+
+<meta name="author" content="Allan Bowe">
+
+
+
+
+
+<meta property="og:type" content="website" />
+
+
+
+
+<meta property="og:title" content="Data Controller Documentation">
+
+<meta property="og:url" content="https://docs.datacontroller.io/dci-deploysasviya/" />
+
+
+
+<meta property='og:image' content="https://docs.datacontroller.io/img/dci_deploymentdiagramviya.png" />
+<meta property="og:image:type" content="image/png" />
+
+
+
+<meta property="og:description" content="How to deploy Data Controller in a production SAS Viya environment" />
+
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function () {
+    var u = "https://analytics.4gl.io/";
+    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+    _paq.push(['setSiteId', '4']);
+    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+    g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="amber">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sas-viya-deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://docs.datacontroller.io" title="Data Controller for SAS® Documentation" class="md-header-nav__button md-logo" aria-label="Data Controller for SAS® Documentation">
+      
+  <img src="../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Data Controller for SAS® Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              DC SAS Viya Deployment
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datacontroller/dcdocs.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    datacontroller/dcdocs.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.datacontroller.io" title="Data Controller for SAS® Documentation" class="md-nav__button md-logo" aria-label="Data Controller for SAS® Documentation">
+      
+  <img src="../img/favicon.ico" alt="logo">
+
+    </a>
+    Data Controller for SAS® Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datacontroller/dcdocs.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    datacontroller/dcdocs.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dc-overview/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dc-userguide/" class="md-nav__link">
+      DC User Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-datacatalog/" class="md-nav__link">
+      Data Catalog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-lineage/" class="md-nav__link">
+      Data Lineage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-fileupload/" class="md-nav__link">
+      File Uploads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../filter/" class="md-nav__link">
+      Filter Mechanism
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../locking-mechanism/" class="md-nav__link">
+      Locking Mechanism
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-tableviewer/" class="md-nav__link">
+      Table Viewer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../viewboxes/" class="md-nav__link">
+      ViewBoxes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin-services/" class="md-nav__link">
+      Admin Services
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Table Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Table Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Table Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_audit/" class="md-nav__link">
+      MPE_AUDIT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_column_level_security/" class="md-nav__link">
+      MPE_COLUMN_LEVEL_SECURITY
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_config/" class="md-nav__link">
+      MPE_CONFIG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datacatalog_libs/" class="md-nav__link">
+      MPE_DATACATALOG_LIBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datacatalog_tabs/" class="md-nav__link">
+      MPE_DATACATALOG_TABS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datacatalog_vars/" class="md-nav__link">
+      MPE_DATACATALOG_VARS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datastatus_libs/" class="md-nav__link">
+      MPE_DATASTATUS_LIBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datastatus_tabs/" class="md-nav__link">
+      MPE_DATASTATUS_TABS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_lockanytable/" class="md-nav__link">
+      MPE_LOCKANYTABLE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_review/" class="md-nav__link">
+      MPE_REVIEW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_submit/" class="md-nav__link">
+      MPE_SUBMIT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_tables/" class="md-nav__link">
+      MPE_TABLES
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Configuration
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../column-level-security/" class="md-nav__link">
+      Column Level Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-dates/" class="md-nav__link">
+      Dates / Datetimes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dynamic-cell-dropdown/" class="md-nav__link">
+      Dynamic Cell Dropdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emails/" class="md-nav__link">
+      Emails
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../excel/" class="md-nav__link">
+      Excel Formulas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../formats/" class="md-nav__link">
+      Formats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-groups/" class="md-nav__link">
+      Groups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libraries/" class="md-nav__link">
+      Libraries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-options/" class="md-nav__link">
+      Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../row-level-security/" class="md-nav__link">
+      Row Level Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-security/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-selectbox/" class="md-nav__link">
+      Selectboxes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-tables/" class="md-nav__link">
+      Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-validations/" class="md-nav__link">
+      Validations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../macros/" class="md-nav__link">
+      Macros
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-requirements/" class="md-nav__link">
+      System Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SAS Viya Deploy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      SAS Viya Deploy
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-account" class="md-nav__link">
+    System Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging-directory" class="md-nav__link">
+    Staging Directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-diagram" class="md-nav__link">
+    Deployment Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-compute-context" class="md-nav__link">
+    Create Compute Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-frontend" class="md-nav__link">
+    Deploy frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-database" class="md-nav__link">
+    Deploy Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-compute-context-autoexec" class="md-nav__link">
+    Update Compute Context Autoexec
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-deploysas9/" class="md-nav__link">
+      SAS 9 Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-stpinstance/" class="md-nav__link">
+      SAS 9 Dedicated STP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Legal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Legal" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../privacy/" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../evaluation-agreement/" class="md-nav__link">
+      Evaluation Licence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../licences/" class="md-nav__link">
+      Other Licences
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../videos/" class="md-nav__link">
+      Videos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Roadmap
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Roadmap" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Roadmap
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../roadmap/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" class="md-nav__link">
+      DC API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-account" class="md-nav__link">
+    System Account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging-directory" class="md-nav__link">
+    Staging Directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-diagram" class="md-nav__link">
+    Deployment Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-compute-context" class="md-nav__link">
+    Create Compute Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-frontend" class="md-nav__link">
+    Deploy frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-database" class="md-nav__link">
+    Deploy Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-compute-context-autoexec" class="md-nav__link">
+    Update Compute Context Autoexec
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datacontroller/dcdocs.github.io/edit/master/docs/dci-deploysasviya.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="sas-viya-deployment">SAS Viya Deployment<a class="headerlink" href="#sas-viya-deployment" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Data Controller for SAS Viya consists of a frontend, a set of Job Execution Services, a staging area, a Compute Context, and a database library.  The library can be a SAS Base engine if desired, however this can cause contention (eg table locks) if end users are able to connect to the datasets directly, eg via Enterprise Guide or Base SAS.
+A database that supports concurrent access is highly recommended.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="system-account">System Account<a class="headerlink" href="#system-account" title="Permanent link">&para;</a></h3>
+<p>Data Controller makes use of a system account for performing backend data updates and writing to the staging area.  This needs to be provisioned in advance using the Viya admin-cli.  The process is well described here:  <a href="https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992">https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-3-5-Compute-Server-Service-Accounts/ta-p/620992</a></p>
+<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>
+<p>Whilst we do recommend that Data Controller configuration tables are stored in a database for concurrency reasons, it is also possible to use a BASE engine library, which is adequate if you only have a few users.</p>
+<p>To migrate the control library to a database, first perform a regular deployment, and afterwards you can generate the DDL and update the settings file..</p>
+<p>Make sure the system account (see above) has full read / write access.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>"Modify schema" privileges are not required.</p>
+</div>
+<h3 id="staging-directory">Staging Directory<a class="headerlink" href="#staging-directory" title="Permanent link">&para;</a></h3>
+<p>All deployments of Data Controller make use of a physical staging directory.  This is used to store logs, as well as CSV and Excel files uploaded by end users.  This directory should NOT be accessible by end users - only the SAS system account requires access to this directory.
+A typical small deployment will grow by a 5-10 mb each month.  A very large enterprise customer, with 100 or more editors, might generate up to 0.5 GB or so per month, depending on the size and frequency of the Excel EUCs and CSVs being uploaded.  Web modifications are restricted only to modified rows, so are typically just a few kb in size.</p>
+<h2 id="deployment-diagram">Deployment Diagram<a class="headerlink" href="#deployment-diagram" title="Permanent link">&para;</a></h2>
+<p>The below areas of the SAS Viya platform are modified when deploying Data Controller:</p>
+<p><img src="/img/dci_deploymentdiagramviya.svg" height="350" style="border:3px solid black" ></p>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>Data Controller deployment is split between 3 deployment types:</p>
+<ul>
+<li>Demo version</li>
+<li>Full Version (manual deploy)</li>
+<li>Full Version (automated deploy)</li>
+</ul>
+<!--
+## Full Version - Manual Deploy
+-->
+
+<p>There are several parts to this proces:</p>
+<ol>
+<li>Create the Compute Context</li>
+<li>Deploy Frontend</li>
+<li>Prepare the database and update settings (optional)</li>
+<li>Update the Compute Context autoexec</li>
+</ol>
+<h3 id="create-compute-context">Create Compute Context<a class="headerlink" href="#create-compute-context" title="Permanent link">&para;</a></h3>
+<p>The Viya Compute context is used to spawn the Job Execution Services - such that those services may run under the specified system account, with a particular autoexec.</p>
+<p>We strongly recommend a dedicated compute context for running Data Controller.  The setup requires an Administrator account.</p>
+<ul>
+<li>Log onto SASEnvironment Manager, select Contexts, View Compute Contexts, and click the Create icon.</li>
+<li>In the New Compute Context dialog, enter the following attributes:<ul>
+<li>Context Name</li>
+<li>Launcher Context</li>
+<li>Attribute pairs:<ul>
+<li>reuseServerProcesses: true</li>
+<li>runServerAs: {{the account set up <a href="#system-account">earlier</a>}}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Save and exit</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>XCMD is NOT required to use Data Controller.</p>
+</div>
+<h3 id="deploy-frontend">Deploy frontend<a class="headerlink" href="#deploy-frontend" title="Permanent link">&para;</a></h3>
+<p>Unzip the frontend into your chosen directory (eg <code>/var/www/html/DataController</code>) on the SAS Web Server.  Open <code>index.html</code> and update the following inside <code>dcAdapterSettings</code>:</p>
+<ul>
+<li><code>appLoc</code> - this should point to the root folder on SAS Drive where you would like the Job Execution services to be created.  This folder should initially, NOT exist (if it is found, the backend will not be deployed)</li>
+<li><code>contextName</code> - here you should put the name of the compute context you created in the previous step.</li>
+<li><code>dcPath</code> - the physical location on the filesystem to be used for staged data.  This is only used at deployment time, it can be configured later in <code>$(appLoc)/services/settings.sas</code> or in the autoexec if used.</li>
+<li><code>adminGroup</code> - the name of an existing group, which should have unrestricted access to Data Controller.  This is only used at deployment time, it can be configured later in <code>$(appLoc)/services/settings.sas</code> or in the autoexec if used.</li>
+<li><code>servertype</code> - should be SASVIYA</li>
+<li><code>debug</code> - can stay as <code>false</code> for performance, but could be switched to <code>true</code> for debugging startup issues</li>
+<li><code>useComputeApi</code> - use <code>true</code> for best performance.</li>
+</ul>
+<p><img alt="Updating index.html" src="../img/viyadeployindexhtml.png" /></p>
+<p>Now, open https://YOURSERVER/DataController (using whichever subfolder you deployed to above) using an account that has the SAS privileges to write to the <code>appLoc</code> location.</p>
+<p>You will be presented with a deployment screen like the one below.  Be sure to check the "Recreate Database" option and then click the "Deploy" button.</p>
+<p><img alt="viya deploy" src="../img/viyadeployauto.png" /></p>
+<p>Your services are deployed!  And the app is operational, albeit still a little sluggish, as every single request is using the APIs to fetch the content of the <code>$(appLoc)/services/settings.sas</code> file.</p>
+<p>To improve responsiveness by another 700ms we recommend you follow the steps in <a href="/dci-deploysasviya/#update-compute-context-autoexec">Update Compute Context Autoexec</a> below.</p>
+<h3 id="deploy-database">Deploy Database<a class="headerlink" href="#deploy-database" title="Permanent link">&para;</a></h3>
+<p>If you have a lot of users, such that concurrency (locked datasets) becomes an issue, you might consider migrating the control library to a database.</p>
+<p>The first part to this is generating the DDL (and inserts).  For this, use the DDL exporter as described <a href="/admin-services/#export-database">here</a>.  If you need a flavour of DDL that is not yet supported, <a href="https://datacontroller.io/contact/">contact us</a>.</p>
+<p>Step 2 is simply to run this DDL in your preferred database.</p>
+<p>Step 3 is to update the library definition in the <code>$(appLoc)/services/settings.sas</code> file using SAS Studio.</p>
+<h3 id="update-compute-context-autoexec">Update Compute Context Autoexec<a class="headerlink" href="#update-compute-context-autoexec" title="Permanent link">&para;</a></h3>
+<p>First, open the <code>$(appLoc)/services/settings.sas</code> file in SAS Studio, and copy the code.</p>
+<p>Then, open SASEnvironment Manager, select Contexts, View Compute Contexts, and open the context we created earlier.</p>
+<p>Switch to the Advanced tab and paste in the SAS code copied from SAS Studio above.</p>
+<p>It will look similar to:</p>
+<div class="highlight"><pre><span></span><code>%let DC_LIBREF=DCDBVIYA;
+%let DC_ADMIN_GROUP={{YOUR DC ADMIN GROUP}};
+%let DC_STAGING_AREA={{YOUR DEDICATED FILE SYSTEM DRIVE}};
+libname &amp;dc_libref {{YOUR DC DATABASE}};
+</code></pre></div>
+<p>To explain each of these lines:</p>
+<ul>
+<li><code>DC_LIBREF</code> can be any valid 8 character libref.</li>
+<li><code>DC_ADMIN_GROUP</code> is the name of the group which will have unrestricted access to Data Controller</li>
+<li><code>DC_STAGING_AREA</code> should point to the location on the filesystem where the staging files and logs are be stored</li>
+<li>The final libname statement can also be configured to point at a database instead of a BASE engine directory (contact us for DDL)</li>
+</ul>
+<p>If you have additional libraries that you would like to use in Data Controller, they should also be defined here.
+<!--
+## Full Version - Automated Deploy
+
+The automated deploy makes use of the SASjs CLI to create the dependent context and job execution services.  In addition to the standard prerequisites (a registered viya system account and a prepared database) you will also need:
+
+* a local copy of the [SASjs CLI](https://sasjs.io/sasjs-cli/#installation)
+* a Client / Secret - with an administrator group in SCOPE, and an authorization_code GRANT_TYPE.  The SASjs [Viya Token Generator](https://github.com/sasjs/viyatoken) may help with this.
+
+### Prepare the Target and Token
+
+To configure this part (one time, manual step), we need to run a single command:
+<div class="highlight"><pre><span></span><code>sasjs add
+</code></pre></div>
+A sequence of command line prompts will follow for defining the target.  These prompts are described [here](https://sasjs.io/sasjs-cli-add/).  Note that `appLoc` is the SAS Drive location in which the Data Controller jobs will be deployed.
+
+### Prepare the Context JSON
+This file describes the context that the CI/CD process will generate.  Save this file, eg as `myContext.json`.
+
+<div class="highlight"><pre><span></span><code>{
+  &quot;name&quot;: &quot;DataControllerContext&quot;,
+  &quot;attributes&quot;: {
+    &quot;reuseServerProcesses&quot;: true,
+    &quot;runServerAs&quot;: &quot;mycasaccount&quot;
+  },
+  &quot;environment&quot;: {
+    &quot;autoExecLines&quot;: [
+      &quot;%let DC_LIBREF=DCDBVIYA;&quot;,
+      &quot;%let DC_ADMIN_GROUP={{YOUR DC ADMIN GROUP}};&quot;,
+      &quot;%let DC_STAGING_AREA={{YOUR DEDICATED FILE SYSTEM DRIVE}};&quot;,
+      &quot;libname &amp;dc_libref {{YOUR DC DATABASE}};&quot;,
+    ],
+    &quot;options&quot;: []
+  },
+  &quot;launchContext&quot;: {
+    &quot;contextName&quot;: &quot;SAS Job Execution launcher context&quot;
+  },
+  &quot;launchType&quot;: &quot;service&quot;,
+}
+</code></pre></div>
+
+### Prepare Deployment Script
+
+The deployment script will run on a build server (or local desktop) and execute as follows:
+
+<div class="highlight"><pre><span></span><code># Create the SAS Viya Target
+sasjs context create --source myContext.json --target myTarget
+</code></pre></div>
+-->
+</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../dci-requirements/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                System Requirements
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../dci-deploysas9/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                SAS 9 Deploy
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            All rights reserved &copy;2022 Bowe IO Ltd.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

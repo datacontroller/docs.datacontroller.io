@@ -1,0 +1,1373 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Options in Data Controller are set in the MPE_CONFIG table and apply to all users.">
+      
+      
+        <link rel="canonical" href="https://docs.datacontroller.io/dcc-options/">
+      
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>DC Options - Data Controller for SAS® Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Open Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+      <link rel="manifest" href="../manifest.webmanifest" crossorigin="use-credentials">
+    
+    
+      <link rel="stylesheet" href="../font-awesome.css">
+    
+    
+      
+    
+    
+
+
+
+<meta name="author" content="Allan Bowe">
+
+
+
+
+
+<meta property="og:type" content="website" />
+
+
+
+
+<meta property="og:title" content="Data Controller for SAS® Options">
+
+<meta property="og:url" content="https://docs.datacontroller.io/dcc-options/" />
+
+
+
+<meta property='og:image' content="/img/mpe_config.png" />
+<meta property="og:image:type" content="image/png" />
+
+
+
+<meta property="og:description" content="Options in Data Controller are set in the MPE_CONFIG table and apply to all users." />
+
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function () {
+    var u = "https://analytics.4gl.io/";
+    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+    _paq.push(['setSiteId', '4']);
+    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+    g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="amber">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-controller-for-sas-options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://docs.datacontroller.io" title="Data Controller for SAS® Documentation" class="md-header-nav__button md-logo" aria-label="Data Controller for SAS® Documentation">
+      
+  <img src="../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Data Controller for SAS® Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              DC Options
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datacontroller/dcdocs.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    datacontroller/dcdocs.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.datacontroller.io" title="Data Controller for SAS® Documentation" class="md-nav__button md-logo" aria-label="Data Controller for SAS® Documentation">
+      
+  <img src="../img/favicon.ico" alt="logo">
+
+    </a>
+    Data Controller for SAS® Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datacontroller/dcdocs.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    datacontroller/dcdocs.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dc-overview/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dc-userguide/" class="md-nav__link">
+      DC User Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-datacatalog/" class="md-nav__link">
+      Data Catalog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-lineage/" class="md-nav__link">
+      Data Lineage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-fileupload/" class="md-nav__link">
+      File Uploads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../filter/" class="md-nav__link">
+      Filter Mechanism
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../locking-mechanism/" class="md-nav__link">
+      Locking Mechanism
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcu-tableviewer/" class="md-nav__link">
+      Table Viewer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../viewboxes/" class="md-nav__link">
+      ViewBoxes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin-services/" class="md-nav__link">
+      Admin Services
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Table Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Table Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Table Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_audit/" class="md-nav__link">
+      MPE_AUDIT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_column_level_security/" class="md-nav__link">
+      MPE_COLUMN_LEVEL_SECURITY
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_config/" class="md-nav__link">
+      MPE_CONFIG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datacatalog_libs/" class="md-nav__link">
+      MPE_DATACATALOG_LIBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datacatalog_tabs/" class="md-nav__link">
+      MPE_DATACATALOG_TABS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datacatalog_vars/" class="md-nav__link">
+      MPE_DATACATALOG_VARS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datastatus_libs/" class="md-nav__link">
+      MPE_DATASTATUS_LIBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_datastatus_tabs/" class="md-nav__link">
+      MPE_DATASTATUS_TABS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_lockanytable/" class="md-nav__link">
+      MPE_LOCKANYTABLE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_review/" class="md-nav__link">
+      MPE_REVIEW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_submit/" class="md-nav__link">
+      MPE_SUBMIT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables/mpe_tables/" class="md-nav__link">
+      MPE_TABLES
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Configuration
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../column-level-security/" class="md-nav__link">
+      Column Level Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-dates/" class="md-nav__link">
+      Dates / Datetimes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dynamic-cell-dropdown/" class="md-nav__link">
+      Dynamic Cell Dropdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../emails/" class="md-nav__link">
+      Emails
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../excel/" class="md-nav__link">
+      Excel Formulas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../formats/" class="md-nav__link">
+      Formats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-groups/" class="md-nav__link">
+      Groups
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libraries/" class="md-nav__link">
+      Libraries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Options
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Options
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dc-scope" class="md-nav__link">
+    DC Scope
+  </a>
+  
+    <nav class="md-nav" aria-label="DC Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dc_email_alerts" class="md-nav__link">
+    DC_EMAIL_ALERTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_maxobs_webedit" class="md-nav__link">
+    DC_MAXOBS_WEBEDIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_restrict_editrecord" class="md-nav__link">
+    DC_RESTRICT_EDITRECORD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_restrict_viewer" class="md-nav__link">
+    DC_RESTRICT_VIEWER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_viewlib_check" class="md-nav__link">
+    DC_VIEWLIB_CHECK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_locale" class="md-nav__link">
+    DC_LOCALE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc_catalog-scope" class="md-nav__link">
+    DC_CATALOG Scope
+  </a>
+  
+    <nav class="md-nav" aria-label="DC_CATALOG Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dc_ignorelibs" class="md-nav__link">
+    DC_IGNORELIBS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc_review-scope" class="md-nav__link">
+    DC_REVIEW Scope
+  </a>
+  
+    <nav class="md-nav" aria-label="DC_REVIEW Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history_rows" class="md-nav__link">
+    HISTORY_ROWS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../row-level-security/" class="md-nav__link">
+      Row Level Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-security/" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-selectbox/" class="md-nav__link">
+      Selectboxes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-tables/" class="md-nav__link">
+      Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcc-validations/" class="md-nav__link">
+      Validations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../macros/" class="md-nav__link">
+      Macros
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Installation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Installation" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-requirements/" class="md-nav__link">
+      System Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-deploysasviya/" class="md-nav__link">
+      SAS Viya Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-deploysas9/" class="md-nav__link">
+      SAS 9 Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-stpinstance/" class="md-nav__link">
+      SAS 9 Dedicated STP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dci-troubleshooting/" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Legal
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Legal" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Legal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../privacy/" class="md-nav__link">
+      Privacy Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../evaluation-agreement/" class="md-nav__link">
+      Evaluation Licence
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../licences/" class="md-nav__link">
+      Other Licences
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../videos/" class="md-nav__link">
+      Videos
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Roadmap
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Roadmap" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Roadmap
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../roadmap/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api/" class="md-nav__link">
+      DC API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dc-scope" class="md-nav__link">
+    DC Scope
+  </a>
+  
+    <nav class="md-nav" aria-label="DC Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dc_email_alerts" class="md-nav__link">
+    DC_EMAIL_ALERTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_maxobs_webedit" class="md-nav__link">
+    DC_MAXOBS_WEBEDIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_restrict_editrecord" class="md-nav__link">
+    DC_RESTRICT_EDITRECORD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_restrict_viewer" class="md-nav__link">
+    DC_RESTRICT_VIEWER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_viewlib_check" class="md-nav__link">
+    DC_VIEWLIB_CHECK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc_locale" class="md-nav__link">
+    DC_LOCALE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc_catalog-scope" class="md-nav__link">
+    DC_CATALOG Scope
+  </a>
+  
+    <nav class="md-nav" aria-label="DC_CATALOG Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dc_ignorelibs" class="md-nav__link">
+    DC_IGNORELIBS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc_review-scope" class="md-nav__link">
+    DC_REVIEW Scope
+  </a>
+  
+    <nav class="md-nav" aria-label="DC_REVIEW Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#history_rows" class="md-nav__link">
+    HISTORY_ROWS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datacontroller/dcdocs.github.io/edit/master/docs/dcc-options.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="data-controller-for-sas-options">Data Controller for SAS® - Options<a class="headerlink" href="#data-controller-for-sas-options" title="Permanent link">&para;</a></h1>
+<p>The <a href="/tables/mpe_config/">MPE_CONFIG</a> table provides a number of system options, which apply to all users.  The table may be re-purposed for other applications, so long as scopes beginning with "DC_" are avoided.</p>
+<p>Currently used scopes include:</p>
+<ul>
+<li>DC</li>
+<li>DC_CATALOG</li>
+</ul>
+<h2 id="dc-scope">DC Scope<a class="headerlink" href="#dc-scope" title="Permanent link">&para;</a></h2>
+<h3 id="dc_email_alerts">DC_EMAIL_ALERTS<a class="headerlink" href="#dc_email_alerts" title="Permanent link">&para;</a></h3>
+<p>Set to YES or NO to enable email alerts. This requires email options to be preconfigured (mail server etc).</p>
+<h3 id="dc_maxobs_webedit">DC_MAXOBS_WEBEDIT<a class="headerlink" href="#dc_maxobs_webedit" title="Permanent link">&para;</a></h3>
+<p>By default, a maximum of 100 observations can be edited in the browser at one time.  This number can be increased, but note that the following factors will impact performance:</p>
+<ul>
+<li>Number of configured <a href="/dcc-validations">Validations</a></li>
+<li>Browser type and version (works best in Chrome)</li>
+<li>Number (and size) of columns</li>
+<li>Speed of client machine (laptop/desktop)</li>
+</ul>
+<h3 id="dc_restrict_editrecord">DC_RESTRICT_EDITRECORD<a class="headerlink" href="#dc_restrict_editrecord" title="Permanent link">&para;</a></h3>
+<p>Setting YES will prevent the EDIT RECORD dialog appearing in the EDIT screen by removing the "Edit Row" option in the right click menu, and the "ADD RECORD" button in the bottom left.  </p>
+<p>Anything other than YES will mean that the modal <em>is</em> available.</p>
+<p>Default=NO </p>
+<h3 id="dc_restrict_viewer">DC_RESTRICT_VIEWER<a class="headerlink" href="#dc_restrict_viewer" title="Permanent link">&para;</a></h3>
+<p>Set to YES to restrict the list of libraries and tables in VIEWER to only those explicitly set to VIEW in the MPE_SECURITY table.  The default is NO (users can see all tables they already have permission to see).</p>
+<h3 id="dc_viewlib_check">DC_VIEWLIB_CHECK<a class="headerlink" href="#dc_viewlib_check" title="Permanent link">&para;</a></h3>
+<p>Set to YES to enable library validity checking in viewLibs service. This means that on first load, SAS will attempt to open each library to see if it is possible to do so.  This reduces the number of libraries in the list, but means that it is slow to load the first time around.</p>
+<p>The default is NO.</p>
+<h3 id="dc_locale">DC_LOCALE<a class="headerlink" href="#dc_locale" title="Permanent link">&para;</a></h3>
+<p>Set to a locale (such as <code>en_gb</code> or <code>en_be</code>) to override the system value (which may be derived from client browser settings).
+This feature is useful when importing ambiguous dates from CSV or Excel (eg 1/2/20 vs 2/1/20) as DC uses the <code>anydtdtm.</code> informats for import.</p>
+<p>Default=SYSTEM.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have clients in different geographies loading excel in local formats, you can also address this issue by ensuring the locale of the windows <em>user</em> profile is not set to the default (eg <code>English (United States)</code>).  When leaving the DC_LOCALE as SYSTEM, the locale settings in SAS are not added or modified.</p>
+</div>
+<h2 id="dc_catalog-scope">DC_CATALOG Scope<a class="headerlink" href="#dc_catalog-scope" title="Permanent link">&para;</a></h2>
+<h3 id="dc_ignorelibs">DC_IGNORELIBS<a class="headerlink" href="#dc_ignorelibs" title="Permanent link">&para;</a></h3>
+<p>When running the <a href="/admin-services/#refresh-data-catalog">Refresh Data Catalog</a> service, it is often that case the the process will fail due to being unable to assign a library.  To avoid the need to resolve the connection issue elsewhere in SAS, you can simply exclude it from the Data Catalog, by including the LIBREF in this field (pipe-separated)</p>
+<h2 id="dc_review-scope">DC_REVIEW Scope<a class="headerlink" href="#dc_review-scope" title="Permanent link">&para;</a></h2>
+<h3 id="history_rows">HISTORY_ROWS<a class="headerlink" href="#history_rows" title="Permanent link">&para;</a></h3>
+<p>Number of rows to return for each HISTORY page.  Default - 100.  Increasing this will increase for all users.  Using very large numbers here can result in a sluggish page load time.  If you need large amounts of HISTORY data, it is generally better to extract it directly from the <a href="/tables/mpe_review/">MPE_REVIEW</a> table.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../libraries/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Libraries
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../row-level-security/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Row Level Security
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            All rights reserved &copy;2022 Bowe IO Ltd.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
