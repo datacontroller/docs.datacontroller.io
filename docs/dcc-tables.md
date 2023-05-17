@@ -37,13 +37,15 @@ This is a required field.
 
 The loadtype determines the nature of the update to be applied. Valid values are as follows:
 
+- FORMAT_CAT. For updating Format Catalogs, the BUSKEY should be `FMTNAME START`.  See [formats](/formats).
 - UPDATE. This is the most basic type, and any updates will happen 'in place'. Simply provide the primary key fields in the `BUSKEY` column.
 - TXTEMPORAL. This signifies an SCD2 type load. For this type the validity fields (valid from, valid to) should be specified in the `VAR_TXFROM` and `VAR_TXTO` fields. The table itself should include `VAR_TXFROM` in the physical key. The remainder of the primary key fields (not including `VAR_TXFROM`) should be specified in `BUSKEY`.
-- BITEMPORAL. These tables have two time dimensions - a version history, and a business history. The version history (SCD2) fields should be specified in `VAR_TXFROM` and `VAR_TXTO` and the business history fields should be specified in `VAR_BUSFROM` and `VAR_BUSTO`. The `VAR_TXFROM` and `VAR_BUSFROM` fields should be in the key of the actual table, but should not be also specified in the `BUSKEY` field.
+- BITEMPORAL. These tables have two time dimensions - a version history, and a business history. The version history (SCD2) fields should be specified in `VAR_TXFROM` and `VAR_TXTO` and the business history fields should be specified in `VAR_BUSFROM` and `VAR_BUSTO`. Both the `VAR_TXFROM` and `VAR_BUSFROM` fields should be in the physical key of the actual table, but should NOT be specified in the `BUSKEY` field.
 
 This is a required field.
+
 !!! Note
-    The support for BITEMPORAL loads is restricted, in the sense it is only possible to load data at a single point in time (no support for loading multiple business date ranges for a single business key). The workaround is simply to load each date range separately.
+    The support for BITEMPORAL loads is restricted, in the sense it is only possible to load data at a single point in time (no support for loading _multiple_ business date ranges for a _specific_ BUSKEY). The workaround is simply to load each date range separately. As a result of this restriction, the EDIT page will only show the latest business date range for each key.  To modify earlier values, a filter should be applied. 
 
 ### BUSKEY
 
